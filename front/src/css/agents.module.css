@@ -1,0 +1,17 @@
+.main {
+    width: 60%;
+    min-width: 700px;
+    max-width: 1500px;
+}
+.addIcon {
+    margin-right: 8px;
+    font-size: 10px;
+    width: 15px;
+    height: 15px;
+    font-size: 6px;
+    height: 18px;
+}
+.toolbar {
+    display: flex;
+    justify-content: right;
+}

@@ -1,0 +1,1 @@
+export const getCessionsList = (store) => store.cessions.list;

@@ -1,0 +1,25 @@
+.header {
+    font-size: 19px;
+    font-weight: 500;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    font-family: 'Roboto_slab', serif;
+    margin-bottom: 8px;
+}
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.input {
+    width: 100%;
+    margin-top: 10px;
+    border-color: black !important
+}
+.error {
+    text-align: center;
+    color: red;
+    margin-top: 10px;
+}

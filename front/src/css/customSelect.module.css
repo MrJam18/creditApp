@@ -1,0 +1,12 @@
+.selectBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.select_content {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

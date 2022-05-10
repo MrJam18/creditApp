@@ -1,0 +1,12 @@
+.main {
+    width: 100%;
+    position: relative;
+}
+.results {
+    position: absolute;
+    width: 100%;
+    box-shadow: 4px 4px 8px 0px rgb(34 60 80 / 20%);
+}
+.antiMargin {
+    margin: 0 !important;
+}

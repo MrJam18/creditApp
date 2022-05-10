@@ -1,0 +1,2 @@
+alter sequence test_id_seq restart; - обнуление счетчика
+drop table contracts, courts, deb_orgs, debtors, jurisdictions, messages, org_tables, org_types, organizations, passports, payments, regions, street_types, streets, users, cities, city_types cascade; - - Удаляет все таблицы

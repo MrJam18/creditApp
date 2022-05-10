@@ -1,0 +1,186 @@
+.main {
+    width: 70%;
+    min-width: 700px;
+    max-width: 1000px;
+    padding: 0;
+    display: flex;
+}
+.header_small {
+    font-weight: 600;
+    font-family: 'Roboto_slab', serif;
+    margin-bottom: 10px;
+    font-size: 20px;
+    text-align: center;
+}
+.divider {
+    margin: 0;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.12);
+    height: 1px;
+    width: 100%
+}
+.menu {
+    width: 35%;
+}
+.menuHeader {
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.content {
+    width: 100%;
+    padding: 15px;
+}
+.content__text {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.content__block {
+    margin-right: 15px;
+    font-size: 18px;
+    flex: 1 0 47%;
+    margin-bottom: 12px;
+}
+.content__fullBlock {
+    font-size: 18px;
+    width: 100%;
+    margin-bottom: 12px;
+}
+.content__block::first-letter {
+    text-transform: capitalize;
+}
+.content_header {
+    font-weight: bolder; 
+}
+.content__link {
+    color: #343434;
+    font-size: 18px;
+    padding: 0;
+    padding-bottom: 1px;
+    margin: 0;
+    cursor: pointer;
+}
+.content__link:hover {
+    border-bottom: 1px solid #000;
+    padding-bottom: 0;   
+}
+.paddingBox__left {
+    padding-top: 20px
+}
+.content__button { 
+    color: #343434;
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
+}
+.payments {
+    padding: 20px;
+    width: 100%;
+    padding-right: 30px;
+}
+.payments__addIcon {
+    margin-right: 8px;
+    font-size: 10px;
+    width: 15px;
+    height: 15px;
+    font-size: 6px;
+    height: 18px;
+}
+.payments__add {
+    display: flex;
+    text-transform: uppercase;
+    
+}
+.addPayment {
+    width: 300px;
+    margin-left: -150px; 
+}
+.payments__toolbar {
+    display: flex;
+    width: 100%;
+    margin-bottom: 5px;
+}
+.tableSpace {
+    display: flex;
+}
+.payments__delButton {
+    font-size: 18px;
+    width: 20px;
+    height: 20px;
+    padding-left: 5px;
+}
+.dataToolbar {
+    display: flex;
+    justify-content: flex-end;
+}
+.dataToolbar__icon {
+    font-size: 22px;
+}
+.data__toolbar__courtBox {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.addCourtIcon {
+    font-size: 20px;
+    width: 50px;
+    height: 50px;
+}
+.courtCreator__inputMargin {
+    margin-bottom: 10px;
+}
+.actions {
+    padding: 20px;
+    width: 100%;
+}
+.actions__downloadIcon {
+    width: 25px;
+    height: 28px;
+}
+.actions__downloadButton {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.payments__rightButton {
+    top: 6px;
+}
+.dataToolbar__customIcon {
+    width: 25px;
+    height: 24px;
+}
+.dataToolbar__deleteIcon {
+    font-size: 31px;
+    padding: 0;
+    margin-top: 5px;
+}
+.selectedDoc__noParams {
+    margin-bottom: 10px;
+}
+.executiveChoises__main {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.executiveChoises__header {
+    font-size: 18.5px;
+    width: 100%;
+    text-align: center;
+    font-weight: 500;
+}
+.fullWidthBlock {
+    width: 100%;
+    margin-bottom: 10px;
+}
+.executiveChoises__bailiffBlock {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        width: 100%;
+}
+.executiveDocChanger__main {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}

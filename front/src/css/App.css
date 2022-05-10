@@ -1,0 +1,202 @@
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-size: 100%;
+  font-family: 'Roboto_slab', serif;
+}
+.header {
+  font-family: 'Roboto_slab', serif;
+  font-size: 24px;
+  font-weight: 600;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.background {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-size: cover;
+  /* background-color: rgb(187, 185, 185); */
+  flex-grow: 1;
+  width: 100%;
+}
+/* .background-test {
+  background: transparent no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+} */
+html {
+  background: rgb(187, 185, 185) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.contentBox {
+  padding: 20px 30px;
+  border-radius: 15px;
+  background-color: white;
+  padding-left: 30px;
+  width:500px;
+}
+/* .secondBox {
+  padding: 20px 30px;
+  border-radius: 15px;
+  background-color: white;
+  padding-left: 30px;
+  width:500px;
+  animation: openWindow 0.2s;
+} */
+/* @keyframes openWindow {
+  from { bottom: auto; transform: scale(0) }
+  to { bottom: auto; transform: scale(1) }
+} */
+
+.details__close {
+  position: absolute;
+  transform: translate(0, -100%);
+  transition: transform 0.3s;
+  visibility: hidden;
+}
+.details__open {
+  display: block;
+  transform: translate(0px);
+  transition: transform .3s;
+  background-color: #fff;
+}
+.details {
+  position: relative;
+  background-color: #fff;
+  
+}
+.detailsHeader {
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff !important;
+  opacity: 1;
+  z-index: 3;
+}
+.detailsHeader:hover {
+  background-color: rgb(201, 200, 200) !important;
+}
+.firstWindow {
+  position: relative;
+}
+.secondWindow {
+  position: absolute;
+  z-index: 5;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  display: flex;
+  background-color: rgba(87, 87, 87, 0.5);
+  height: 100%;
+  flex-grow: 1;
+}
+.closingButton {
+  display: flex;
+  justify-content: right;
+  position: relative;
+  cursor: pointer;
+}
+.xmark {
+  position: absolute;
+  right: 10px;
+  right: -17px;
+  bottom: -5px;
+}
+
+.position_relative {
+  position: relative;
+}
+.position_absolute {
+  position: absolute;
+}
+.react-dadata__input {
+  border-color: rgb(160, 160, 160) !important
+}
+.MuiButton-root {
+  width: 100%
+}
+.margin_0 {
+  margin: 0 !important;
+}
+.marginTop_0 {
+  margin-top: 0 !important;
+}
+.fullWidth {
+  width: 100% !important;
+}
+.margin_center {
+  margin-left: auto;
+  margin-right: auto;
+}
+.button {
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  margin: 0;
+}
+.button_submit {
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+.antiLink {
+  text-decoration: none;
+  color: currentColor;
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.antibutton {
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  margin: 0;
+  font-family: 'Roboto_slab', serif;
+}
+.error {
+    color: red;
+    margin-top: 15px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+.contentBox__fixedCenter {
+  padding: 20px 30px;
+  border-radius: 15px;
+  background-color: white;
+  padding-left: 30px;
+  position: fixed;
+  width: 400px;
+  min-height: 200px;
+  top: 25%;
+  left: 50%;
+  margin-top: -100px;
+  margin-left: -250px; 
+  text-align: center;
+}
+.header_small {
+  font-weight: 600;
+  font-family: 'Roboto_slab', serif;
+  margin-bottom: 10px;
+  font-size: 20px;
+  text-align: center;
+}
+.antimargin {
+  margin: 0;
+}
+.antipadding {
+  padding: 0;
+}

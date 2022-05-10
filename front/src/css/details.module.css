@@ -1,0 +1,28 @@
+.close {
+    position: absolute;
+    transform: scaleY(0);
+    transform-origin: top;
+    visibility: hidden;
+  }
+.always {
+  transition: transform 0.15s;
+  margin-left: 45px;
+}
+  .open {
+    transform-origin: top;
+    transform: scaleY(1);
+  }
+  .main {
+    position: relative;
+    background-color: #fff;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff !important;
+    opacity: 1;
+    z-index: 3;
+  }
+  .header:hover {
+    background-color: rgb(201, 200, 200) !important;
+  }

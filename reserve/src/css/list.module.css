@@ -1,0 +1,14 @@
+.debtor {
+    border: 1px solid black
+}
+.debtorName {
+    font-family: 'Roboto_slab', serif;
+}
+.listBox {
+    width: 80%;
+    margin-top: 30px
+}
+.birthDate {
+    justify-content: center;
+    align-items: center
+}

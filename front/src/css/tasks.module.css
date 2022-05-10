@@ -1,0 +1,9 @@
+.main {
+    height: 100%
+}
+.flexContainer {
+    height: 94.5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}

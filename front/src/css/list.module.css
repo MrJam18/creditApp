@@ -1,0 +1,85 @@
+.debtor {
+    border: 1px solid black
+}
+.debtorName {
+    font-family: 'Roboto_slab', serif;
+}
+.listBox {
+    width: 80%;
+    margin-top: 30px;
+}
+.birthDate {
+    justify-content: center;
+    align-items: center
+}
+.contractsNumber {
+    margin-right: 20px;
+}
+.debtor {
+    opacity: 1;
+    z-index: 2;
+    background-color: #fff !important;
+}
+.details {
+    display: block
+}
+.issuingOrg {
+    margin-left: 0 auto;
+    flex: 1
+}
+.utils {
+    display: flex;
+    justify-content: right;
+    margin-bottom: 10px;
+}
+.buttonUtil {
+    border: 0;
+    border-radius: 50px;
+    margin-left: 6px;
+    background-color: rgb(207, 202, 202);
+    cursor: pointer;
+    padding: 3px 6px;
+    transition: color 0.15s;
+    transition: background 0.15s;
+}
+.buttonUtil:active {
+    color: white;
+    background-color: black;
+}
+
+.imgUtil {
+    width: 20px;
+    height: 15px;
+}
+.addContract__block {
+    text-align: center;
+}
+.addContract__button {
+    border: none;
+    border-radius: 50px;
+    width: 30px;
+    height: 30px;
+    background: #cfcaca;
+    cursor: pointer;
+
+}
+.addContract__icon {
+    font-size: 16px;
+}
+.addContract__button:active {
+    transition: color 0.15s;
+    transition: background 0.15s;
+    color: white;
+    background-color: black;
+}
+.debtor__buttons {
+    padding-left: 10px;
+    visibility: hidden;
+    cursor: pointer;
+}
+.debtor__block:hover .debtor__buttons {
+    visibility: visible
+}
+/* .status {
+    flex: 1
+} */

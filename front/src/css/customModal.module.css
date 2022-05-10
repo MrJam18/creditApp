@@ -1,0 +1,72 @@
+.backStart{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    background-color: rgba(87, 87, 87, 0.5);
+    flex-grow: 1;
+}
+.back{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    background-color: rgba(87, 87, 87, 0.5);
+    flex-grow: 1;
+    animation-duration: 0.3s;
+    animation-name: slowShow;
+}
+
+.contentBox {
+    padding: 20px 30px;
+    border-radius: 15px;
+    background-color: white;
+    padding-left: 30px;
+    width: 400px;
+    min-height: 200px;
+    margin-top: 75px;
+}
+.closingButton {
+    display: flex;
+    justify-content: right;
+    position: relative;
+    cursor: pointer;
+}
+.xmark {
+    position: absolute;
+    right: -19px;
+    bottom: -6px;
+    font-size: 19px;
+}
+.fixed {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.headerHolder {
+    width: 100%;
+    position: absolute;
+    top: -22%;
+    right: 36%;
+}
+
+@keyframes slowShow {
+    from {
+        background-color: rgba(87, 87, 87, 0);
+    }
+  
+    to {
+        background-color: rgba(87, 87, 87, 0.5);
+    }
+  }

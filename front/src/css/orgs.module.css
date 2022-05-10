@@ -1,0 +1,23 @@
+.main {
+    width: 70%;
+    min-width: 1000px;
+    max-width: 2000px;
+}
+.addIcon {
+    margin-right: 8px;
+    font-size: 10px;
+    width: 15px;
+    height: 15px;
+    font-size: 6px;
+    height: 18px;
+}
+.toolbar {
+    display: flex;
+    justify-content: right;
+}
+.smallInputsHolder {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    width: 100%;
+}

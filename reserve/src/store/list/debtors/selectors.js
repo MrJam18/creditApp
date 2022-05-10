@@ -1,0 +1,1 @@
+export const getDebtors = (store) => store.debtors

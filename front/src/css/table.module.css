@@ -1,0 +1,38 @@
+/* table, tr,td, th {
+    
+} */
+/* .rows, .headers {
+    border: 1px solid black;
+    border-collapse: collapse;
+    border-right: 0;
+} */
+.cell, .header {
+    border: 1px solid black;
+    border-collapse: collapse;
+    border-right: 0;
+}
+.table {
+    width: 100%;
+    /* border-right: 1px solid black; */
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+.headers {
+    height: 50px;
+    white-space: nowrap;
+}
+.rows {
+    height: 30px;
+}
+.rightButtonParent {
+    visibility: hidden;
+    left: -10px;
+    bottom: 3px;
+}
+
+tr:hover .rightButtonParent {
+    visibility: visible;
+}
+.cell {
+    padding-left: 10px;
+}
