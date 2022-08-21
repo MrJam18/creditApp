@@ -1,0 +1,113 @@
+.main {
+    width: 70%;
+    min-width: 700px;
+    max-width: 1000px;
+    padding: 0;
+    display: flex;
+}
+.header_small {
+    font-weight: 600;
+    font-family: 'Roboto_slab', serif;
+    margin-bottom: 10px;
+    font-size: 20px;
+    text-align: center;
+}
+.divider {
+    margin: 0;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.12);
+    height: 1px;
+    width: 100%
+}
+.menu {
+    width: 35%;
+}
+.menuHeader {
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.content {
+    width: 100%;
+    padding: 15px;
+}
+.info {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.content__block {
+    margin-right: 15px;
+    font-size: 18px;
+    flex: 1 0 47%;
+    margin-bottom: 12px;
+}
+.content__fullBlock {
+    font-size: 18px;
+    width: 100%;
+    margin-bottom: 12px;
+}
+.content__block::first-letter {
+    text-transform: capitalize;
+}
+.content__blockHeader {
+    font-weight: 600;
+    font-family: 'Roboto_slab', serif;
+    font-size: 17px;
+}
+.content__blockHeader_center {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 7px;
+}
+.content__link {
+    color: #343434;
+    font-size: 18px;
+    padding: 0;
+    padding-bottom: 1px;
+    margin: 0;
+    cursor: pointer;
+    margin-right: 5px;
+}
+.content__link:hover {
+    border-bottom: 1px solid #000;
+    padding-bottom: 0;
+}
+.paddingBox__left {
+    padding-top: 20px
+}
+.content__button {
+    color: #343434;
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
+}
+.payments {
+    padding: 20px;
+    width: 100%;
+    padding-right: 30px;
+}
+.payments__addIcon {
+    margin-right: 8px;
+    font-size: 10px;
+    width: 15px;
+    height: 15px;
+    font-size: 6px;
+    height: 18px;
+}
+
+.content__fullWidthWrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.addPassport__inputBlock {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+.addPassport__fullWidthInput {
+    width: 100%;
+    margin-bottom: 15px;
+}

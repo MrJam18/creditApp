@@ -2,12 +2,14 @@ const express = require('express');
 const cookieParser = require('cookie-parser');
 require('dotenv').config();
 const sequelize = require('./db');
-const fileUpload = require('express-fileupload');
 const cors = require('cors');
 const router = require('./routes/index');
 const errorHandler = require('./middleware/errorHandlingMiddleware');
 const { clientApi } = require('./utils/adresses');
 // const userService = require('./services/userService');
+
+
+
 const app = express();
 
 
@@ -18,13 +20,14 @@ app.use(cors({
     credentials: true,
     origin: clientApi
 }));
-app.use(fileUpload({}));
+// app.use(fileUpload({}));
 app.use('/api', router);// router must be almost last!
 app.use(errorHandler)  // middleware must be last!
 const start = async () => {
     try {
+
         await sequelize.authenticate();
-        await sequelize.sync();
+        // await sequelize.sync({alter: true});
         app.listen(PORT, () => console.log('server started on port ' + PORT));
     }
     catch(e) {
@@ -33,11 +36,8 @@ const start = async () => {
     }
 }
 
-
 start();
 
 
-// userService.registration('mr.jam18@yandex.ru', 'zzzzz', 'admin', 'jamil', 'mamedov', 'admin');
-// .then((valu)=> {
-//     console.log(valu);
-// })
+// userService.registration('Can.David.Mamedov@icloud.com', '11052013d', 'admin', 'David', 'Mamedov', 'admin', 1);
+

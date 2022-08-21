@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-// import { getTasksList, getTasksTotal } from '../../store/tasks/selectors';
 import { getTotalLimitations, getLimitationsList } from '../../store/contracts/selectors'
 import { getUser } from '../../store/users/selectors';
 import NoBorderTable from '../dummyComponents/NoBorderTable';
@@ -8,10 +7,12 @@ import styles from '../../css/start.module.css';
 import {setAlert} from '../../store/alert/actions';
 import { recieveLimitationsList } from '../../store/contracts/actions';
 import MinPagination from '../dummyComponents/MinPagination';
+import { useNavigate } from 'react-router';
 
 
 const Limits = () => {
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const [loading, setLoading] = useState(true);
     const focus = false;
     const headers = [{key: 'date_issue', type: 'date', name: 'Дата выдачи'}, {key: 'debtor', name: 'ФИО должника'}, {key: 'creditor', name: 'Название организации'}, {key:'limitation', name: 'срок иск. давности', type: 'date'}];
@@ -45,13 +46,16 @@ const Limits = () => {
         }
 
     },[])
+    const onClickRow = (index) => {
+        navigate(`/contracts/${limitations[index].id}`);
+    }
 
     
     return (
         <div className={styles.element}>
             <div className="header">Сроки исковой давности</div>
             <div className={styles.flexContainer}>
-           <NoBorderTable loading={loading}  headers={headers} rows={limitations} focus={focus} sortHandler={sortHandler}  /> 
+           <NoBorderTable loading={loading}  headers={headers} rows={limitations} rowsButtons onClickRow={onClickRow} focus={focus} sortHandler={sortHandler}  /> 
            <MinPagination pageUpdater={changePage} total={totalLimitations} />
            </div>
         </div>

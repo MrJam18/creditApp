@@ -3,9 +3,6 @@ const countAllInYear = require("./countAllInYear");
 const getYear = require("../getYear");
 const Break = require("./Break");
 const compareDatesBool = require("../dates/compareDatesBool");
-// const countAllInYearNoLimit = require('./countAllInYearNoLimit');
-// const addDays = require("../dates/addDays");
-// const countDays = require("../dates/countDays");
 
 module.exports = function countAllWithPayments(percent, penalty, issued, startDate, endDate, payments, dueDate) {
     percent = Number(percent);
@@ -32,17 +29,7 @@ module.exports = function countAllWithPayments(percent, penalty, issued, startDa
         limited.percents = issued * 1.5;
         limited.limitPenalty = true;
     }
-    years = years.map((el)=>{
-        el.payments = [];
-        payments.forEach((payEl, index)=> {
-            const paymentYear = getYear(payEl.date);
-            if (paymentYear === el.year){
-                payEl.index = index;     
-                el.payments.push(payEl);
-            }
-        });
-        return el;
-        },[]);
+
         breaks.push(new Break(startDate, years[0].isLeap, 0, 0))
     if (years.length === 1) {
     const result = countAllInYear(years[0], percent, penalty, main, percents, penalties, startDate, endDate, dueDate, breaks, limited);
@@ -55,10 +42,6 @@ module.exports = function countAllWithPayments(percent, penalty, issued, startDa
         earliestYear = years[0];
     }
     else {
-    // const countedBeforePenalty = main * countDays(startDate, dueDate) / 366 * percent / 100;
-    // const countedDays = (limited.percents - countedBeforePenalty) / (main * 1 / 366 * (percent + penalty) / 100);
-    // console.log(countedDays);
-    // console.log(addDays(startDate, countedDays), '---------------------------------------------------------------------------------------------------------------------');
         const firstYear = years.shift();
         let firstResult;
         if(firstYear.year ===  dueYear){
@@ -133,9 +116,8 @@ module.exports = function countAllWithPayments(percent, penalty, issued, startDa
     main = Number(main.toFixed(2));
     percents = Math.trunc(percents);
     penalties = Math.trunc(penalties);
-    const sum = Number((main + percents + penalties).toFixed(2));
     
     return {
-        main, percents, penalties, payments, breaks, limitedPercents: percents, sum
+        main, percents, penalties, payments, breaks, limitedPercents: percents
     }
 }

@@ -20,15 +20,13 @@ const CourtCreator = ({show, setShow, setValue}) => {
     const [addressError, setAddressError] = useState(false);
     const levels = useSelector(getCourtsLevels);
     const types = useSelector(getCourtsTypes);
-    const getNecessary = () => {
-        dispatch(recieveCourtTypes());
-        dispatch(recieveCourtLevels());
+    const getNecessary =  async () => {
+       await dispatch(recieveCourtTypes());
+       await dispatch(recieveCourtLevels());
     }
     useEffect(getNecessary, []);
-    const onSubmit = async (ev) => {
-        ev.preventDefault();
-        const elements = form.current.elements;
-        const court = formDataConverter(elements);
+    const onSubmit = async () => {
+        const court = formDataConverter(form.current.elements);
         if (!address) setError('Заполните адрес!');
         else {
             setLoading(true);
@@ -45,10 +43,10 @@ const CourtCreator = ({show, setShow, setValue}) => {
                 },'')
                 throw new Error(errorMessage)
             }   
-                setValue({
-                    value: response.name,
-                    id: response.id
-                })
+                // setValue({
+                //     value: response.name,
+                //     id: response.id
+                // })
                 dispatch(setAlert('Успешно!', "Суд успешно добавлен!"));
                 setShow(false);
             }
@@ -64,7 +62,7 @@ const CourtCreator = ({show, setShow, setValue}) => {
         <CustomModal show={show} setShow={setShow}>
             <div className={styles.courtCreator}>
              <div className='header_small'>Создание суда.</div>
-             <form ref={form} onSubmit={onSubmit} >
+             <form ref={form} >
              <div className={styles.courtCreator__inputMargin}>
              <TextField label='Название суда' variant='standard' required name='name' fullWidth />
              </div>
@@ -77,7 +75,7 @@ const CourtCreator = ({show, setShow, setValue}) => {
              <div className={styles.courtCreator__inputMargin}>
              <Address error={addressError} setError={setAddressError} setAdressForDB={setAddress} />
              </div>
-             <ButtonInForm loading={loading} />
+             <ButtonInForm loading={loading} onClick={onSubmit} />
              </form>
              {error && <div className='error'>{error}</div>}
              </div>

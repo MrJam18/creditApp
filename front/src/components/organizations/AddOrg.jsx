@@ -45,7 +45,7 @@ const AddOrg = ({show, setShow}) => {
         if(!address){
             return setError('Укажите адрес!')
         }
-        const data = formDataConverter(form.current);
+        const data = formDataConverter(elements);
         await dispatch(addOrganization({
             organization: data, 
             address

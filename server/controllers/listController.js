@@ -1,15 +1,80 @@
+const { Op } = require("sequelize");
 const ApiError = require("../error/apiError");
-const { Debtors, Contracts, Organizations } = require("../models/models");
+const Organizations = require('../models/subjects/Organizations');
+const Debtors = require('../models/subjects/Debtor');
+const Contracts = require('../models/documents/Contracts');
+const isDate = require("../utils/dates/isDate");
+const getWherePropertyWhenSearchFIO = require("../utils/getWherePropertyWhenSearchFIO");
+const { changeDateToISO } = require('../utils/dates/changeDateFormat');
 class ListController {
     async getList(req, res, next) {
         try{
-            const {page, limit} = req.query;
+            const { page, limit } = req.query;
+            let search = req.query.search;
             const groupId = req.user.groupId;
             const offset = page * limit - limit;
-            const debtorsData = await Debtors.findAndCountAll({limit, offset, order: [['createdAt', 'DESC']], where: {groupId}, include: [{ model: Contracts, as: 'contracts', include: Organizations}]});
+            let debtorsData;
+            if(search === 'null' || search === 'undefined') search = null;
+            if(search){
+                if(!/\d/.test(search)){
+                    const searchArray = search.split(' ', 3);
+                    const where = {
+                        [Op.and]: {
+                        ...getWherePropertyWhenSearchFIO(searchArray), groupId
+                        }
+                    };
+                    debtorsData = debtorsData = await Debtors.findAndCountAll({limit, offset, order: [['createdAt', 'DESC']], where, include: [{ model: Contracts, as: 'contracts', include: Organizations}]});
+                }
+                else {
+                    let searchArray = search.split(' ', 6);
+                    searchArray = searchArray.filter((el, index) => {
+                        if(/№/.test(el)) {
+                            if(/^№$/.test(el)) return false;
+                            else searchArray[index] = el.replace('№', '');
+                        }
+                        else if(/^от$/.test(el) ) return false;
+                        else if(/^договор$/.test(el)) return false;
+                        else if(/^г.$/.test(el)) return false;
+                        return true;
+                    });
+                    let where;
+                    if(searchArray.length >= 2) {
+                        let date_issue;
+                        let number;
+                        searchArray.find((el, index) => {
+                            if(isDate(el)){
+                                date_issue = changeDateToISO(el);
+                                searchArray.splice(index, 1);
+                                number = searchArray[0];
+                                return true;
+                            }
+                        })
+                        where = {
+                            date_issue, number
+                        }
+                    }
+                    else {
+                        if(isDate(searchArray[0])){
+                            where = {
+                                date_issue: changeDateToISO(searchArray[0])
+                            }
+                        }
+                        else {
+                            where = {
+                                number: searchArray[0]
+                            }
+                        }
+                    }
+                    debtorsData = await Debtors.findAndCountAll({limit, offset, order: [['createdAt', 'DESC']], where: {groupId}, include: [{ model: Contracts, where, as: 'contracts', include: Organizations}]});
+                }
+                
+            }
+            else {
+            debtorsData = await Debtors.findAndCountAll({limit, offset, order: [['createdAt', 'DESC']], where: {groupId}, include: [{ model: Contracts, as: 'contracts', include: Organizations}]});
+            }
             const contractsList = debtorsData.rows.reduce((acc, el)=> {
                 if(!acc[el.id]) acc[el.id] = [];
-                if(el.contracts.length == 0) return acc;
+                if(el.contracts.length === 0) return acc;
                 acc[el.id].push(...el.contracts)
                 return acc;
                 }, {});

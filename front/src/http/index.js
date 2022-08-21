@@ -30,6 +30,18 @@ api.interceptors.response.use((conf) => conf, async (err) => {
     throw err;
 })
 
+api.saveFile = async (path, fileName) => {
+    const {data} = await api.get(path, {responseType: 'blob'});
+    const blob = new Blob([data]);
+    saveAs(blob, fileName);
+    return {status: 'ok'}
+}
+api.saveFilePost = async (path, body, fileName) => {
+    const {data} = await api.post(path, body, {responseType: 'blob'});
+    const blob = new Blob([data]);
+    saveAs(blob, fileName);
+    return {status: 'ok'}
+}
 
 export const saveFile =  async (path, fileName) => {
     const {data} = await api.get(path, {responseType: 'blob'});

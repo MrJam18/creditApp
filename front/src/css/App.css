@@ -23,13 +23,6 @@
   flex-grow: 1;
   width: 100%;
 }
-/* .background-test {
-  background: transparent no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-} */
 html {
   background: rgb(187, 185, 185) no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -132,6 +125,9 @@ html {
 .fullWidth {
   width: 100% !important;
 }
+.width_50 {
+  width: 50% !important;
+}
 .margin_center {
   margin-left: auto;
   margin-right: auto;
@@ -199,4 +195,48 @@ html {
 }
 .antipadding {
   padding: 0;
+}
+.margin-bottom_10 {
+  margin-bottom: 10px;
+}
+.margin-bottom_20 {
+  margin-bottom: 20px;
+}
+.fullWidthFlexBlock {
+  display: flex;
+  width: 100%;
+}
+.flex_SB {
+  justify-content: space-between;
+}
+.flex_JCC {
+  justify-content: center;
+}
+@keyframes slideOut {
+  from {
+    right: 0px;
+  }
+  to {
+    right: 80%;
+  }
+}
+@keyframes slideIn {
+  from {
+    left: 80%;
+    right: 0px;
+  }
+  to {
+    left: 0px;
+    right: 0px;
+  }
+}
+.small-inputs-box {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 15px;
+}
+.full-width-box {
+  width: 100%;
+  margin-bottom: 15px;
 }

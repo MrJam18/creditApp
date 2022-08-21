@@ -21,6 +21,9 @@ import { setAlert } from '../store/alert/actions';
 import usersSlice from '../store/users/reducer';
 import LeftMenu from './LeftMenu';
 import Agents from './agents/Agents';
+import Debtor from './debtor/Debtor';
+import Cessions from "./cessions/Cessions";
+import Test from "./Test";
 
 
 function Router() {
@@ -37,10 +40,10 @@ function Router() {
   useEffect(()=> {
     setAlert('Ошибка', error, 'error');
     dispatch(setGlobalError(false));
-  }, [error])
+  }, [error]);
   if(loading) return <Loading />;
   return (
-      <BrowserRouter>
+      <>
         <Menu/>
         <LeftMenu />
         <HidingAlert></HidingAlert>
@@ -51,8 +54,12 @@ function Router() {
             <Route path='organizations' exact element={<PrivateAccess Wrapped={<Organizations />} />} />
             <Route path='agents' exact element={<PrivateAccess Wrapped={<Agents />} />} />
             <Route path='contracts/:contractId' element= {<PrivateAccess Wrapped={<Contract />} /> } />
+            <Route path='debtors/:debtorId' element={<PrivateAccess Wrapped={<Debtor />} />} />
             <Route path='/' element={<PrivateAccess Wrapped={<Start />} />} />
+            <Route path='cessions' element={<PrivateAccess Wrapped={<Cessions />} /> } />
+                <Route path='test' element={<Test />} />
             </Routes>
+            </>
       
       
       
@@ -62,8 +69,6 @@ function Router() {
       
       
       
-      
-      </BrowserRouter>
   );
 }
 

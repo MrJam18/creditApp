@@ -5,7 +5,7 @@ import { useDispatch} from 'react-redux';
 import { setCourtsList } from '../../../store/courts/actions';
 import CourtCreator from './CourtCreator';
 import { useParams } from 'react-router';
-import { createDocument } from '../../../store/contracts/actions';
+import {createCourtClaim, createDocument} from '../../../store/contracts/actions';
 import { setAlert } from '../../../store/alert/actions';
 import CourtSearch from './CourtSearch';
 import ButtonInForm from '../../dummyComponents/ButtonInForm';
@@ -35,7 +35,15 @@ const FastDocumentCreator = ({show, setShow}) => {
         if(!court) setError('Выберите суд из списка!');
         else if(!agent) setError('Выберите представителя!');
         else {
-            await dispatch(createDocument(`createCourtOrder?contractId=${contractId}&courtId=${court.id}&date=${date}&contractJur=${contractJur}&ignorePayments=${ignorePayments}&agentId=${agent.id}`, 'Судебный приказ ' + contractId));
+            const data = {
+                contractId,
+                courtId: court.id,
+                countDate: date,
+                ignorePayments,
+                agentId: agent.id,
+                type: 'courtOrder'
+            }
+            await dispatch(createCourtClaim(data, 'Судебный приказ ' + contractId));
             dispatch(setCourtsList([]));
             setCourt(undefined);
             dispatch(setAlert('Успешно!', "Иск успешно создан!"));

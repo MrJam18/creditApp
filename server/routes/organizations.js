@@ -5,10 +5,12 @@ const router = new Router();
 
 router.use(authMiddleware);
 router.get('/getSearchList', organizationsController.getNameList);
+router.get('/getNameListForCessions', organizationsController.getNameListForCessions);
 router.get('/getList', organizationsController.getList);
 router.post('/addOne', organizationsController.addOne);
 router.post('/changeOne', organizationsController.changeOne);
-router.post('/deleteOne', organizationsController.deleteOne)
+router.post('/deleteOne', organizationsController.deleteOne);
+
 
 
 module.exports = router;

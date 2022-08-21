@@ -6,7 +6,7 @@ import CustomSelect from '../../dummyComponents/CustomSelect';
 import CourtSearch from './CourtSearch';
 import styles from '../../../css/contract.module.css'
 import { useDispatch, useSelector } from 'react-redux';
-import { createDocument } from '../../../store/contracts/actions';
+import {createCourtClaim, createDocument} from '../../../store/contracts/actions';
 import { getContractId } from '../../../store/contracts/selectors';
 import getISODate from '../../../utils/getISODate';
 import ButtonInForm from '../../dummyComponents/ButtonInForm';
@@ -47,7 +47,7 @@ const SelectDoument = ({show, setShow}) => {
     const [ignorePayments, setIgnorePayments] = useState(false);
     const [showExecutiveChoises, setShowExecutiveChoises] = useState(false);
     const [agent, setAgent] = useState(false);
-    const docTypes = [{value: 'order', label: 'Судебный приказ'}, {value: 'claim', label: "Исковое заявление"}, {value: 'IDReqCourt', label: "Запрос на получение исп. документа у суда"}, {value: 'IPInit', label: "Заявление о возбуждении ИП"}, {value: 'IPIntrod', label: "Заявление об ознакомлении с материалами ИП"}, {value: 'reqDeliveryID', label: "Заявление о выдаче ИД после окончания ИП" }];
+    const docTypes = [{value: 'courtOrder', label: 'Судебный приказ'}, {value: 'claim', label: "Исковое заявление"}, {value: 'IDReqCourt', label: "Запрос на получение исп. документа у суда"}, {value: 'IPInit', label: "Заявление о возбуждении ИП"}, {value: 'IPIntrod', label: "Заявление об ознакомлении с материалами ИП"}, {value: 'reqDeliveryID', label: "Заявление о выдаче ИД после окончания ИП" }];
     const onCloseModal = () =>{
         setShowCourtSearch(false);
         setShowNoParams(true);
@@ -57,7 +57,7 @@ const SelectDoument = ({show, setShow}) => {
     }
     const paramsHandler = (val) => {
         switch(val){
-            case 'order':
+            case 'courtOrder':
             case 'claim':
              setShowCourtSearch(true);
              setShowNoParams(false);
@@ -82,16 +82,19 @@ const SelectDoument = ({show, setShow}) => {
         if(!selectedDoc) return setError('Выберите документ для создания!');
         try{
             switch(selectedDoc){
-                case 'order': 
-                if(!court) return setError('Вы не выбрали суд для подачи документа!');
-                else if(!agent)  return setError('Выберите представителя!');
-                await dispatch(createDocument(`createCourtOrder?contractId=${contractId}&courtId=${court.id}&date=${date}&contractJur=${contractJur}&ignorePayments=${ignorePayments}&agentId=${agent.id}`, 'Судебный приказ ' + contractId));
-                setShow(false);
-                break;
+                case 'courtOrder':
                 case 'claim':
                     if(!court) return setError('Вы не выбрали суд для подачи документа!');
                     else if(!agent)  return setError('Выберите представителя!');
-                    await dispatch(createDocument(`createClaim?contractId=${contractId}&courtId=${court.id}&date=${date}&contractJur=${contractJur}&ignorePayments=${ignorePayments}&agentId=${agent.id}`, 'Иск ' + contractId));
+                    const data = {
+                        contractId,
+                        courtId: court.id,
+                        countDate: date,
+                        ignorePayments,
+                        agentId: agent.id,
+                        type: selectedDoc
+                    }
+                    await dispatch(createCourtClaim(data));
                     setShow(false);
                     break;
                 case 'IDReqCourt':
@@ -99,7 +102,6 @@ const SelectDoument = ({show, setShow}) => {
                     setShow(false);
                     break;
             }
-
         }
         catch(e){
             setError(e.message);

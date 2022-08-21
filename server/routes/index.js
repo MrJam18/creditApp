@@ -17,6 +17,7 @@ const tasksRouter = require('./tasks');
 const debtorsRouter = require('./debtors');
 const agentsRouter = require('./agents');
 const bailiffsRouter = require('./bailiffs');
+const filesRouter = require('./files');
 
 router.use('/events', eventRouter);
 router.use('/messenger', messengerRouter);
@@ -35,6 +36,7 @@ router.use('/tasks', tasksRouter);
 router.use('/debtors', debtorsRouter);
 router.use('/agents', agentsRouter);
 router.use('/bailiffs', bailiffsRouter);
+router.use('/files', filesRouter);
 
 
 

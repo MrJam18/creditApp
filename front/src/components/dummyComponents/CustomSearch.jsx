@@ -19,7 +19,7 @@ const useStyles = makeStyles({
 
 let cancelBlur = false;
 
-const CustomSearch = ({label, results = [], onSearch, onClick, customStyles, delay = 300, setValue, defaultValue = ''}) => {
+const CustomSearch = ({label, results = [], onSearch, onClick, customStyles, delay = 300, setValue = null, defaultValue = ''}) => {
     const [resultsData, setResultsData] = useState(results);
     const classes = useStyles();
     const input = useRef();
@@ -56,6 +56,12 @@ const CustomSearch = ({label, results = [], onSearch, onClick, customStyles, del
         setResultsData([]);
         }
     }, [setValue])
+    useEffect(()=> {
+        return () => {
+            setResultsData([]);
+            setInputValue(defaultValue);
+        }
+    }, []);
     const onBlur = () => {
        setTimeout(()=> {
            if(!cancelBlur) {

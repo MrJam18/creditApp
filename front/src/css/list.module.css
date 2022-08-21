@@ -75,10 +75,26 @@
 .debtor__buttons {
     padding-left: 10px;
     visibility: hidden;
-    cursor: pointer;
+    cursor: pointer; 
+    border-radius: 50%;
+    width: 20px;
+    height: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+    transition: background-color 0.15s;
+}
+.debtor__buttons:hover {
+    background-color: rgba(0, 0, 255, 0.199);
+
 }
 .debtor__block:hover .debtor__buttons {
-    visibility: visible
+    visibility: visible;
+    
+}
+.debtor__infoIcon {
+    padding-right: 0.6rem;
 }
 /* .status {
     flex: 1

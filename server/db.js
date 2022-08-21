@@ -1,4 +1,7 @@
-const {Sequelize} = require('sequelize')
+const {Sequelize} = require('sequelize');
+const log = require('simple-node-logger').createSimpleLogger();
+log.setLevel('error');
+
 
 module.exports = new Sequelize(
     process.env.DB_NAME,
@@ -7,6 +10,7 @@ module.exports = new Sequelize(
     {
         dialect: 'postgres',
         host: process.env.DB_HOST,
-        port: process.env.DB_PORT
+        port: process.env.DB_PORT,
+        logging: log.debug()
     }
 )

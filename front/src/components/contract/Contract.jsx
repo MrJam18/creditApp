@@ -12,24 +12,27 @@ import ContractPayments from './ContractPayments'
 import { Divider } from '@mui/material';
 import Actions from './Actions';
 import { setAlert } from '../../store/alert/actions';
+import Files from "./files/Files";
 
 
 const Contract = () => {
     const { contractId } = useParams();
     const dispatch = useDispatch();
     const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(false);
     const contract = useSelector(getContract);
     const [menuValue, setMenuValue] = useState('data');
     const menuSelector = () => {
         switch (menuValue) {
             case 'data':
-            return <ContractData contractId={contractId}/>
+                return <ContractData contractId={contractId}/>
             case 'payments': 
-            return <ContractPayments />
+                return <ContractPayments />
             case 'actions':
-            return <Actions />
+                return <Actions />
+            case 'files':
+                return  <Files />
         }
-        
     }
 
     const getNecessary = async () => {
@@ -38,6 +41,8 @@ const Contract = () => {
         await dispatch(getCurrentContract(contractId));
         }
         catch(e){
+            console.log(e.response.data.message);
+            setError(e.response.data.message);
             setAlert('Ошибка!', "Ошибка при получении данных контракта!", 'error');
         }
         finally{
@@ -48,11 +53,16 @@ const Contract = () => {
     useEffect(getNecessary, [])
     return (
     <div className={'background firstWindow'}>
-        {loading ? 'Загрузка' : <div className="header">{`${contract.name} № ${contract.number} от ${chandeDateFormatOnRus(contract.date_issue)} г.`}</div> }
+        {loading &&  <div className="header">Загрузка</div> }
+        {error && <div className="header">Ошибка!</div>}
+        {(!loading && !error) && <div className="header">{`${contract.name} № ${contract.number} от ${chandeDateFormatOnRus(contract.date_issue)} г.`}</div> }
     <div className={"contentBox" + ' ' + styles.main}>
     <ContractMenu menuValue={menuValue} setMenuValue = {setMenuValue} />
     <Divider orientation='vertical' />
-        {loading ? <div className="center"><Loading/></div> : menuSelector()    }
+        {loading && <div className="center"><Loading/></div> }
+        {error && <div className="center"><div className="header_small error">Ошибка получения контракта! <br />
+                                                                        {error}</div></div> }
+        {(!loading && !error) && menuSelector() }
     </div>
 
     </div>

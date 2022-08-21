@@ -24,11 +24,11 @@ const CreateBailiff = ({setShow}) => {
             setError(false);
             try{
                 await dispatch(createBailiff({name, address}));
-                dispatch(setAlert('Успешно!', "Суд успешно добавлен!"));
+                dispatch(setAlert('Успешно!', "ОСП успешно добавлен!"));
                 setShow(false);
             }
             catch(e){
-                if(e.message === "SequelizeUniqueConstraintError") setError('Данный суд уже существует!')
+                if(e.message === "SequelizeUniqueConstraintError") setError('Данный отдел уже существует!')
                 else setError(e.message) ;
             }
             finally{
