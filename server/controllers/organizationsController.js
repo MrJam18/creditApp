@@ -1,10 +1,11 @@
 const ApiError = require("../error/apiError");
-const { Organizations } = require("../models/models");
+const Organizations = require('../models/subjects/Organizations');
 const { Op } = require("sequelize");
 const getArrayFromString = require("../utils/getArrayFromString");
 const countOffset = require("../utils/countOffset");
-const { getOrCreateAddressIdsFromDB } = require("./adressController");
 const getFullAddressWithoutInclude = require("../utils/adress/getFullAddressWithoutInclude");
+const Address = require("../classes/Address");
+
 
 class OrganizationsController {
     async getNameList(req, res, next) {
@@ -25,19 +26,52 @@ class OrganizationsController {
               ],
             groupId
            }, attributes: ['id', 'name', 'short', 'INN'] });
-           const nameList = data.reduce((acc, el)=> {
-            let name;
-            if (el.short) name = el.short + ", ИНН: " +  el.INN;
-            else name = el.name;
-            acc.push({name, id: el.id, INN: el.INN});
-            return acc;
-           },[])
-           res.json(nameList);
+           const list = data.map((el)=> {
+               el.getSearchName();
+               el = el.getPlain();
+               delete el.short;
+               delete el.INN;
+               return el;
+           },[]);
+           res.json(list);
         }
     catch(e) {
         console.log(e);
         next(ApiError.internal(e.message));
     }
+    }
+    async getNameListForCessions(req, res, next) {
+        const {value} = req.query;
+        const groupId = req.user.groupId;
+        try {
+            const data = await Organizations.findAll({
+                limit: 5, where: {
+                    [Op.or]: [{
+                        name: {
+                            [Op.iLike]: `%${value}%`
+                        },
+                    },
+                        {
+                            short: {
+                                [Op.iLike]: `%${value}%`
+                            }
+                        },
+                    ],
+                    groupId
+                }, attributes: ['id', 'name', 'short', 'INN']
+            });
+            const list = data.map((el) => {
+                el.getSearchName();
+                el.getNameOrShort();
+                el = el.getPlain();
+                delete el.INN;
+                return el;
+            }, []);
+            res.json(list);
+        } catch (e) {
+            console.log(e);
+            next(ApiError.internal(e.message));
+        }
     }
     async getList(req, res, next) {
         try{
@@ -85,15 +119,14 @@ class OrganizationsController {
                 organization.requisits = null;
             }
             const groupId = req.user.groupId;
-            const address = await getOrCreateAddressIdsFromDB(body.address);
+            const address = await Address.getIds(body.address);
             await Organizations.create({
                 ...address, ...body.organization, groupId
             })
             res.json({status: 'ok'});
         }
         catch(e) {
-            console.log(e);
-            next(ApiError.internal(e.message));
+            next(e);
         }
     }
     async changeOne(req,res,next) {
@@ -112,7 +145,7 @@ class OrganizationsController {
             }
             
             if(body.address) {
-                const address = await getOrCreateAddressIdsFromDB(body.address);
+                const address = await Address.getIds(body.address);
                 await Organizations.update({
                     ...address, ...body.organization, userId
                 },{where: {

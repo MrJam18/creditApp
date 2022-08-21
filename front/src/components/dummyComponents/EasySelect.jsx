@@ -19,19 +19,23 @@ const useStyles = makeStyles( {
         fontFamily: 'Roboto_slab, serif'
     },
 })
-const EasySelect = ({name, label, initValue, variants, style, customClassName, defaultValue }) => {
+const EasySelect = React.forwardRef(({name, label, initValue = '', variants, style, onChange, customClassName, defaultValue = ''}, ref) => {
     const classes = useStyles();
-    const input = useInput(initValue);
-    const Variants = variants.map ((el)=> <MenuItem value={el.id} key={el.id}>{el.name}</MenuItem>)
+    const input = useInput(defaultValue);
+    const Variants = variants.map ((el)=> <MenuItem value={el.id} key={el.id}>{el.name}</MenuItem>);
+    const changeHandler = (ev) => {
+        input.onChange(ev);
+        if(onChange) onChange(ev.target.value);
+    }
     return (
             <div className={styles.selectBlock + ' ' + classes.input + ' ' + customClassName } style={style}>
                 <InputLabel id={name} className={classes.fullWidthLabel} >{label}</InputLabel>
-                <Select fullWidth defaultValue={defaultValue} variant='standard' required labelId={name} {...input} name={name}>
+                <Select inputRef={ref} fullWidth defaultValue={defaultValue} variant='standard' labelId={name} {...input} onChange={changeHandler} name={name}>
                         {Variants}
                 </Select>
                 
             </div>
     );
-};
+});
 
 export default EasySelect;

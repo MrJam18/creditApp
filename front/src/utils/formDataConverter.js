@@ -4,8 +4,8 @@
  * @param {array} exceptions - массив c названиями исключений name формы.
  * @returns объект со свойствами, эквивалентными аттрибутам name инпутов формы и значениями value этих инпутов, за исключением параметра exceptions.
  */
-export const formDataConverter = (formRef, exceptions)=> {
-    const data = formRef.elements ? formRef.elements : formRef;
+export const formDataConverter = (formRef, exceptions = null)=> {
+    const data = formRef.current ? formRef.current.elements : formRef;
     let object = {};
     const keys = Object.keys(data);
     if (exceptions) {

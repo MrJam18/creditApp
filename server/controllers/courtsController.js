@@ -1,14 +1,15 @@
-const { Courts, CourtLevels, CourtTypes } = require("../models/models");
+const {  CourtLevels, CourtTypes } = require("../models/models");
 const { Op } = require("sequelize");
-const adressController = require("./adressController");
 const ApiError = require("../error/apiError");
+const Address = require('../classes/Address');
+const Courts = require('../models/subjects/Courts');
 
 class CourtsController{
 
 async findByName (req, res, next) {
     try {
-        const {find} = req.query;
-        const regExp = `%${find}%`.toLowerCase();
+        const { value } = req.query;
+        const regExp = `%${value}%`.toLowerCase();
         const courts = await Courts.findAll({limit: 5,
             where: {
             name:{
@@ -43,7 +44,7 @@ async getTypes(req,res,next) {
  async create(req, res, next) {
      try{
         const body = req.body;
-        const address = await adressController.getOrCreateAddressIdsFromDB(body.address);
+        const address = await Address.getIds(body.address);
         const court = {
             ...body.court,
             ...address,

@@ -4,7 +4,7 @@ import 'react-dadata/dist/react-dadata.css';
 import styles from '../css/adress.module.css'
 import { useState } from 'react';
 
-const Address = ({setAdressForDB, defaultValue = ''}) => {
+const Address = ({setAdressForDB, defaultValue = '', showHeader = true}) => {
     const [error, setError] = useState(false);
     const  onSelectAdress = (val) => {
         const data = val.data;
@@ -38,7 +38,7 @@ const Address = ({setAdressForDB, defaultValue = ''}) => {
 
     return (
         <div className={styles.main}>
-        <div className={styles.header}>Адрес</div>
+            {showHeader && <div className={styles.header}>Адрес</div> }
            Введите адрес и выберите из списка.
             <div className={styles.input}>
             <AddressSuggestions selectOnBlur defaultQuery={defaultValue} token="56f00db2c366abb68541863cad53bbee37215ef6" delay={350} onChange= { onSelectAdress} inputProps = {{

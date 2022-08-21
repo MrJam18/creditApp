@@ -9,7 +9,7 @@ class PaymentsService {
         for (let payment of payments){
             delete payment.createdAt;
             delete payment.updatedAt;
-            Payments.update(payment, {
+            await Payments.update(payment, {
                 where: {                        
                     id: payment.id
                 }

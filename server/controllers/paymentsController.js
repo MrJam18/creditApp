@@ -1,8 +1,9 @@
-const ApiError = require('../error/apiError');
-const { Payments, Contracts } = require('../models/models');
+const { Payments } = require('../models/models');
+const Contracts = require('../models/documents/Contracts');
 const paymentsService = require('../services/paymentsService');
-const countAllWithPayments = require('../utils/countMoney/countAllWithPayments');
 const compareDates = require('../utils/dates/compareDates');
+const errorHandler = require('../error/errorHandler');
+const LoanCounter = require("../classes/counters/LoanCounter");
 
 const limit = 25; 
 const offset = 0;
@@ -24,25 +25,13 @@ class PaymentsController {
                     contractId
                 }
             })
-            if(paymentsInDB.length != 0) paymentsService.countPaymentsInDB(paymentsInDB, contract)
-                // const endDate = paymentsInDB[paymentsInDB.length - 1].date;
-                // const { payments } = countAllWithPayments(contract.percent, contract.penalty, contract.sum_issue, contract.date_issue, endDate, paymentsInDB, contract.due_date);
-                // for (let payment of payments){
-                //     delete payment.createdAt;
-                //     delete payment.updatedAt;
-                //     Payments.update(payment, {
-                //         where: {                        
-                //             id: payment.id
-                //         }
-                //     })
-                // }
+            if(paymentsInDB.length !== 0) await paymentsService.countPaymentsInDB(paymentsInDB, contract);
                 return res.json({status: 'ok'}); 
 
             
         }
         catch(e) {
-            console.log(e);
-            next(ApiError.internal(e.message));
+            errorHandler(e, next);
         }
         }
         async createPayment(req, res, next) {
@@ -56,33 +45,25 @@ class PaymentsController {
                     contractId
                 }
             })
-            
-            if(paymentsInDB != 0){
-            const endDate = compareDates(paymentsInDB[paymentsInDB.length - 1].date, payment.date);
-            paymentsInDB.push(payment);
-            const { payments } = countAllWithPayments(contract.percent, contract.penalty, contract.sum_issue, contract.date_issue, endDate, paymentsInDB, contract.due_date);
-            payment = payments.pop();
-            for (let payment of payments){
+                payment.contractId = contractId;
+                const payments = paymentsInDB.map(el=> el.get({plain: true}));
+                payments.push(payment);
+            const endDate = paymentsInDB[paymentsInDB.length - 1] ? compareDates(paymentsInDB[paymentsInDB.length - 1].date, payment.date) : payment.date;
+            const counted = new LoanCounter(contract.sum_issue, contract.percent, contract.penalty, contract.date_issue, endDate, contract.due_date, payments );
+            for (let payment of counted.payments){
                 delete payment.createdAt;
                 delete payment.updatedAt;
-                Payments.update(payment, {
+                if(!payment.id) await Payments.create(payment);
+                else await Payments.update(payment, {
                     where: {
                         id: payment.id
                     }
                 })
             }
-            }
-            else {
-                const {payments} = countAllWithPayments(contract.percent, contract.penalty, contract.sum_issue, contract.date_issue, payment.date, [payment], contract.due_date);
-                payment = payments[0];
-            }
-            payment.contractId = contractId;
-            const response = await Payments.create(payment);
-            return res.json(response);
+            return res.json({status: 'ok'});
         }
         catch(e) {
-            console.log(e);
-            next(ApiError.internal(e.message));
+            next(e);
         }
     
         }
@@ -91,18 +72,13 @@ class PaymentsController {
         try{
             const {page, limit, contractId, orderField, orderType} = req.query;
             const offset = page * limit - limit;
-            const contract = await Contracts.findByPk(contractId, {
-                attributes: ['percent', 'penalty', 'date_issue', 'sum_issue', 'due_date']
-            })
             let dataPayments = await Payments.findAndCountAll({limit, offset, order: [[orderField, orderType]], where: {
                 contractId
-            }})
-            const total = dataPayments.count;
-            // const { payments } = countAllWithPayments(contract.percent, contract.penalty, contract.sum_issue, contract.date_issue, getISODate(), dataPayments.rows, contract.due_date);
-            res.json({total, list: dataPayments.rows});
+            }});
+            res.json({total: dataPayments.count, list: dataPayments.rows});
         }
         catch(e) {
-            next(ApiError.internal(e.message));
+            errorHandler(e, next);
         }
     }
     async getPaymentsInner(contractId) {
@@ -113,26 +89,20 @@ class PaymentsController {
         return response;
     }
     catch(e){
-        console.log(e);
-        next(ApiError.internal(e.message));
+        errorHandler(e, next);
     }
     }
     async sortPayments(req,res,next) {
         try{
             const {field, contractId, type} = req.query;
-            const contract = await Contracts.findByPk(contractId, {
-                attributes: ['percent', 'penalty', 'date_issue', 'sum_issue', 'due_date']
-            });
             const payments = await Payments.findAndCountAll({limit, offset, order: [[field, type]], where: {
                 contractId
             }})
-            // const total = dataPayments.count;
-            // const {payments} = countAllWithPayments(contract.percent, contract.penalty, contract.sum_issue, contract.date_issue, getISODate(), dataPayments.rows, contract.due_date);
             res.json({total: payments.count, list: payments.rows});
             
         }
         catch(e){
-            next(ApiError.internal(e.message));
+            errorHandler(e, next);
         }
     }
 

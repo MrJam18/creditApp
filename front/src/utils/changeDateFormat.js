@@ -2,7 +2,7 @@
  * @param {string} date - дата в формате ISO YYYY-MM-DD
  * @returns {string}  дату в формате DD.MM.YYYY
  */
-const chandeDateFormatOnRus = (date) => {
+const changeDateFormatOnRus = (date) => {
     if (date) {
     const dateArray = date.split('-');
     const rightDate = dateArray.reduce((acc, date)=> {
@@ -21,4 +21,4 @@ const changeDateFormatOnISO = (date) => {
     })
     return rightDate;
 }  
-export {chandeDateFormatOnRus, changeDateFormatOnISO}
+export {changeDateFormatOnRus, changeDateFormatOnISO, changeDateFormatOnRus as chandeDateFormatOnRus}

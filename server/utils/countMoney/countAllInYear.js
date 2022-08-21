@@ -29,10 +29,10 @@ module.exports = function countAllInYear(year, percent, penalty, main, percents,
             percents += accruedPercents;
             ({limited, percents} = countLimited(limited, accruedPercents, percents));
         }
-            
+
         year.payments.forEach((el, index)=> {
             if(limited.stop) {
-                breaks.push(new Break(el.date, year.isLeap, percents, penalties, el, true, limited.limitPenalty ? true : false));
+                breaks.push(new Break(el.date, year.isLeap, percents, penalties, el, true, !!limited.limitPenalty));
             }
             else {
             breaks.push(new Break(el.date, year.isLeap, percents, penalties, el));

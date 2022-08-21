@@ -1,2 +1,2 @@
-export const serverApi = 'http://localhost:5000/api/';
-export const serverInsideDocumentsAddress = 'D:/CreditApp/server/static/documents/'
+export const serverApi = 'http://localhost:4000/api/';
+export const serverInsideStaticContractsAddress = 'D:/CreditApp/server/static/contracts'

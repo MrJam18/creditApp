@@ -8,17 +8,20 @@ import { recieveAndSaveDocument, recieveLastActionsList } from '../../store/acti
 import {  getLastActionsList, getLastActionsTotal } from '../../store/actions/selectors';
 import MinPagination from '../dummyComponents/MinPagination';
 import { addLinksForSaveFile } from '../../utils/addLinkForSaveFile';
+import { useNavigate } from 'react-router';
 
 const LastActions = () => {
     const dispatch = useDispatch();
     const [loading, setLoading] = useState(true);
+    const navigate = useNavigate();
     const focus = false;
-    const headers = [{name: "Дата/время", key: 'createdAt', type: 'date/time'}, {name: "Действие", key: 'actionType'} , {name: "Объект", key: 'actionObject'}, {name: "Результат", key: 'result', styles: {minWidth: '200px'}}];
+    const headers = [{name: "Дата/время", key: 'createdAt', type: 'date/time'}, {name: 'Должник', key: 'debtor'}, {name: "Действие", key: 'actionType'} , {name: "Объект", key: 'actionObject'}, {name: "Результат", key: 'result', styles: {minWidth: '200px'}}];
     const actions = useSelector(getLastActionsList);
     const totalActions = useSelector(getLastActionsTotal);
     const userId = useSelector(getUserId);
     const [rows, setRows] = useState([]);
     const onClickDocumentLink = (ev) => {
+        ev.stopPropagation();
         const path = ev.currentTarget.getAttribute('data-path');
         const object = ev.currentTarget.getAttribute('data-object');
         const id = ev.currentTarget.getAttribute('data-id');
@@ -35,6 +38,9 @@ const LastActions = () => {
         finally {
             setLoading(false);
         }
+    }
+    const onClickRow = (index) => {
+        navigate(`contracts/${actions[index].contractId}`);
     }
     const sortHandler = async () => {
            }
@@ -56,12 +62,13 @@ const LastActions = () => {
     },[actions])
 
 
+
     
     return (
         <div className={styles.element}>
             <div className="header">Мои последние действия</div>
             <div className={styles.flexContainer}>
-           <NoBorderTable loading={loading}  headers={headers} rows={rows} focus={focus} sortHandler={sortHandler}  /> 
+           <NoBorderTable loading={loading}  headers={headers} rows={rows} rowsButtons onClickRow={onClickRow} focus={focus} sortHandler={sortHandler}  /> 
            <MinPagination pageUpdater={changePage} total={totalActions} />
            </div>
         </div>

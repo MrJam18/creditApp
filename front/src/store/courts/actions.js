@@ -13,6 +13,9 @@ export const setCourtLevels = list => ({
     type: 'COURTS::CHANGE_LEVELS',
     payload: list
 })
+export const clearCourtsList = () => ({
+    type: 'COURTS::CLEAR_LIST'
+})
 // export const setCurrentContract = contract => ({
 //     type: 'CONTRACTS::GET_CURRENT',
 //     payload: contract

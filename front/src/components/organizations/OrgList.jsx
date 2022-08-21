@@ -23,8 +23,7 @@ const OrgList = ({userId}) => {
     const changePageHandler = async (limit, page) => {
         await dispatch(recieveOrgList(limit, page, order, userId))
     }
-    const onClickRow = (ev) => {
-        const index = ev.currentTarget.getAttribute('data-index');
+    const onClickRow = (index) => {
         setChangedOrganization(list[index]);
     }
     useEffect( async ()=> {

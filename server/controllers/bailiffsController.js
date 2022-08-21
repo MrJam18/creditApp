@@ -1,7 +1,8 @@
 const ApiError = require("../error/apiError");
-const { Bailiffs } = require("../models/models");
+const { Bailiffs } = require("../models/subjects/Bailiffs");
 const { Op } = require("sequelize");
-const { getOrCreateAddressIdsFromDB } = require('./adressController');
+// const { getOrCreateAddressIdsFromDB } = require('./adressController');
+const Address = require("../classes/Address");
 
 class BailiffsController{
 
@@ -23,7 +24,7 @@ async searchBailiffs (req, res, next) {
 async createOne(req, res, next) {
     try{
         const body = req.body;
-        const address = await getOrCreateAddressIdsFromDB(body.address);
+        const address = await Address.getIds(body.address);
         await Bailiffs.create({...address, name: body.name});
         res.json({status: 'ok'});
     }

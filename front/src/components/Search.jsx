@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { styled, alpha } from '@mui/material/styles';
 import InputBase from '@mui/material/InputBase';
 import styles from '../css/search.module.css'
 import SearchIcon from '@mui/icons-material/Search';
+import { useNavigate } from 'react-router';
 
 const SearchStyle = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -46,18 +47,27 @@ const SearchStyle = styled('div')(({ theme }) => ({
   }));
 
 const Search = () => {
+  const navigate = useNavigate();
+  const inputSearch = useRef();
+  const onSubmit = (ev) =>  {
+    ev.preventDefault();
+    navigate('list', {state: inputSearch.current.value})
+  };
+
     return (
         <div className={styles.searchWrapper}>
+          <form onSubmit={onSubmit}>
         <SearchStyle>
           <SearchIconWrapper>
             <SearchIcon />
           </SearchIconWrapper>
-          <StyledInputBase
+          <StyledInputBase inputRef={inputSearch}
             placeholder="Поиск договора"
             inputProps={{ 'aria-label': 'search' }}
           />
           {/* <button onClick={ws.sendMessage}>send</button> */}
    </SearchStyle>
+   </form>
    </div>
     );
 };

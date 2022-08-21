@@ -179,7 +179,7 @@ class Merged3Cell extends TableCell {
                 columnSpan: 3,
                 verticalAlign: VerticalAlign.CENTER,
                 children: [new Paragraph({
-                    alignment: 'left',
+                    alignment: 'center',
                     children: [new TableText(text)]
                 })],
             }

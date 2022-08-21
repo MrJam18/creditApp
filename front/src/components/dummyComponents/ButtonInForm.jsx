@@ -13,11 +13,11 @@ const useStyles = makeStyles({
      },
 })
 
-const ButtonInForm = ({loading, onClick, formId}) => {
+const ButtonInForm = ({loading, onClick, formId, text = 'Подтвердить'}) => {
     const classes = useStyles();
     return (
         <div className={classes.main}>
-        <LoadingButton loading={loading} onClick={onClick} type='submit' form={formId} variant='contained' className={classes.button}>Подтвердить </LoadingButton> 
+        <LoadingButton loading={loading} onClick={onClick} type='submit' form={formId} variant='contained' className={classes.button}>{text} </LoadingButton>
         </div>    
     );
 };
