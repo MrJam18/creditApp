@@ -1,3 +1,3 @@
-const contractsAddress = 'D:\\CreditApp\\server\\static\\contracts';
+const contractsAddress = process.env.ROOT + '\\static\\contracts';
 
 module.exports = {contractsAddress}

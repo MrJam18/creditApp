@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from 'css/contract.module.css';
 import {useSelector} from "react-redux";
-import {selectExisting, selectLoadingExisting} from "../../../store/contracts/selectors";
+import {selectExisting, contractsSelectors} from "../../../store/contracts/selectors";
 import Loading from "../../dummyComponents/Loading";
 import {Button} from "@mui/material";
 import api from "../../../http";
@@ -11,7 +11,7 @@ import {alertHandler} from "../../../utils/errorHandler";
 const DocumentsGetter = ({ documentName }) => {
  const status = useSelector(selectExisting[documentName]);
  const {contractId} = useParams();
- const loading = useSelector(selectLoadingExisting);
+ const loading = useSelector(contractsSelectors.getLoadingExisting);
  const currentLoading = useSelector(selectExisting['loading' + documentName]);
  const loadHandler = async () => {
   try{

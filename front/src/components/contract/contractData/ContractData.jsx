@@ -1,7 +1,7 @@
 import React, { useState} from 'react';
 import styles from '../../../css/contract.module.css';
 import {useDispatch, useSelector} from 'react-redux';
-import { getContract } from '../../../store/contracts/selectors';
+import { contractsSelectors } from '../../../store/contracts/selectors';
 import Toolbar from './Toolbar'
 import ExecutiveDocChanger from './ExecutiveDocChanger';
 import BaseColumner from "../../dummyComponents/Columns/BaseColumner";
@@ -11,7 +11,7 @@ import {changeContract} from "../../../store/contracts/actions";
 
 
 const ContractData = ({contractId}) => {
-    const contract = useSelector(getContract);
+    const contract = useSelector(contractsSelectors.getCurrent);
     const dispatch = useDispatch();
     const [showExecutiveDocChanger, setShowExecutiveDocChanger] = useState(false);
     const onClickExecutiveDoc = () => {

@@ -1,6 +1,5 @@
 
 const findOrCreateByName = async (Model, name, defaults) => {
-    console.log(1221)
     const data = await Model.findOrCreate({
         raw: true,
         attributes: ['id'],

@@ -1,7 +1,7 @@
 const { Op } = require("sequelize");
 const ApiError = require("../error/apiError");
-const Organizations = require('../models/subjects/Organizations');
-const Debtors = require('../models/subjects/Debtor');
+const Creditors = require('../models/subjects/Creditors');
+const Debtors = require('../models/subjects/Debtors');
 const Contracts = require('../models/documents/Contracts');
 const isDate = require("../utils/dates/isDate");
 const getWherePropertyWhenSearchFIO = require("../utils/getWherePropertyWhenSearchFIO");
@@ -23,7 +23,7 @@ class ListController {
                         ...getWherePropertyWhenSearchFIO(searchArray), groupId
                         }
                     };
-                    debtorsData = debtorsData = await Debtors.findAndCountAll({limit, offset, order: [['createdAt', 'DESC']], where, include: [{ model: Contracts, as: 'contracts', include: Organizations}]});
+                    debtorsData = debtorsData = await Debtors.findAndCountAll({limit, offset, order: [['createdAt', 'DESC']], where, include: [{ model: Contracts, as: 'contracts', include: Creditors}]});
                 }
                 else {
                     let searchArray = search.split(' ', 6);
@@ -65,12 +65,12 @@ class ListController {
                             }
                         }
                     }
-                    debtorsData = await Debtors.findAndCountAll({limit, offset, order: [['createdAt', 'DESC']], where: {groupId}, include: [{ model: Contracts, where, as: 'contracts', include: Organizations}]});
+                    debtorsData = await Debtors.findAndCountAll({limit, offset, order: [['createdAt', 'DESC']], where: {groupId}, include: [{ model: Contracts, where, as: 'contracts', include: Creditors}]});
                 }
                 
             }
             else {
-            debtorsData = await Debtors.findAndCountAll({limit, offset, order: [['createdAt', 'DESC']], where: {groupId}, include: [{ model: Contracts, as: 'contracts', include: Organizations}]});
+            debtorsData = await Debtors.findAndCountAll({limit, offset, order: [['createdAt', 'DESC']], where: {groupId}, include: [{ model: Contracts, as: 'contracts', include: Creditors}]});
             }
             const contractsList = debtorsData.rows.reduce((acc, el)=> {
                 if(!acc[el.id]) acc[el.id] = [];
@@ -92,8 +92,7 @@ class ListController {
             res.json({debtorsList, contractsList, totalRows: debtorsData.count})
     }
     catch(e) {
-        console.log(e);
-        next(ApiError.internal(e.message));
+        next(e)
     }
     }
 }

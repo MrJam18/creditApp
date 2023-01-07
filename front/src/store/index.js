@@ -1,8 +1,8 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { debtorsSlice } from './debtors/reducer';
 import { contractsSlice } from './contracts/reducer';
-import {cessionsReducer, cessionsSlice} from './cessions/reducer';
-import { organizationsSlice } from './organizations/reducer';
+import {cessionsSlice} from './cessions/reducer';
+import { organizationsSlice } from './creditors/reducer';
 import { alertReducer } from './alert/reducer';
 import { globalReducer } from './global';
 import { paymentsSlice } from './contracts/payments/reducer';

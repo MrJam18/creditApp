@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import CustomSearch from "../CustomSearch";
+import CustomSearch from "./CustomSearch";
 import AddOutlinedIcon from "@mui/icons-material/AddOutlined";
 import styles from '*/dummySearch.module.css';
 import {makeStyles} from "@mui/styles";

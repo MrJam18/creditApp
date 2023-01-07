@@ -21,8 +21,8 @@ const ColumnsWrapper = ({column, data, reqFunction}) => {
     useEffect(async ()=> {
         let elements = [];
         if(column.type === 'composed') {
-            column.options.forEach((el)=> {
-                const element = prepareDataForColWrapper(el, data);
+            column.elements.forEach((el)=> {
+                const element = prepareDataForColWrapper(el, data[el.colName]);
                 elements.push(element);
             })
         }

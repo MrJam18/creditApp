@@ -1,5 +1,5 @@
 const File = require('../File');
-const {Actions} = require("../../../models/models");
+const {Actions} = require("../../../models/connections");
 const Contracts = require("../../../models/documents/Contracts");
 const uncapitalizeFirst = require('../../../utils/text/uncapitalizeFirst')
 

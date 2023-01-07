@@ -6,5 +6,4 @@ module.exports = function(array, callback){
             callback(el, index, array);
         }
     }
-
 }

@@ -9,16 +9,16 @@ class CessionsInfo extends DocumentModel
     static async findByCessionId(cessionId, groupId, attributes)
     {
         return await this.findAll({
-            where: {cessionId, groupId}, attributes, order: [['transferDate']], plain: true
+            where: {cessionId, groupId}, attributes, order: [['transferDate']]
         });
     }
     static async getFirstCreditor(cessionId, groupId, attributes)
     {
-        const Organizations = require('../subjects/Organizations');
+        const Organizations = require('../subjects/Creditors');
         const cession = await this.findOne({
-            where: {cessionId, groupId}, order: [['transferDate']], attributes: ['assigneeId']
+            where: {cessionId, groupId}, order: [['transferDate']], attributes: ['assignorId']
         })
-        return await Organizations.findByIdAndGroupId(cession.assigneeId, groupId, attributes);
+        return await Organizations.findByIdAndGroupId(cession.assignorId, groupId, attributes);
 
     }
     async getEnclosures()

@@ -1,4 +1,4 @@
-const { Organizations, Cessions } = require("../../models/models");
+const { Organizations, Cessions } = require("../../models/connections");
 const { Indent, Text } = require("./docxClasses");
 
 module.exports = async function(cessionId, contractCreditorName) {

@@ -10,7 +10,7 @@ import ChangeAgent from './changeAgent';
 import {setAlert} from '../../store/alert/actions'
 import agentsSlice from '../../store/agents/reducer';
 
-const headers = [{key: 'createdAt', name: 'Дата создания'}, {key: 'surname', name: 'Фамииля'}, {key: 'name', name: 'Имя'}, {key: 'patronymic' , name: 'Отчество'}, {key: "document", name: "Документ"}];
+const headers = [{key: 'createdAt', name: 'Дата создания', type: 'date'}, {key: 'surname', name: 'Фамииля'}, {key: 'name', name: 'Имя'}, {key: 'patronymic' , name: 'Отчество'}, {key: "enclosure", name: "Документ"}];
 
 const Agents = () => {
     const dispatch = useDispatch();
@@ -35,6 +35,11 @@ const Agents = () => {
     useEffect(()=> {
         dispatch(recieveAgentsList(1, 25, order));
     }, []);
+    useEffect(()=> {
+        if(error){
+            dispatch(setAlert('ошибка получения предстаувителей', error, 'error'));
+        }
+    }, [error]);
 
 
     return (

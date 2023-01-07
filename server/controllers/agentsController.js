@@ -9,7 +9,7 @@ const getFullName = require('../utils/getFullName');
 const getWherePropertyWhenSearchFIO = require("../utils/getWherePropertyWhenSearchFIO");
 const getAgentByGroupOrUser = require("../utils/getAgentByGroupOrUser");
 const changeFIOOnFullName = require("../utils/changeFIOOnFullName");
-const Address = require('../classes/Address');
+const AddressBuilder = require("../Builders/AddressBuilder");
 
 
 
@@ -27,8 +27,7 @@ class AgentsController {
             res.json({rows, count: agents.count});
         }
         catch(e) {
-            console.log(e);
-            next(ApiError.internal(e));
+            next(e);
         }
     }
     async addOne(req, res, next) {
@@ -37,7 +36,7 @@ class AgentsController {
             const groupId = req.user.groupId;
             const userId = req.user.id;
             const agent = req.body.agent;
-            const address = await Address.getIds(body.address);
+            const address = await AddressBuilder.build(body.address);
             if(agent.isDefault){
                await setFalseDefaultsInGroup(groupId, userId)
             }
@@ -61,7 +60,8 @@ class AgentsController {
         const groupId = req.user.groupId;
         const userId = req.user.id;
         const agent = req.body.agent;
-        const where = getAgentByGroupOrUser(groupId, userId)
+        const where = getAgentByGroupOrUser(groupId, userId);
+        where.id = agent.id;
         if(agent.isDefault){
             setFalseDefaultsInGroup(groupId, userId)
         }
@@ -86,8 +86,7 @@ class AgentsController {
         res.json({status: 'ok'});
         }
         catch(e) {
-            console.log(e);
-            next(ApiError.internal(e));
+            next(e);
         }   
 
     }
@@ -128,12 +127,11 @@ class AgentsController {
                 element.name = getFullName(el);
                 element.id = el.id;
                 return element;
-            })
+            });
             res.json(agents);
         }
         catch(e) {
-            console.log(e);
-            next(ApiError.internal(e));
+            next(e);
         }   
     }
     async getDefaultAgent(req, res, next) {

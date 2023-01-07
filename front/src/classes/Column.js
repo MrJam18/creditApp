@@ -21,6 +21,7 @@ export class Column
         }
         switch (this.type){
             case 'composed':
+                this.elements = options.elements
             case 'selected':
                 this.func = options.func
                 break;

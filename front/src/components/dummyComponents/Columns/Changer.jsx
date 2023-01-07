@@ -3,7 +3,7 @@ import styles from '*/changer.module.css';
 import CustomModal from "../CustomModal";
 import ButtonInForm from "../ButtonInForm";
 import EasySelect from "../EasySelect";
-import Address from "../../Address";
+import Address from "../Address/Address";
 import EasyInput from "../EasyInput";
 
 let address = false;

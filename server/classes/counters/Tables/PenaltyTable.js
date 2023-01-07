@@ -10,6 +10,7 @@ const deleteCycle = require('../../../utils/deleteCycle');
 const {changeDateToISO} = require("../../../utils/dates/changeDateFormat");
 const getRubles = require("../../../utils/countMoney/getRubles");
 
+
 module.exports = class PenaltyTable extends CountingTable {
     constructor(contract, breaks) {
         super(contract, breaks)
@@ -31,7 +32,7 @@ module.exports = class PenaltyTable extends CountingTable {
 
     init() {
         deleteCycle(this.breaks, (el, index) => {
-            if (el.payment && Number(el.payment.main) === 0 && Number(el.payment.penalties) === 0) {
+            if ((el.payment && Number(el.payment.main) === 0 && Number(el.payment.penalties) === 0) || el.noPenalty) {
                 this.breaks.splice(index, 1);
             }
         });
@@ -41,8 +42,8 @@ module.exports = class PenaltyTable extends CountingTable {
                 if (el.payment) {
                     const payment = el.payment;
                     this.main -= payment.main;
-                    this.percents = this.penalties - payment.penalties;
-                    this.addPaymentRow(payment.main, payment.percents, el.date);
+                    this.percents = this.percents - payment.penalties;
+                    this.addPaymentRow(payment.main, payment.penalties, el.date);
                 }
                 const days = countDays(el.date, next.date);
                 const firstDate = addDays(el.date, 1);

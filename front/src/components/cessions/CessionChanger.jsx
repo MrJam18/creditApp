@@ -16,17 +16,15 @@ const CessionChanger = ({ header }) => {
     const forceUpdate = useSelector(cessionsSelector.forceUpdate);
     useEffect(async ()=> {
        await dispatch(recieveCessionInfo(cessionId));
-    }, []);
-    useEffect(()=> {
-        return () => {
+       return () => {
             dispatch(actions.setInfoDefault());
         }
     }, []);
     const setShow = (show) => {
         dispatch(actions.setInfoShow(show));
     }
-    const onSubmit = async (name) => {
-        await dispatch(sendCessionChanges(name));
+    const onSubmit = async (name, defaultCession) => {
+        await dispatch(sendCessionChanges(name, defaultCession));
     }
     return (
         <ChangerUI activeCession={activeCession} info={info} error={error} onSubmit={onSubmit} showDeleteGroup setShow={setShow} cessionName={header} header={'Изменение группы цессий'} forceUpdate={forceUpdate} />

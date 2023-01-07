@@ -12,7 +12,7 @@ import AddButton from "./AddButton";
 
 const actions = cessionsSlice.actions;
 
-const headers = [{key: "name", name: 'Название'}, {key: 'lastAssignee', name: 'Цедент'}, {key: 'lastAssignor', name: 'Цессионарий'}, {key: 'lastTransferDate', name: 'Дата цессии', type: 'date'}, {key: 'createdAt', name: "Дата создания"}];
+const headers = [{key: "name", name: 'Название'}, {key: 'lastAssignor', name: 'Цедент'}, {key: 'lastAssignee', name: 'Цессионарий'}, {key: 'lastTransferDate', name: 'Дата цессии', type: 'date'}, {key: 'createdAt', name: "Дата создания"}];
 
 const Cessions = () => {
     const loading = useSelector(cessionsSelector.getLoading);

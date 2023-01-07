@@ -3,16 +3,17 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router';
 import { getCurrentContract } from '../../store/contracts/actions';
 import styles from '../../css/contract.module.css';
-import { getContract } from '../../store/contracts/selectors';
+import { contractsSelectors } from '../../store/contracts/selectors';
 import { chandeDateFormatOnRus } from '../../utils/changeDateFormat';
 import Loading from '../dummyComponents/Loading';
 import ContractMenu from './ContractMenu';
 import ContractData from './contractData/ContractData';
-import ContractPayments from './ContractPayments'
+import ContractPayments from './payments/ContractPayments'
 import { Divider } from '@mui/material';
 import Actions from './Actions';
 import { setAlert } from '../../store/alert/actions';
 import Files from "./files/Files";
+import {contractsSlice} from "../../store/contracts/reducer";
 
 
 const Contract = () => {
@@ -20,7 +21,7 @@ const Contract = () => {
     const dispatch = useDispatch();
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
-    const contract = useSelector(getContract);
+    const contract = useSelector(contractsSelectors.getCurrent);
     const [menuValue, setMenuValue] = useState('data');
     const menuSelector = () => {
         switch (menuValue) {
@@ -50,7 +51,12 @@ const Contract = () => {
         }
     }
 
-    useEffect(getNecessary, [])
+    useEffect(()=> {
+        getNecessary();
+        return () => {
+            dispatch(contractsSlice.actions.reset());
+        }
+    }, []);
     return (
     <div className={'background firstWindow'}>
         {loading &&  <div className="header">Загрузка</div> }

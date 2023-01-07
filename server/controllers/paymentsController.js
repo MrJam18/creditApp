@@ -1,9 +1,8 @@
-const { Payments } = require('../models/models');
-const Contracts = require('../models/documents/Contracts');
-const paymentsService = require('../services/paymentsService');
-const compareDates = require('../utils/dates/compareDates');
+const Payments = require('../models/documents/Payments');
 const errorHandler = require('../error/errorHandler');
 const LoanCounter = require("../classes/counters/LoanCounter");
+const Contracts = require("../models/documents/Contracts");
+const {numbersHelper} = require("../helpers/numbersHelper");
 
 const limit = 25; 
 const offset = 0;
@@ -11,71 +10,58 @@ const offset = 0;
 class PaymentsController {
     async deletePayment(req,res, next) {
         try{
-            const {paymentId, contractId} = req.body;
+            const {id, contractId} = req.query;
             await Payments.destroy({
                 where: {
-                    id: paymentId
+                    id
                 }
             });
-            const contract = await Contracts.findByPk(contractId, {
-                attributes: ['percent', 'penalty', 'date_issue', 'sum_issue', 'due_date']
-            });
-            const paymentsInDB = await Payments.findAll({ order: [['date', 'ASC']],
-                where: {
-                    contractId
-                }
-            })
-            if(paymentsInDB.length !== 0) await paymentsService.countPaymentsInDB(paymentsInDB, contract);
-                return res.json({status: 'ok'}); 
-
-            
+            await LoanCounter.updatePayments(contractId);
+                return res.json({status: 'ok'});
         }
         catch(e) {
-            errorHandler(e, next);
+            next(e);
         }
         }
+
         async createPayment(req, res, next) {
             try{
             let {payment, contractId} = req.body;
-            const contract = await Contracts.findByPk(contractId, {
-                attributes: ['percent', 'penalty', 'date_issue', 'sum_issue', 'due_date']
-            });
-            const paymentsInDB = await Payments.findAll({ order: [['date', 'ASC']],
-                where: {
-                    contractId
-                }
-            })
-                payment.contractId = contractId;
-                const payments = paymentsInDB.map(el=> el.get({plain: true}));
-                payments.push(payment);
-            const endDate = paymentsInDB[paymentsInDB.length - 1] ? compareDates(paymentsInDB[paymentsInDB.length - 1].date, payment.date) : payment.date;
-            const counted = new LoanCounter(contract.sum_issue, contract.percent, contract.penalty, contract.date_issue, endDate, contract.due_date, payments );
-            for (let payment of counted.payments){
-                delete payment.createdAt;
-                delete payment.updatedAt;
-                if(!payment.id) await Payments.create(payment);
-                else await Payments.update(payment, {
-                    where: {
-                        id: payment.id
-                    }
-                })
-            }
+            payment.sum = numbersHelper.getDBFormat(payment.sum);
+            await Contracts.checkGroupId(contractId, req.user.groupId);
+            payment.contractId = contractId;
+            await LoanCounter.updatePayments(contractId, payment);
             return res.json({status: 'ok'});
         }
         catch(e) {
             next(e);
         }
-    
         }
+
+        async changePayment(req, res, next)
+        {
+            try{
+                const {payment, contractId} = req.body;
+                await Payments.destroy({where: {id: payment.id}});
+                delete payment.id;
+                payment.contractId = contractId;
+                await LoanCounter.updatePayments(contractId, payment);
+                return res.json({status: 'ok'});
+            }
+            catch (e) {
+                next(e);
+            }
+        }
+
 
     async getPayments(req,res, next) {
         try{
             const {page, limit, contractId, orderField, orderType} = req.query;
             const offset = page * limit - limit;
-            let dataPayments = await Payments.findAndCountAll({limit, offset, order: [[orderField, orderType]], where: {
+            const payments = await Payments.findAndCountAll({limit, offset, order: [[orderField, orderType]], where: {
                 contractId
             }});
-            res.json({total: dataPayments.count, list: dataPayments.rows});
+            return res.json({total: payments.count, list: payments.rows});
         }
         catch(e) {
             errorHandler(e, next);
@@ -98,6 +84,7 @@ class PaymentsController {
             const payments = await Payments.findAndCountAll({limit, offset, order: [[field, type]], where: {
                 contractId
             }})
+            console.log(payments)
             res.json({total: payments.count, list: payments.rows});
             
         }

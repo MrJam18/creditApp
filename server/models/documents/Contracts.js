@@ -3,13 +3,14 @@ const {DataTypes} = require("sequelize");
 const getISODate = require("../../utils/dates/getISODate");
 const sequelize = require(process.env.ROOT + '/db');
 const InitTemplates = require("../templates/initTemplates");
+const ApiError = require("../../error/apiError");
 
 class Contracts extends DocumentModel
 {
     static async changeStatus(id, groupId, statusId, userId, auto)
     {
-        const {Statuses, Actions} = require('../models');
-        const contract = await this.findByIdAndGroupId(id, groupId, ['statusId']);;
+        const {Statuses, Actions} = require('../connections');
+        const contract = await this.findByIdAndGroupId(id, groupId, ['statusId']);
         const lastStatus = await Statuses.findByPk(contract.statusId);
         const status = await Statuses.findByPk(statusId);
         await contract.update({statusId});
@@ -17,7 +18,13 @@ class Contracts extends DocumentModel
         await Actions.create({
             actionTypeId: '4', actionObjectId: '12', result, contractId: id, userId
         })
-
+    }
+    static async checkGroupId(contractId, groupId)
+    {
+        const data = await Contracts.findOne({where: {
+            id: contractId, groupId
+            }, attributes: ['id']});
+        if(!data) throw ApiError.UnauthorizedError();
     }
 
 
@@ -46,6 +53,11 @@ Contracts.init({
         }}
 }, {
     sequelize,
+    indexes: [
+        {
+            fields: ['groupId']
+        }
+    ],
     modelName: 'contracts'
 })
 

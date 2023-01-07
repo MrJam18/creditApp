@@ -1,12 +1,8 @@
 const { Model } = require('sequelize');
 const {changeDateFormat} = require("../../utils/dates/changeDateFormat");
-const {DataTypes} = require("sequelize");
+const { Op } = require("sequelize");
 
 module.exports = class BaseModel extends Model {
-    // getId()
-    // {
-    //     return this.id
-    // }
     getPlain()
     {
         return this.get({plain: true});
@@ -16,13 +12,16 @@ module.exports = class BaseModel extends Model {
         this.setDataValue('createdAt', this.createdAt.toLocaleString('ru-RU').substring(0, 10) + (withEnding ? ' г.' : ''));
         this.setDataValue('updatedAt', this.updatedAt.toLocaleString('ru-RU').substring(0, 10) + (withEnding ? ' г.' : ''));
     }
+    removeEmptyStrings()
+    {
+        for(const prop in this.dataValues)
+        {
+            if(this.dataValues[prop] === '') this.setDataValue(prop, null);
+        }
+    }
     changeDateFormat(attribute)
     {
         return this.setDataValue(attribute,  changeDateFormat(this[attribute]));
-    }
-    setDateOnRus(date)
-    {
-        return changeDateFormat(date);
     }
 
      static async updateByIdAndGroupId(id, groupId, data)
@@ -64,5 +63,15 @@ module.exports = class BaseModel extends Model {
     deleteData(key)
     {
         delete this.dataValues[key];
+    }
+
+    static async findByName(value, groupId)
+    {
+        return await this.findAll({where: {
+                name:{
+                    [Op.iLike]: `%${value}%`
+                },
+                groupId
+            }, attributes: ['id', 'name']});
     }
 }

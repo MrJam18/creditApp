@@ -9,6 +9,7 @@ class Docx extends File
   super(contractsFolder + path, undefined, 'docx');
   this.document = document;
  }
+
  async getBuffer()
  {
   this.buffer = await Packer.toBuffer(this.document);

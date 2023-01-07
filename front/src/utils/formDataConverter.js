@@ -12,15 +12,17 @@ export const formDataConverter = (formRef, exceptions = null)=> {
     keys.forEach(el => {
         if(/^\d+$/.test(el) || /^mui/.test(el)) return; 
         for (const value of exceptions) {
-            if (value == el) return
+            if (value === el) return
         }
-        object[el] = data[el].value
+        if(data[el].value === 'on') object[el] = data[el].checked;
+        else object[el] = data[el].value;
     });
 }
     else {
         keys.forEach(el => {
-            if(/^\d+$/.test(el) || /^mui/.test(el)) return; 
-            object[el] = data[el].value
+            if(/^\d+$/.test(el) || /^mui/.test(el)) return;
+            if(data[el].value === 'on') object[el] = data[el].checked;
+            else object[el] = data[el].value;
     })
     }
     return object;

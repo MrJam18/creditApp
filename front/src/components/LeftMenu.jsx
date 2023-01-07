@@ -27,7 +27,7 @@ const LeftMenu = () => {
             <Drawer transitionDuration={180} onClose={closeMenu} open={open}>
                 <div className={styles.main}>
                 <NavLink onClick={closeMenu} to='organizations' className={({isActive}) => isActive ? styles.link + ' ' + styles.link_active : styles.link } >
-                <MenuItem className={classes.menuItem} >Организации</MenuItem>
+                <MenuItem className={classes.menuItem} >Кредиторы</MenuItem>
                 </NavLink>
                 <NavLink to='cessions' onClick={closeMenu} className={({isActive}) => isActive ? styles.link + ' ' + styles.link_active : styles.link } >
                 <MenuItem className={classes.menuItem} divider>Цессии</MenuItem>

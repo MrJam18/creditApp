@@ -1,7 +1,6 @@
 const fileFactory = require("../classes/files/clientFiles/fileFactory");
 const fs = require("fs");
 const {contractsAddress} = require("../constants/addresses");
-const clientFiles = require("../constants/clientFiles");
 const FileConfig = require("../configs/FileConfig");
 const Contracts = require("../models/documents/Contracts");
 const ApiError = require("../error/apiError");
@@ -59,6 +58,7 @@ class FilesController {
             const contract = await Contracts.findByIdAndGroupId(data.contractId, req.user.groupId, ['id']);
             if(!contract) throw ApiError.UnauthorizedError();
             const config = new FileConfig(`contracts\\${data.contractId}\\files\\${data.fileName}.pdf`);
+            if(!await config.checkFile()) throw new Error('Файла не существует');
             await config.deleteFile();
             res.json({status: 'ok'});
         }

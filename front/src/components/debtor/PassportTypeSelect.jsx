@@ -1,12 +1,12 @@
 import React, {useState} from 'react';
 import {InputLabel, MenuItem, Select} from "@mui/material";
 
-const PassportTypeSelect = ({type, setType}) => {
+const PassportTypeSelect = ({type, setType, className, sx}) => {
 
     return (
         <>
-        <InputLabel id="passportType" required>Вид паспорта</InputLabel>
-        <Select fullWidth variant='standard'
+        <InputLabel id="passportType" sx={sx} required>Вид паспорта</InputLabel>
+        <Select className={className} size={'small'} sx={sx} fullWidth variant='standard'
                 labelId="passportType"
                 value={type}
                 name= 'typeId'

@@ -1,9 +1,10 @@
-const { Actions, ActionTypes, ActionObjects, Users } = require('../models/models');
+const { Actions, ActionTypes, ActionObjects, Users } = require('../models/connections');
 const Contracts = require('../models/documents/Contracts');
-const Debtors = require('../models/subjects/Debtor');
+const Debtors = require('../models/subjects/Debtors');
 const ApiError = require('../error/apiError');
 const countOffset = require('../utils/countOffset');
 const getSurnameAndInititals = require('../utils/getSurnameAndInititals');
+const sequelize = require('sequelize');
 
 
 
@@ -41,17 +42,17 @@ class ActionsController {
     async getLastActionsList(req, res, next) {
         try{
             const { userId, page } = req.query;
-            const limit = 10;
+            const limit = 8;
             const offset = countOffset(limit, page);
             const actions = await Actions.findAndCountAll({
                 offset, limit,
-                order: [['createdAt', 'DESC']], attributes: ['createdAt', 'id', 'result', 'contractId'], include: [{model: ActionTypes, attributes: ['name']}, {model: ActionObjects, attributes: ['name']}, {model: Contracts, attributes: ['id'], include: [{model: Debtors, attributes: ['surname', 'name', 'patronymic']}]}], where: {
+                order: [['createdAt', 'DESC']], attributes: [[sequelize.fn('to_char', sequelize.col('actions.createdAt'), 'DD.MM.YYYY'), 'createdAt'], 'id', 'result', 'contractId'], include: [{model: ActionTypes, attributes: ['name']}, {model: ActionObjects, attributes: ['name']}, {model: Contracts, attributes: ['id'], include: [{model: Debtors, attributes: ['surname', 'name', 'patronymic']}]}], where: {
                     userId
                 }});
             const rows = actions.rows.map((el)=> {
                 const debtor = getSurnameAndInititals(el.contract.debtor);
                 return {
-                    createdAt: el.createdAt,
+                    createdAt: el.createdAt + ' г.',
                     id: el.id,
                     result: el.result,
                     actionType: el.actionType.name,

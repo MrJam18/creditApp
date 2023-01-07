@@ -20,7 +20,7 @@ const initialState = {
         show: false,
         activeCession: 0,
         deleteIds: [],
-        forceUpdateCounter: 0,
+        forceUpdateState: false
 
     }
 }
@@ -81,28 +81,15 @@ const initialState = {
                 state.info.activeCession = state.info.count - 1;
             },
             setInfoDefault(state) {
-                state.info = {
-                        loading: true,
-                        rows: null,
-                        count: 0,
-                        error: false,
-                        submitLoading: false,
-                        showConfirm: false,
-                        cessionId: null,
-                        show: false,
-                        activeCession: 0,
-                        deleteIds: [],
-                        forceUpdateCounter: 0,
-                }
+                state.info = initialState.info;
             },
             pushDeleteId(state, action) {
                 state.info.deleteIds.push(action.payload);
             },
             forceUpdate(state) {
-                state.info.forceUpdateCounter++;
+                state.info.forceUpdate = !state.info.forceUpdate;
             },
             setLastInfo(state) {
-                const lastInfo = getLastInfo(state.info.rows);
                 state.info.lastInfo = getLastInfo(state.info.rows);
             }
         }

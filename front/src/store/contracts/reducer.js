@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit"
 const initState = {
     current: null,
     executiveDoc: {},
+    court: null,
     list: [],
     limitations: [],
     totalLimitations: [],
@@ -52,7 +53,12 @@ export const contractsSlice = createSlice({
             state.current = action.payload;
         },
         setExecutiveDoc(state, action) {
-            state.executiveDoc = action.payload
+            state.executiveDoc = action.payload;
+        },
+        setExecutiveDocName(state, action) {
+            if(state.current) {
+                state.current.executiveDocName = action.payload;
+            }
         },
         setLimitations(state, action) {
             state.limitations = action.payload.list;
@@ -89,6 +95,10 @@ export const contractsSlice = createSlice({
         },
         setLoadingExisting(state, action) {
             state.loadingExisting = action.payload;
-        }
+        },
+        setCourt(state, action) {
+            state.court = action.payload;
+        },
+        reset: ()=> initState
     },
 })
