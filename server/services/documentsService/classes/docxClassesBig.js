@@ -1,6 +1,8 @@
 const { TextRun, Paragraph, AlignmentType, TabStopPosition, TabStopType } = require("docx");
 const bigSize = 22;
 
+
+//DEPRECATED! Use docxElementsBuilder instead!
 class BigTextRun extends TextRun {
     constructor(text) {
         const textObj = {

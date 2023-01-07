@@ -17,7 +17,8 @@ const initialState = {
     comments: [],
     actions: [],
     loading: true,
-    error: false    
+    error: false,
+    executiveDoc: null
 }
 
 
@@ -34,6 +35,9 @@ export const debtorsSlice = createSlice({
         },
         setPassport(state, action) {
             state.passport = action.payload
+        },
+        setExecutiveDoc(state, action) {
+            state.executiveDoc = action.payload
         }
         },
 })

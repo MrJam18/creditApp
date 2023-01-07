@@ -1,54 +1,69 @@
 const { Op } = require("sequelize");
 const ApiError = require("../error/apiError");
-const { Payments, Statuses, ExecutiveDocTypes, Actions} = require("../models/models");
+const {Statuses, Actions} = require("../models/connections");
 const Cessions = require('../models/documents/Cessions');
-const Organizations = require('../models/subjects/Organizations');
+const Creditors = require('../models/subjects/Creditors');
 const Contracts = require('../models/documents/Contracts');
-const Debtors = require('../models/subjects/Debtor');
+const Debtors = require('../models/subjects/Debtors');
 const ExecutiveDocs = require('../models/documents/ExecutiveDocs');
-const paymentsService = require("../services/paymentsService");
-const changeAllNumFormates = require("../utils/changeAllNumFormates");
-const countSumWithFee = require("../utils/countMoney/countSumWithFee");
 const countOffset = require("../utils/countOffset");
 const addYears = require("../utils/dates/addYears");
-const { changeDateFormat } = require("../utils/dates/changeDateFormat");
 const getISODate = require("../utils/dates/getISODate");
 const numFormatHandler = require("../utils/numFormatHandler");
-const paymentsController = require("./paymentsController");
 const getSurnameAndInitials = require('../utils/getSurnameAndInititals')
 const errorHandler = require('../error/errorHandler')
 const countDays = require('../utils/dates/countDays');
 const nullCession = require('../constants/nullCession');
 const {createContractsDirs} = require('../utils/files/createDirs');
 const LoanCounter = require("../classes/counters/LoanCounter");
+const FileConfig = require("../configs/FileConfig");
+const Payments = require("../models/documents/Payments");
+const Bailiffs = require('../models/subjects/Bailiffs');
+const CourtClaims = require('../models/documents/CourtClaims');
+const Courts = require('../models/subjects/Courts');
+const {getExecutiveDocName} = require("../utils/getExecutiveDocName");
 
 class ContractsController {
     async getContract(req, res, next) {
         try{
            const { id }= req.query;
            const groupId = req.user.groupId;
-           const contractRes = await Contracts.findOne({ include: [{model: Debtors, attributes: ['name', 'surname', 'patronymic']}, {model: Cessions, attributes: ['name']}, {model: Organizations, attributes: ['name', 'short']}, {model: Statuses}, {model: ExecutiveDocs, attributes: ['number', 'dateIssue'], include: {model: ExecutiveDocTypes, attributes: ['name']}}], where: {groupId, id}});
+           const contractRes = await Contracts.findOne({ include: [{model: Debtors, attributes: ['name', 'surname', 'patronymic']}, {model: Cessions, attributes: ['name']}, {model: Creditors, attributes: ['name', 'short']}, {model: Statuses}, {model: ExecutiveDocs, attributes:
+                       ['id', 'number', 'dateIssue', 'resolutionNumber', 'resolutionDate', 'main', 'percents', 'penalties', 'fee', 'typeId'], include: [
+                        {model: Bailiffs, attributes: ['id', 'name']},
+                       {model: Courts, attributes: ['id', 'name']}
+                   ]}], where: {groupId, id}});
            if(!contractRes) return next(ApiError.badRequest('Контракта с указанным id не существует!'));
+           let court;
+           const executiveDoc = contractRes.executiveDoc;
+           let executiveDocName;
+           if(executiveDoc) {
+               court = executiveDoc.court;
+               executiveDocName = getExecutiveDocName(executiveDoc.typeId, executiveDoc.number, executiveDoc.dateIssue);
+           }
+           else {
+               court = await CourtClaims.getLastCourt(id);
+               executiveDocName = 'отсутствует';
+           }
            const contract = contractRes.get({plain: true});
            contract.debtorName = contractRes.debtor.getInitials();
            contract.status = {id: contract.status.id, value: contract.status.name};
            if(contract.cession) contract.cession = contract.cession.name;
            else contract.cession = nullCession.name;
-           contract.creditor = contract.organization.name;
-           if(!contract.executiveDoc) contract.executiveDocName = 'отсутствует';
-           else contract.executiveDocName = `${contract.executiveDoc.executiveDocType.name} № ${contract.executiveDoc.number} от ${changeDateFormat(contract.executiveDoc.dateIssue)} г.`;
-           let payments = await paymentsController.getPaymentsInner(id);
+           contract.creditor = contract.creditor.name;
+           contract.executiveDocName = executiveDocName;
+           let payments = await Payments.getByContractId(id);
            contract.paymentsCount = payments.count;
            const ISONow = getISODate();
-           const counted = new LoanCounter(contract.sum_issue, contract.percent, contract.penalty, contract.date_issue, ISONow, contract.due_date, payments.rows);
+           const counted = new LoanCounter(contract, ISONow, payments.rows);
            contract.delayDays = countDays(contract.due_date, ISONow);
            res.json({
-               // payments,
                contract: {
-               ...contract,
-               percentToday: counted.percents,
-               penaltyToday: counted.penalties,
-               mainToday: counted.main
+                   ...contract,
+                   percentToday: counted.percents,
+                   penaltyToday: counted.penalties,
+                   mainToday: counted.main,
+                   court
                }
            });
         }
@@ -70,7 +85,7 @@ class ContractsController {
                }
            })
            if (payments.length !== 0) {
-               const counted = new LoanCounter(contract.sum_issue, contract.percent, contract.penalty, contract.date_issue, payments[length - 1].date, contract.due_date, payments );
+               const counted = new LoanCounter(contract, payments[length - 1].date, payments );
                await counted.updatePayments();
            }
         }
@@ -90,7 +105,7 @@ class ContractsController {
                 orderArray[1] = 'surname';
             }
             else if(orderArray[0] === 'creditor') {
-                orderArray.unshift(Organizations);
+                orderArray.unshift(Creditors);
                 orderArray[1] = 'name';
             }
             else if(orderArray[0] === 'limitation') {
@@ -104,11 +119,11 @@ class ContractsController {
                     due_date: {
                         [Op.lte]: deadLine
                     }
-                }, include: [{model: Organizations, attributes: ['name', 'short']}, {model: Debtors, attributes: ['name', 'surname', 'patronymic']}]
+                }, include: [{model: Creditors, attributes: ['name', 'short']}, {model: Debtors, attributes: ['name', 'surname', 'patronymic']}]
             });
             const limitations = contracts.rows.map((el)=> {
                 const debtor = getSurnameAndInitials(el.debtor);
-                const creditor = el.organization.short ? el.organization.short : el.organization.name;
+                const creditor = el.creditor.short ? el.creditor.short : el.creditor.name;
                 const limitation = addYears(el.due_date, 3);
                 return {
                     debtor, creditor, limitation, date_issue: el.date_issue, id: el.id
@@ -122,59 +137,17 @@ class ContractsController {
     }
     async createOne(req, res, next) {
         try{
-            const data = req.body;
-            const contract = data.contract;
-            const groupId = req.user.groupId;
+            const contract = req.body;
+            contract.groupId = req.user.groupId;
             contract.sum_issue = numFormatHandler(contract.sum_issue);
             contract.percent = numFormatHandler(contract.percent);
             contract.penalty = numFormatHandler(contract.penalty);
-            const contractRes = await Contracts.create( {
-                ...contract, debtorId: data.debtorId, groupId
-            });
-            if(data.executiveDoc){
-                await ExecutiveDocs.createOne(data.executiveDoc, groupId, contractRes.id);
-            }
+            const contractRes = await Contracts.create(contract);
             createContractsDirs(contractRes.id);
-            return res.json(contractRes);
-
+            return res.json({status: 'ok'});
         }
         catch(e) {
-            errorHandler(e, next)
-        }
-    }
-    async setExecutiveDoc(req, res, next) {
-        try{
-            req.body = changeAllNumFormates(req.body);
-            const body = req.body;
-            const groupId = req.user.groupId;
-            if(body.resolutionDate === '') body.resolutionDate = null;
-            if(body.resolutionNumber === '') body.resolutionNumber = null;
-            body.sum = countSumWithFee(body);
-            const executiveDoc = await ExecutiveDocs.findOne({
-                where: {
-                    contractId: body.contractId
-                }
-            })
-            const contract = await Contracts.findOne({
-                where: {
-                    id: body.contractId,
-                    groupId
-                },
-                attributes: ['id']
-            })
-            if(!contract){
-               return next(ApiError.UnauthorizedError());
-            }
-            else{
-                if(executiveDoc) await executiveDoc.update(body);
-                else await ExecutiveDocs.create(body);
-            }
-            res.json({
-                status: 'ok'
-            })
-        }
-        catch(e) {
-            errorHandler(e, next)
+            next(e);
         }
     }
     async deleteOne(req, res, next) {
@@ -185,9 +158,8 @@ class ContractsController {
             where: {
                 id, groupId
             },
-        })
-        if(!contract) return next(ApiError.UnauthorizedError());
-        else{
+        });
+        if(!contract) throw ApiError.UnauthorizedError();
             await Actions.destroy({
                 where: {
                     contractId: id
@@ -208,15 +180,16 @@ class ContractsController {
                     id, groupId
                 }, cascade: true
             }, )
+            const config = new FileConfig(`contracts\\${id}`);
+            await config.deleteFolder();
             res.json({
                 status: 'ok'
             })
 
-        }
 
     }
     catch(e) {
-        errorHandler(e, next)
+        next(e);
     }
     }
     async getStatuses(req, res, next)
@@ -229,8 +202,6 @@ class ContractsController {
         {
             errorHandler(e, next);
         }
-
-
     }
 }
 

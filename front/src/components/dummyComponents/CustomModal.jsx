@@ -6,7 +6,7 @@ import { solid } from '@fortawesome/fontawesome-svg-core/import.macro';
 
 
 
-const CustomModal = ({children, show = true, setShow, onClose, customStyles, fixedStyles, header}) => {
+const CustomModal = ({children, show = true, setShow, onClose, customStyles, fixedStyles, header, customClassName = null}) => {
     const [headerStyles, setHeaderStyles] = useState({maxWidth: '400px'})
     const closeHandler = () => {
         if (onClose){
@@ -33,7 +33,7 @@ const CustomModal = ({children, show = true, setShow, onClose, customStyles, fix
         {show && <div className={styles.back} onKeyDown={onKeyDown} onMouseDown={closeHandler}>
             <div className={styles.fixed} style={fixedStyles}>
                 <div className={styles.headerHolder} style={headerStyles}>{header}</div>
-            <div className={styles.contentBox} style={customStyles} onMouseDown={stopClosing}>
+            <div className={styles.contentBox + (customClassName ? " " + customClassName : '') } style={customStyles} onMouseDown={stopClosing}>
             <div className={styles.closingButton} onClick= {closeHandler}>
                 <FontAwesomeIcon icon={solid("xmark")} className={styles.xmark}/>
                 </div>

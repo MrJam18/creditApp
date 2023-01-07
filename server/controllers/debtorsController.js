@@ -1,24 +1,32 @@
 const ApiError = require('../error/apiError');
-const Debtors = require('../models/subjects/Debtor');
+const Debtors = require('../models/subjects/Debtors');
 const Contracts = require('../models/documents/Contracts')
 const Passports = require('../models/documents/Passport')
 const provider = require('../providers/DebtorsProvider');
 const {PassportTypes} = require("../models/PassportType");
 const errorHandler = require('../error/errorHandler');
 const Address = require("../classes/Address");
+const capitalizeFirst = require('../utils/text/capitalizeFirst')
+const AddressBuilder = require("../Builders/AddressBuilder");
 
 class DebtorsController {
     async createDebtor(req, res, next) {
         try{
         const data = req.body;
+        const debtorData = data.debtor;
+        debtorData.surname = capitalizeFirst(debtorData.surname);
+        debtorData.name = capitalizeFirst(debtorData.name);
+        if(debtorData.patronymic) debtorData.patronymic = capitalizeFirst(debtorData.patronymic);
         const groupId = req.user.groupId;
-        const addressIds = await Address.getIds(data.address);
-        const debtor = await Debtors.create({...addressIds, ...data.debtor, groupId});
+        const address = await AddressBuilder.build(data.address);
+        address.addInModel(debtorData);
+        debtorData.groupId = groupId;
+        const debtor = await Debtors.create(debtorData);
         if(data.passport !== 'noPassport') await Passports.create({...data.passport, debtorId: debtor.id, groupId, typeId: 1});
-        return res.json(debtor);
+        return res.json({status: 'ok'});
         }
         catch(e) {
-            errorHandler(e, next)
+            next(e);
         }
     }
     
@@ -30,12 +38,21 @@ class DebtorsController {
             const {count} = await Contracts.findAndCountAll({
                 where: { id, groupId }
             });
+            if(debtor.passport !== 'noPassport'){
+                debtor.passport.seriesAndNumber = {
+                    series: debtor.passport.series,
+                    number: debtor.passport.number
+                }
+                delete debtor.passport.series;
+                delete debtor.passport.number;
+            }
+
             debtor.countContracts = count;
+            console.log(debtor);
                 res.json(debtor);
         }
         catch(e) {
-            console.log(e);
-            next(ApiError.internal(e.message));
+            next(e);
         }
     }
     async setDebtor(req, res, next)

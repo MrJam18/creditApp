@@ -1,14 +1,12 @@
+const {moneyObjectToDBFormat} = require("../utils/dataBase/moneyObjectToDBFormat");
 module.exports = class Money
 {
     /**
      * @param {string} number number with anyFormat
      * @returns {number} standard number.
      */
-    static getDBFormat (number) {
-        if (/,/.test(number)) {
-            return Number(number.replace(',', '.'));
-        }
-        else return Number(number);
+    static getDBFormat (moneyHolder) {
+       return moneyObjectToDBFormat(moneyHolder)
     }
     static getSum(sumHolder)
     {

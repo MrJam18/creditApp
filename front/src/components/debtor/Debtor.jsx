@@ -6,7 +6,7 @@ import { getDebtor, getDebtorLoading } from "../../store/debtors/selectors";
 import InnerMenu from "../dummyComponents/InnerMenu";
 import Info from "./DebtorInfo";
 import Loading from '../dummyComponents/Loading';
-import styles from 'D:/CreditApp/front/src/css/debtor.module.css';
+import styles from '../../css/debtor.module.css';
 
 
 const menu = [{

@@ -14,8 +14,8 @@ const CessionAdder = ({ setShow }) => {
  const activeCession = useSelector(cessionsSelector.selectActiveCession);
  const forceUpdate = useSelector(cessionsSelector.forceUpdate);
 
- const onSubmit = async (name) => {
-  await dispatch(addCessionGroup(name));
+ const onSubmit = async (name, defaultCession) => {
+  await dispatch(addCessionGroup(name, defaultCession));
   setShow(false);
  }
  useEffect(()=> {

@@ -1,12 +1,16 @@
+
+
 /**
  *
  * @param {string} bigChunk first property of store
  * @returns function, which have chunk of store as string with max 3 nested properties
  */
 import {capitalizeFirstLetter} from "../../utils/text/capitalize";
+import {contractsSlice} from "../contracts/reducer";
 
 export const selectorCreator = (bigChunk) => {
     /**
+     * deprecated
      * @param {string} chunk several properties of store(max 3)
      * @returns function selector for redux-store
      */
@@ -31,6 +35,7 @@ export class SelectorCreator
     #bigChunk;
     easyCreator;
     /**
+     * deprecated
      * @param {string} chunk several properties of store(max 3)
      * @returns function selector for redux-store
      */
@@ -59,6 +64,13 @@ export class SelectorCreator
                 }
             }
             return (store) => store[bigChunk][chunk]
+        }
+    }
+    buildAllSelectorsFromInitState(slice)
+    {
+        const state = slice.getInitialState();
+        for(const prop in state) {
+            this[prop] = (store) => store[this.#bigChunk][prop];
         }
     }
 }

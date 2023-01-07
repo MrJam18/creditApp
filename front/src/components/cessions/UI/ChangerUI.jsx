@@ -11,7 +11,6 @@ import NameChanger from "../NameChanger";
 import Cession from "../Cession";
 
 const ChangerUI = ({ error, info, activeCession, header, setShow, forceUpdate, showDeleteGroup, cessionName, onSubmit }) => {
-
  const ActiveCession = useCallback(() => info.loading ? null : <Cession data={info.rows[activeCession]} />, [activeCession, info.loading, forceUpdate]);
 
  return (
@@ -43,7 +42,7 @@ const ChangerUI = ({ error, info, activeCession, header, setShow, forceUpdate, s
       />
       <CustomButton text={'Продолжить'} formId='cessionData' />
       {error && <div className="error"> {error} </div>  }
-      {info.showConfirm && <NameChanger onSubmit={onSubmit} />}
+      {info.showConfirm && <NameChanger name={cessionName} onSubmit={onSubmit} />}
      </>
     }
    </CustomModal>

@@ -1,11 +1,12 @@
+
+const {changeDateToISO} = require("./changeDateFormat");
+
 /**
  *
  * @param {string} firstDate in All formates
  * @param {string} secondDate in All formates
  * @returns true if firstDate later then secondDate or false
  */
-const {changeDateToISO} = require("./changeDateFormat");
-
 module.exports = function compareDatesBool(firstDate, secondDate) {
     const regExp = /./;
     if(regExp.test(firstDate)) firstDate = changeDateToISO(firstDate);

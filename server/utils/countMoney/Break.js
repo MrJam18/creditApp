@@ -1,5 +1,5 @@
 module.exports = class Break {
-    constructor(date, isLeap, main, percents, penalties, payment, percentsCounted = true, penaltyCounted = true){
+    constructor(date, isLeap, main, percents, penalties, payment, percentsCounted = true, penaltyCounted = true, noPenalty){
         this.date = date;
         this.isLeap = isLeap;
         this.main = main;
@@ -8,6 +8,7 @@ module.exports = class Break {
         this.percentsCounted = percentsCounted;
         this.penaltyCounted = penaltyCounted;
         if(payment) this.payment = payment;
+        if(noPenalty) this.noPenalty = true;
     }
 }
 

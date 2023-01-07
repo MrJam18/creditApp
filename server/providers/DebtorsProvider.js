@@ -1,5 +1,5 @@
 const Provider = require("./base/Provider");
-const {Debtors} = require("../models/models");
+const {Debtors} = require("../models/connections");
 
  class DebtorsProvider extends Provider
 {

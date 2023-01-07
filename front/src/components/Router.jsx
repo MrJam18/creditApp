@@ -15,7 +15,7 @@ import { getLoading } from '../store/users/selectors';
 import Loading from './dummyComponents/Loading';
 import HidingAlert from './dummyComponents/HidingAlert';
 import Start from './start/Start';
-import Organizations from './organizations/Organizations';
+import Creditors from './creditors/Creditors';
 import { getGlobalError, setGlobalError } from '../store/global';
 import { setAlert } from '../store/alert/actions';
 import usersSlice from '../store/users/reducer';
@@ -30,7 +30,6 @@ function Router() {
   const dispatch = useDispatch();
   const loading = useSelector(getLoading);
   const error = useSelector(getGlobalError);
-
   useEffect(()=> {
     if(localStorage.getItem('token')) {
       dispatch(checkAuth());
@@ -51,7 +50,7 @@ function Router() {
             <Route path='login' exact element={<PublicAccess wrapped={<Login />}  />} />
             <Route path='list' exact element = {<PrivateAccess Wrapped={<List />} />} />
             <Route path= 'claim' exact element= {<PrivateAccess Wrapped={<Claim />}  />} />
-            <Route path='organizations' exact element={<PrivateAccess Wrapped={<Organizations />} />} />
+            <Route path='organizations' exact element={<PrivateAccess Wrapped={<Creditors />} />} />
             <Route path='agents' exact element={<PrivateAccess Wrapped={<Agents />} />} />
             <Route path='contracts/:contractId' element= {<PrivateAccess Wrapped={<Contract />} /> } />
             <Route path='debtors/:debtorId' element={<PrivateAccess Wrapped={<Debtor />} />} />

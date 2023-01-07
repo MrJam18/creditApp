@@ -61,7 +61,7 @@ export const setCessionChanges = (data, assignee, assignor, enclosures, useDefau
         dispatch(actions.setInfoRow({index, data}));
 }
 
-export const sendCessionChanges = (name) => async (dispatch, getState) => {
+export const sendCessionChanges = (name, defaultCession) => async (dispatch, getState) => {
     const state = getState();
     const cessionId = state.cessions.info.cessionId;
     const info = prepareInfo(state.cessions.info.rows);
@@ -75,7 +75,8 @@ export const sendCessionChanges = (name) => async (dispatch, getState) => {
         lastInfo,
         cessionId,
         name,
-        deleteIds: state.cessions.info.deleteIds
+        deleteIds: state.cessions.info.deleteIds,
+        defaultCession
     }
     await api.post('cessions/changeOne', data);
     dispatch(setAlert('Успешно', "Цессия успешно изменена."));
@@ -110,7 +111,7 @@ export const deleteCessionGroup = (cessionId) => async (dispatch) => {
 
 }
 
-export const addCessionGroup = (name) => async (dispatch, getState) => {
+export const addCessionGroup = (name, defaultCession) => async (dispatch, getState) => {
     const state = getState();
     const lastInfo = {...state.cessions.info.lastInfo};
     lastInfo.assigneeId = lastInfo.assignee.id;
@@ -120,7 +121,8 @@ export const addCessionGroup = (name) => async (dispatch, getState) => {
     const data = {
         info: prepareInfo(state.cessions.info.rows),
         name,
-        lastInfo
+        lastInfo,
+        defaultCession
     }
     await api.post('cessions/createOne', data);
     dispatch(setAlert('Успешно', "Цессия успешно добавлена."));

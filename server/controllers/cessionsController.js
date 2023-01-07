@@ -3,10 +3,11 @@ const nullCession = require('../constants/nullCession');
 const errorHandler = require('../error/errorHandler');
 const Provider = require('../providers/documents/CessionsProvider');
 const { Op } = require("sequelize");
-const Organizations = require("../models/subjects/Organizations");
+const Creditors = require("../models/subjects/Creditors");
 const CessionsInfo = require("../models/documents/CessionsInfo");
 const CessionsEnclosures = require('../models/documents/CessionsEnclosures');
 const ApiError = require("../error/apiError");
+const StringHelper = require("../helpers/StringHelper");
 const provider = new Provider();
 
 
@@ -44,7 +45,7 @@ class CessionsController {
                 attributes: ['name', 'cessionsAmount', 'createdAt', 'updatedAt', 'lastTransferDate', 'id'],
                 where: {
                     groupId: provider.groupId
-                }, include: [{model: Organizations, as: 'lastAssignee', attributes: ['short', 'name']}, {model: Organizations, as: 'lastAssignor', attributes: ['short', 'name']}]
+                }, include: [{model: Creditors, as: 'lastAssignee', attributes: ['short', 'name']}, {model: Creditors, as: 'lastAssignor', attributes: ['short', 'name']}]
             });
             list.rows.forEach((el)=> {
                 el.getNameOrShort('lastAssignee');
@@ -62,7 +63,7 @@ class CessionsController {
         try{
             const ids = provider.getIds(req);
             const info = await CessionsInfo.findAndCountAll({
-                where: {cessionId: ids.id, groupId: ids.groupId}, order: ['transferDate'], attributes: ['transferDate', 'sum', 'number', 'text', 'useDefaultText', 'id'], include: [{model: Organizations, as: 'assignee', attributes: ['short', 'name', 'INN', 'id']}, {model: Organizations, as: 'assignor', attributes: ['short', 'name', 'INN', 'id']}]
+                where: {cessionId: ids.id, groupId: ids.groupId}, order: ['transferDate'], attributes: ['transferDate', 'sum', 'number', 'text', 'useDefaultText', 'id'], include: [{model: Creditors, as: 'assignee', attributes: ['short', 'name', 'courtIdentifier', 'id']}, {model: Creditors, as: 'assignor', attributes: ['short', 'name', 'courtIdentifier', 'id']}]
             })
             const rows = info.rows;
             for(let i = 0; i < rows.length; i++) {
@@ -72,7 +73,6 @@ class CessionsController {
                 rows[i].assignee.getSearchName();
                 rows[i].assignor.getSearchName();
                 rows[i].assignee.deleteData('INN');
-                rows[i].assignor.deleteData('INN');
             }
             res.json(info);
         }
@@ -99,6 +99,7 @@ class CessionsController {
             const newCessionsInfo = [];
             const cessionsInfo = [];
             const deleteIds = data.deleteIds;
+            const stringHelper = new StringHelper();
             data.info.forEach((el)=> {
                 if(!el.number) el.number = null;
                 if(!el.sum) el.sum = null;
@@ -115,7 +116,7 @@ class CessionsController {
                     const el = cessionsInfo[i];
                     const enclosures = el.enclosures.map((enclosure)=> {
                         return {
-                            name: enclosure,
+                            name: stringHelper.capitalizeFirst(enclosure),
                             cessionsInfoId: el.id
                         }
                     })
@@ -138,6 +139,9 @@ class CessionsController {
                     })
                     await CessionsEnclosures.bulkCreate(enclosures);
                 }
+            }
+            if(data.defaultCession) {
+                await Creditors.updateByIdAndGroupId(lastInfo.assigneeId, groupId, {defaultCessionId: data.cessionId});
             }
             provider.sendOk(res);
         }
@@ -166,6 +170,7 @@ class CessionsController {
         let info = data.info;
         const groupId = req.user.groupId;
         const lastInfo = data.lastInfo;
+        const stringHelper = new StringHelper();
         try {
             const cession = Cessions.build({
                 lastAssigneeId: lastInfo.assigneeId,
@@ -184,7 +189,7 @@ class CessionsController {
                 }
                 throw e;
             }
-            for(let i = 0; i < info.length; i++){
+            for(let i = 0; i < info.length; i++) {
                 const el = info[i];
                 provider.getNullsFromString(el);
                 el.groupId = groupId;
@@ -192,15 +197,19 @@ class CessionsController {
                 let enclosures = [...el.enclosures];
                 delete el.enclosures;
                 const infoRes = await CessionsInfo.create(el);
-                enclosures = enclosures.map((el)=> {
+                enclosures = enclosures.map((el) => {
                     return {
-                        name: el,
+                        name: stringHelper.capitalizeFirst(el),
                         cessionsInfoId: infoRes.id
                     };
                 })
                 await CessionsEnclosures.bulkCreate(enclosures);
             }
+            if(data.defaultCession) {
+                await Creditors.updateByIdAndGroupId(lastInfo.assigneeId, groupId, {defaultCessionId: cession.id});
+            }
             provider.sendOk(res);
+
         }
         catch (e) {
             next(e)

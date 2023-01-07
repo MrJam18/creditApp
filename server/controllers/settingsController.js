@@ -1,7 +1,7 @@
 const ApiError = require('../error/apiError');
-const {Users, OrgTypes} = require('../models/models');
-const Organizations = require('../models/subjects/Organizations');
-// const {Organizations} = require('../models/models');
+const {Users, OrgTypes} = require('../models/connections');
+const Organizations = require('../models/subjects/Creditors');
+// const {Creditors} = require('../models/models');
 const uuid = require('uuid');
 const path = require('path');
 

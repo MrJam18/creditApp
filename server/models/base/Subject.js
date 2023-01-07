@@ -1,10 +1,18 @@
 const BaseModel = require("./BaseModel");
+const {addressColumns} = require("../../constants/dataBase/addressColumns");
 module.exports = class Subject extends BaseModel {
+
+
+    static getAddressColumns()
+    {
+        return addressColumns;
+    }
 
     async getFullAddress()
     {
         const getAddress = require("../../utils/adress/getFullAddressWithoutInclude");
-        this.setDataValue('fullAddress', await getAddress(this));
+        this.fullAddress = await getAddress(this);
+        this.setDataValue('fullAddress', this.fullAddress);
         return this.fullAddress;
     }
 
@@ -21,9 +29,4 @@ module.exports = class Subject extends BaseModel {
         else this.setDataValue('short', this.name);
         return this.short;
     }
-    // async getName(key)
-    // {
-    //     this.setDataValue(key, this[key].name);
-    //     return this[key];
-    // }
 }

@@ -13,13 +13,55 @@
     align-items: center;
     margin-bottom: 10px;
 }
-.input {
+.inputBlock {
     width: 100%;
     margin-top: 10px;
-    border-color: black !important
+    border-color: black !important;
+    display: flex;
+    justify-content: space-between;
 }
 .error {
     text-align: center;
     color: red;
     margin-top: 10px;
+}
+.handleAddressButton {
+    margin: 0 0 0 7px;
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+    height: 38px;
+    transition: background-color 0.3s;
+    border-radius: 10px;
+}
+.handleAddressButton:hover {
+    background-color: #a5d3ff;;
+}
+.handleAddressButton:focus {
+    background-color: #60b0ff;
+}
+.inputContainer {
+    width: 100%;
+}
+.handleAddressIMG {
+    width: 38px;
+    height: 38px;
+}
+.header_small {
+    font-weight: 600;
+    font-family: 'Roboto_slab', serif;
+    margin-bottom: 10px;
+    font-size: 20px;
+    text-align: center;
+}
+.daDataContainer {
+    border: none;
+    width: auto;
+}
+.inputManually {
+    border: none;
+}
+.addressManually__main {
+
 }

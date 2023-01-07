@@ -22,7 +22,7 @@ const useStyles = makeStyles( {
 const EasySelect = React.forwardRef(({name, label, initValue = '', variants, style, onChange, customClassName, defaultValue = ''}, ref) => {
     const classes = useStyles();
     const input = useInput(defaultValue);
-    const Variants = variants.map ((el)=> <MenuItem value={el.id} key={el.id}>{el.name}</MenuItem>);
+    const Variants = variants.map((el)=> <MenuItem value={el.id} key={el.id}>{el.name}</MenuItem>);
     const changeHandler = (ev) => {
         input.onChange(ev);
         if(onChange) onChange(ev.target.value);

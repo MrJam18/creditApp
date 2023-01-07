@@ -3,8 +3,8 @@ import {TextField} from "@mui/material";
 import {capitalizeFirstLetter} from "../../utils/text/capitalize";
 import {moreThenNow} from "../../utils/moreThenNow";
 
-const EasyInput = React.forwardRef(({ label, name, className, type='text', autoFocus=false, required = false, pattern, defaultValue = null, disabled=false }, ref) => {
-    const goodLabel = label ? capitalizeFirstLetter(label) : null;
+const EasyInput = React.forwardRef(({ label, name, className, type='text', autoFocus=false, required = false, pattern, defaultValue = null, disabled=false, variant='standard', size='medium', onBlur=null }, ref) => {
+    label = label ? capitalizeFirstLetter(label) : null;
     const inputRef = useRef();
     let suggestionsHandler;
     let currentPattern;
@@ -33,7 +33,7 @@ const EasyInput = React.forwardRef(({ label, name, className, type='text', autoF
     }, [inputRef.current]);
 
     return (
-        <TextField autoFocus={autoFocus} disabled={disabled} defaultValue={defaultValue} label={goodLabel} onChange={suggestionsHandler} inputProps={{pattern: currentPattern}} inputRef={inputRef} variant={'standard'} required={required} InputLabelProps={type === 'date' ? { shrink: true } : null} className={className} name={name} fullWidth type={type} />
+        <TextField autoFocus={autoFocus} onBlur={onBlur} disabled={disabled} defaultValue={defaultValue} label={label} onChange={suggestionsHandler} inputProps={{pattern: currentPattern}} inputRef={inputRef} variant={variant} required={required} InputLabelProps={type === 'date' ? { shrink: true } : null} className={className} name={name} fullWidth type={type} size={size} />
     );
 });
 

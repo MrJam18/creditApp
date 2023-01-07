@@ -1,6 +1,6 @@
 import {useDispatch, useSelector} from 'react-redux';
 import styles from '../css/list.module.css'
-import { getContracts } from '../store/contracts/selectors';
+import { contractsSelectors } from '../store/contracts/selectors';
 import Debtors from './Debtors';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { solid } from '@fortawesome/fontawesome-svg-core/import.macro';
@@ -8,7 +8,7 @@ import AddDebtor from './AddDebtor';
 import { useEffect, useState } from 'react';
 import Loading from './dummyComponents/Loading';
 import Pagination from './dummyComponents/Pagination';
-import AddContract from './addContract/AddContract';
+import AddContract from './AddContract';
 import { useLocation } from 'react-router';
 import { getList, getListLoading, getListTotal } from '../store/list/selectors';
 import { recieveList } from '../store/list/actions';
@@ -21,7 +21,7 @@ const List = () => {
     const dispatch = useDispatch();
     const loading = useSelector(getListLoading);
     const debtors = useSelector(getList);
-    const contracts = useSelector(getContracts);
+    const contracts = useSelector(contractsSelectors.getList);
     const total = useSelector(getListTotal);
     const [addDebtor, setAddDebtor] = useState(false);
     const [addContract, setAddContract] = useState(false);

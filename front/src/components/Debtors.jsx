@@ -43,7 +43,7 @@ const Debtors = ({debtor, contracts, setAddContract}) => {
       <Link to={`/contracts/${contract.id}`} key= {contract.id} className='antiLink'>
           <ListItemButton component= 'div' className={classes.debtorBlock}>
       <ListItemText primary={`договор № ${contract.number} выдан ${chandeDateFormatOnRus(contract.date_issue)} г.`} className={classes.debtorName}/>
-      <div className={styles.issuingOrg}>{contract.organization.name}</div>
+      <div className={styles.issuingOrg}>{contract.creditor.name}</div>
       <div className={styles.status}>{contract.status?.name}</div>
     </ListItemButton>
     </Link>

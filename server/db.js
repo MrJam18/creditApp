@@ -1,6 +1,6 @@
 const {Sequelize} = require('sequelize');
-const log = require('simple-node-logger').createSimpleLogger();
-log.setLevel('error');
+// const logger = require('simple-node-logger').createSimpleFileLogger(process.env.ROOT + '\\logs\\db.log');
+// logger.setLevel('info');
 
 
 module.exports = new Sequelize(
@@ -11,6 +11,7 @@ module.exports = new Sequelize(
         dialect: 'postgres',
         host: process.env.DB_HOST,
         port: process.env.DB_PORT,
-        logging: log.debug()
-    }
+        logging: (sql)=>  null,
+        logQueryParameters: false
+    },
 )

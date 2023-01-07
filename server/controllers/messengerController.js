@@ -1,5 +1,5 @@
 const ApiError = require('../error/apiError');
-const {Regions} = require('../models/models');
+const {Regions} = require('../models/connections');
 
 class MessengerController {
     create(req,res) {

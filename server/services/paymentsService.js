@@ -1,8 +1,8 @@
-const { Payments } = require("../models/models");
+const { Payments } = require("../models/connections");
 const countAllWithPayments = require("../utils/countMoney/countAllWithPayments");
 
 class PaymentsService {
-   async countPaymentsInDB(paymentsInDB, contract){
+   async updatePayments(payments, contractId){
        try{
         const endDate = paymentsInDB[paymentsInDB.length - 1].date;
         const { payments } = countAllWithPayments(contract.percent, contract.penalty, contract.sum_issue, contract.date_issue, endDate, paymentsInDB, contract.due_date);

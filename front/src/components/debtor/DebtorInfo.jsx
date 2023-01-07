@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from 'D:/CreditApp/front/src/css/debtorInfo.module.css';
+import styles from '../../css/debtorInfo.module.css';
 import {columns, passportColumns } from '../../constants/debtorColumns';
 import deleteDebtorView from "./DeleteDebtor";
 import Toolbar from "../dummyComponents/Toolbar";
@@ -34,6 +34,7 @@ const DebtorInfo = ({debtor}) => {
     const passportReqFunction = async (data) => {
         await dispatch(changePassport(data, passport.id, debtorId));
     }
+    console.log(passportColumns, passport)
     return (
         <div className={styles.content}>
             <div className={styles.header_small}>Информация о должнике</div>

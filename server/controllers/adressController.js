@@ -1,4 +1,4 @@
-const { Regions, Cities, Streets, CityTypes, StreetTypes, RegionTypes, HouseTypes, FlatTypes, Areas, BlockTypes } = require('../models/models');
+const { Regions, Cities, Streets, CityTypes, StreetTypes, RegionTypes, HouseTypes, FlatTypes, Areas, BlockTypes } = require('../models/connections');
 const findOrCreateByName = require('../utils/findOrCreateinDBByName');
 
 //this deprecated

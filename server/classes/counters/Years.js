@@ -1,6 +1,7 @@
 const getYear = require("../../utils/getYear");
 const Year = require("./Year");
 const deleteCycle = require('../../utils/deleteCycle');
+const Payment = require("../../documents/Controllers/Payment");
 
 module.exports = class Years
 {
@@ -13,8 +14,8 @@ module.exports = class Years
             const yearPayments = [];
             deleteCycle(payments, (payment, index)=> {
                 if (getYear(payment.date) === year){
-                    payment.index = index;
-                    yearPayments.push(payment);
+                    payment = new Payment(payment.date, payment.sum, null, null, null, payment.contractId, payment.id);
+                    yearPayments.unshift(payment);
                     payments.splice(index, 1);
                 }
             });
@@ -25,11 +26,21 @@ module.exports = class Years
     }
     getFirstYear()
     {
-        return this.list.shift();
+        return this.list[0]
     }
     getLastYear()
     {
-        if(this.list.length !== 0) return this.list.pop();
+        if(this.list.length > 1) return this.list[this.list.length - 1]
         else return null;
+    }
+    getOtherYears()
+    {
+        if(this.list.length <= 2) return [];
+        else {
+            const list = [...this.list];
+            list.shift();
+            list.pop();
+            return list;
+        }
     }
 }

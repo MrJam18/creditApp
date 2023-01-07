@@ -1,34 +1,48 @@
 
-const fs = require('fs')
+const fs = require('fs');
 const { Packer, } = require('docx');
-const { Payments, Actions } = require("../models/models");
+const { Payments, Actions } = require("../models/connections");
 const Cessions = require('../models/documents/Cessions');
-const Organizations = require('../models/subjects/Organizations');
+const Creditors = require('../models/subjects/Creditors');
 const Courts = require('../models/subjects/Courts');
 const Contracts = require('../models/documents/Contracts');
-const Debtors = require('../models/subjects/Debtor');
-const ExecutiveDocs = require('../models/documents/ExecutiveDocs');
+const Debtors = require('../models/subjects/Debtors');
 const ApiError = require("../error/apiError");
 const  {docsFoler}  = require("../utils/adresses");
 const { v4: uuidv4 } = require('uuid');
 const createClaimDoc = require("../services/documentsService/createClaimDoc");
 const courtReqforIdDoc = require("../services/documentsService/courtReqforIdDoc");
 const getISODate = require('../utils/dates/getISODate');
-const createIPInitDoc = require('../services/documentsService/createIPInitDoc');
-const changeAllNumFormates = require('../utils/changeAllNumFormates');
-const DocumentsProvider = require('../providers/documents/DocumentsProvider');
+const Docx = require("../classes/files/Docx");
+const CourtClaim = require("../documents/Controllers/CourtClaim");
+const IPInit = require("../documents/Controllers/IPInit");
 
-const provider = new DocumentsProvider();
 
 class DocumentsController {
     async createCourtClaim(req, res, next) {
         try {
-            const {contractId, courtId, countDate, ignorePayments, agentId, type} = req.body;
+            const {contractId, courtId, countDate, ignorePayments, contractJur, agentId, type} = req.body;
             const userId = req.user.id;
             const groupId = req.user.groupId;
-            let ignorePaymentsBool;
-            ignorePaymentsBool = ignorePayments === 'true';
-            const path = await provider.createCourtClaim(contractId, courtId, agentId, groupId, userId, countDate, type, ignorePaymentsBool  )
+            const options = {
+                ignorePayments,
+                contractJur
+            }
+            console.log(options);
+            const data = await CourtClaim.init(contractId, agentId, courtId, countDate, groupId, options, type);
+            const file = new Docx(data.path, data.document);
+            await file.getBuffer();
+            const path = file.createFile();
+            await data.createAction(userId, path);
+            if(data.contract.statusId !== 2){
+                const now = getISODate();
+                await Contracts.update({
+                    statusId: 2, statusChanged: now
+                }, {where: {
+                        id: contractId
+                    }})
+                await Actions.create({contractId, userId, actionTypeId: 4, actionObjectId: 12, result: 'статус автоматически изменен на "Ожидает отправки СП".'})
+            }
             res.download(path);
         }
         catch(e) {
@@ -46,9 +60,9 @@ class DocumentsController {
         const contract = await Contracts.findByPk(contractId, {
             include: [{model: Payments}, {model: Debtors, include: {
                 all: true
-            }}, {model: Organizations, include: {
+            }}, {model: Creditors, include: {
                 all: true
-            }}, {model: Cessions, include: [{model: Organizations, as: 'assignee', attributes: ['name']}, {model: Organizations, as: 'assignor', attributes: ['name']}, ]}]
+            }}, {model: Cessions, include: [{model: Creditors, as: 'assignee', attributes: ['name']}, {model: Creditors, as: 'assignor', attributes: ['name']}, ]}]
         });
         contract.courtId = courtId;
         await contract.save();
@@ -81,7 +95,7 @@ class DocumentsController {
         const contract = await Contracts.findByPk(contractId, {
             include: [{model: Payments}, {model: Debtors, include: {
                 all: true
-            }}, {model: Organizations, include: {
+            }}, {model: Creditors, include: {
                 all: true
             }}, {model: Courts, include: {all: true}}]
         });
@@ -112,44 +126,17 @@ class DocumentsController {
     async createIPInit(req, res, next) {
         try{
         const body = req.body;
-        const userId = req.user.id;
         const groupId = req.user.groupId;
-        const contract = await Contracts.findOne({where: {
-            groupId, id: body.contractId
-        }, plain: true});
-        body.executiveDoc = changeAllNumFormates(body.executiveDoc);
-        const executiveDoc = body.executiveDoc;
-        provider.getNullsFromString(executiveDoc);
-        // if(executiveDoc.resolutionDate == '') executiveDoc.resolutionDate = null;
-        // if(executiveDoc.resolutionNumber == '') executiveDoc.resolutionNumber = null;
-        executiveDoc.sum = Number(executiveDoc.main) + Number(executiveDoc.percents) + Number(executiveDoc.penalties) + Number(executiveDoc.fee);
-        executiveDoc.contractId = body.contractId;
-        const executiveDocInDB = await ExecutiveDocs.findOne({
-            where: {
-                contractId: body.contractId
-            }
-        })
-        if(!executiveDocInDB) ExecutiveDocs.create(executiveDoc);
-        else {
-          executiveDocInDB.update(executiveDoc)
-        }
-        contract.bailiffId = body.bailiffId;
-        const doc = await createIPInitDoc(contract, body.bailiffId, body.agentId, body.executiveDoc);
-        const path = `${docsFoler}contract${contract.id}/IPInit/${uuidv4()}.docx`;
-        const buffer = await Packer.toBuffer(doc);
-        if(!fs.existsSync(docsFoler + `contract${contract.id}`)) fs.mkdirSync(docsFoler + `contract${contract.id}`);
-        if(!fs.existsSync(docsFoler + `contract${contract.id}/IPInit`)) fs.mkdirSync(docsFoler + `contract${contract.id}/IPInit`);
-        fs.writeFileSync(path, buffer);
-        await Actions.create({contractId: body.contractId, actionTypeId: 1, actionObjectId: 13, userId, result: path});
-        if(contract.statusId === 8 || contract.statusId === 12){
-            contract.statusId = 13
-        }
-        await contract.save();             
+        const data = await IPInit.init(body, groupId);
+        const file = new Docx(data.path, data.document);
+        await file.getBuffer();
+        const path = file.createFile();
+        await data.createAction(req.user.id, path);
+        await data.changeStatus(11, req.user.id, 'Исп. документ отправлен СПИ');
         res.download(path);
         }
         catch(e) {
-            console.log(e);
-            next(ApiError.badRequest(e));
+            next(e);
         }
 
     }
