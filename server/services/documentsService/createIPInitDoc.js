@@ -1,5 +1,5 @@
 const { Document } = require("docx");
-const { Courts, Debtors, Organizations, Agents, Bailiffs } = require("../../models/connections");
+const { Courts, Debtors, Organizations, Agents, Bailiffs } = require("../../models/models");
 const getFullAddressWithoutInclude = require("../../utils/adress/getFullAddressWithoutInclude");
 const getFullName = require("../../utils/getFullName");
 const {incline} = require('lvovich');

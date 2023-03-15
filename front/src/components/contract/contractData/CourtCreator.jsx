@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import CustomModal from '../../dummyComponents/CustomModal';
 import styles from '../../../css/contract.module.css'
 import { TextField } from '@mui/material';
-import Address from '../../dummyComponents/Address/Address';
+import Address from '../../Address';
 import { useDispatch, useSelector } from 'react-redux';
 import { getCourtsLevels, getCourtsTypes } from '../../../store/courts/selectors';
 import EasySelect from '../../dummyComponents/EasySelect';
@@ -20,29 +20,41 @@ const CourtCreator = ({show, setShow, setValue}) => {
     const [addressError, setAddressError] = useState(false);
     const levels = useSelector(getCourtsLevels);
     const types = useSelector(getCourtsTypes);
-    const getNecessary =  async () => {
-       await dispatch(recieveCourtTypes());
-       await dispatch(recieveCourtLevels());
+    const getNecessary = () => {
+        dispatch(recieveCourtTypes());
+        dispatch(recieveCourtLevels());
     }
     useEffect(getNecessary, []);
-    const onSubmit = async () => {
-        const data = formDataConverter(form.current.elements);
+    const onSubmit = async (ev) => {
+        ev.preventDefault();
+        const elements = form.current.elements;
+        const court = formDataConverter(elements);
         if (!address) setError('Заполните адрес!');
         else {
             setLoading(true);
             setError(false);
             try{
-                const court = await dispatch(createCourt(data, address));
+                const response = await dispatch(createCourt(court, address));
+                if(response.name === "SequelizeUniqueConstraintError") throw new Error(response.name);
+                // if(response.name) throw new Error(response.name);
+                if(response.message) throw new Error(response.message);
+                if(response.errors){
+                const errorMessage = response.errors.reduce((acc,el)=>{
+                    acc += el.message + '. ';
+                    return acc;
+                },'')
+                throw new Error(errorMessage)
+            }   
                 setValue({
-                    name: court.name,
-                    id: court.id
-                });
+                    value: response.name,
+                    id: response.id
+                })
                 dispatch(setAlert('Успешно!', "Суд успешно добавлен!"));
                 setShow(false);
             }
             catch(e){
-                if(e?.response?.data?.message) setError(e.response.data.message);
-                else setError(e.message);
+                if(e.message === "SequelizeUniqueConstraintError") setError('Данный суд уже существует!')
+                else setError(e.message) ;
             }
             setLoading(false)
             
@@ -52,7 +64,7 @@ const CourtCreator = ({show, setShow, setValue}) => {
         <CustomModal show={show} setShow={setShow}>
             <div className={styles.courtCreator}>
              <div className='header_small'>Создание суда.</div>
-             <form ref={form} >
+             <form ref={form} onSubmit={onSubmit} >
              <div className={styles.courtCreator__inputMargin}>
              <TextField label='Название суда' variant='standard' required name='name' fullWidth />
              </div>
@@ -65,7 +77,7 @@ const CourtCreator = ({show, setShow, setValue}) => {
              <div className={styles.courtCreator__inputMargin}>
              <Address error={addressError} setError={setAddressError} setAdressForDB={setAddress} />
              </div>
-             <ButtonInForm type='button' loading={loading} onClick={onSubmit} />
+             <ButtonInForm loading={loading} />
              </form>
              {error && <div className='error'>{error}</div>}
              </div>

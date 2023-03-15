@@ -1,5 +1,5 @@
 const ApiError = require("../error/apiError");
-const { UsersinTask, Tasks } = require("../models/connections");
+const { UsersinTask, Tasks } = require("../models/models");
 
 
 class TasksController {

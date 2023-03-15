@@ -1,15 +1,15 @@
 const { Op } = require("sequelize");
 const ApiError = require('../error/apiError');
-const Agents = require('../models/subjects/Agents');
+const { Agents } = require('../models/models');
 const changeAddressOnFullinArray = require('../utils/adress/changeAddressOnFullinArray');
 const countOffset = require('../utils/countOffset');
 const getArrayFromString = require('../utils/getArrayFromString');
 const setFalseDefaultsInGroup = require('../utils/setFalseDefaultsInGroup');
+const { getOrCreateAddressIdsFromDB } = require('./adressController');
 const getFullName = require('../utils/getFullName');
 const getWherePropertyWhenSearchFIO = require("../utils/getWherePropertyWhenSearchFIO");
 const getAgentByGroupOrUser = require("../utils/getAgentByGroupOrUser");
 const changeFIOOnFullName = require("../utils/changeFIOOnFullName");
-const AddressBuilder = require("../Builders/AddressBuilder");
 
 
 
@@ -27,7 +27,8 @@ class AgentsController {
             res.json({rows, count: agents.count});
         }
         catch(e) {
-            next(e);
+            console.log(e);
+            next(ApiError.internal(e));
         }
     }
     async addOne(req, res, next) {
@@ -36,9 +37,9 @@ class AgentsController {
             const groupId = req.user.groupId;
             const userId = req.user.id;
             const agent = req.body.agent;
-            const address = await AddressBuilder.build(body.address);
+            const address = await getOrCreateAddressIdsFromDB(body.address);
             if(agent.isDefault){
-               await setFalseDefaultsInGroup(groupId, userId)
+                setFalseDefaultsInGroup(groupId, userId)
             }
             if(agent.noShowGroup) {
                 await Agents.create({...address,  ...agent, groupId: null, userId});
@@ -60,13 +61,12 @@ class AgentsController {
         const groupId = req.user.groupId;
         const userId = req.user.id;
         const agent = req.body.agent;
-        const where = getAgentByGroupOrUser(groupId, userId);
-        where.id = agent.id;
+        const where = getAgentByGroupOrUser(groupId, userId)
         if(agent.isDefault){
             setFalseDefaultsInGroup(groupId, userId)
         }
         if(body.address) {
-           const address = await Address.getIds(body.address);
+           const address = await getOrCreateAddressIdsFromDB(body.address);
            if(agent.noShowGroup) {
             await Agents.update({...address,  ...agent, groupId: null, userId}, {where});
            }
@@ -86,7 +86,8 @@ class AgentsController {
         res.json({status: 'ok'});
         }
         catch(e) {
-            next(e);
+            console.log(e);
+            next(ApiError.internal(e));
         }   
 
     }
@@ -111,10 +112,10 @@ class AgentsController {
     }
     async getSearchList(req, res, next) {
         try{
-            const value = req.query.value;
+            const searchString = req.query.searchString;
             const groupId = req.user.groupId;
             const userId = req.user.id;
-            const searchArray = value.split(' ', 3);
+            const searchArray = searchString.split(' ', 3);
             const where = {
                 [Op.and]: [{...getWherePropertyWhenSearchFIO(searchArray)}, {...getAgentByGroupOrUser(groupId, userId)} ]
                 
@@ -127,11 +128,12 @@ class AgentsController {
                 element.name = getFullName(el);
                 element.id = el.id;
                 return element;
-            });
+            })
             res.json(agents);
         }
         catch(e) {
-            next(e);
+            console.log(e);
+            next(ApiError.internal(e));
         }   
     }
     async getDefaultAgent(req, res, next) {

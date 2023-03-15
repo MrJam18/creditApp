@@ -28,7 +28,7 @@ export const recieveTaskstList = (limit, page, sort, userId) => async dispatch =
 // export const findOrganizations = (val, setError) => async (dispatch) => {
 //     try{
 //     setOrganizationsLoading(true);
-//     const {data} = await api.get('creditors/getNameList?value=' + val);
+//     const {data} = await api.get('organizations/getNameList?value=' + val);
 //     dispatch(setOrganizationsNames(data));
 //     setOrganizationsLoading(false);
 //     }

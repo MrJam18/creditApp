@@ -6,7 +6,7 @@ const claimRouter = require('./new_claim');
 const settingsRouter = require('./settings');
 const listRouter = require('./list');
 const cessionsRouter = require('./cessions');
-const creditorsRouter = require('./creditors');
+const organizationsRouter = require('./organizations');
 const contractsRouter = require('./contracts');
 const paymentsRouter = require('./payments');
 const documentsRouter = require('./documents');
@@ -17,8 +17,6 @@ const tasksRouter = require('./tasks');
 const debtorsRouter = require('./debtors');
 const agentsRouter = require('./agents');
 const bailiffsRouter = require('./bailiffs');
-const filesRouter = require('./files');
-const executiveDocsRouter = require('./executiveDocs')
 
 router.use('/events', eventRouter);
 router.use('/messenger', messengerRouter);
@@ -26,7 +24,7 @@ router.use('/new_claim', claimRouter);
 router.use('/settings', settingsRouter);
 router.use('/list', listRouter);
 router.use('/cessions', cessionsRouter);
-router.use('/creditors', creditorsRouter);
+router.use('/organizations', organizationsRouter);
 router.use('/contracts', contractsRouter );
 router.use('/payments', paymentsRouter);
 router.use('/documents', documentsRouter);
@@ -37,8 +35,6 @@ router.use('/tasks', tasksRouter);
 router.use('/debtors', debtorsRouter);
 router.use('/agents', agentsRouter);
 router.use('/bailiffs', bailiffsRouter);
-router.use('/files', filesRouter);
-router.use('/executiveDocs', executiveDocsRouter);
 
 
 

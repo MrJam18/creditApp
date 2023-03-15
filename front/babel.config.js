@@ -11,7 +11,6 @@ const presets = [
       },
       useBuiltIns: "usage",
       corejs: "3.6.4",
-      moduleRoot: 'D:/CreditApp/front'
     },
   ],
 ];
@@ -19,6 +18,6 @@ const presets = [
 module.exports = function (api) {
   api.cache(true);
     return {
-      plugins: ['macros', 'babel-plugin-root-import'],
+      plugins: ['macros'],
     }
   }

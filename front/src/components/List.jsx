@@ -1,7 +1,8 @@
 import {useDispatch, useSelector} from 'react-redux';
+import { getDebtors, getDebtorsLoading, getTotalRows } from '../store/debtors/selectors';
 import styles from '../css/list.module.css'
-import { contractsSelectors } from '../store/contracts/selectors';
-import Debtors from './Debtors';
+import { getContracts } from '../store/contracts/selectors';
+import Debtor from './Debtor';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { solid } from '@fortawesome/fontawesome-svg-core/import.macro';
 import AddDebtor from './AddDebtor';
@@ -9,37 +10,45 @@ import { useEffect, useState } from 'react';
 import Loading from './dummyComponents/Loading';
 import Pagination from './dummyComponents/Pagination';
 import AddContract from './AddContract';
-import { useLocation } from 'react-router';
-import { getList, getListLoading, getListTotal } from '../store/list/selectors';
-import { recieveList } from '../store/list/actions';
+import { getList } from '../store/debtors/actions';
+import { setAlert } from '../store/alert/actions';
 
 
 
 
 const List = () => {
-    const {state} = useLocation();
     const dispatch = useDispatch();
-    const loading = useSelector(getListLoading);
-    const debtors = useSelector(getList);
-    const contracts = useSelector(contractsSelectors.getList);
-    const total = useSelector(getListTotal);
+    const loading = useSelector(getDebtorsLoading);
+    const debtors = useSelector(getDebtors);
+    const contracts = useSelector(getContracts);
+    const total = useSelector(getTotalRows);
     const [addDebtor, setAddDebtor] = useState(false);
     const [addContract, setAddContract] = useState(false);
-
     const openAddDebtor = ()=> {
       setAddDebtor(true)
     }
-
-    const pageChanger = async (limit, page) => {
-      await dispatch(recieveList(limit, page));
+    const getNecessary = async () => {
+      try{
+      await dispatch(getList(25, 1))
+      }
+      catch(e){
+        setAlert('Ошибка подключения.', e.message, 'error')
+      }
     }
-
-    useEffect(()=> dispatch(recieveList(25, 1, state)), [state]);
-    const debtorsList = debtors.map(debtor => <Debtors debtor = { debtor } contracts = {contracts[debtor.id]} key={debtor.id} setAddContract= {setAddContract}/>)
+    const pageChanger = async (limit, page) => {
+      try{
+      await dispatch(getList(limit, page));
+      }
+      catch(e){
+        setAlert('Ошибка подключения.', e.message, 'error')
+      }
+    }
+    useEffect(getNecessary, [])
+    const debtorsList = debtors.map(debtor => <Debtor debtor = { debtor } contracts = {contracts[debtor.id]} key={debtor.id} setAddContract= {setAddContract}/>)
 
     return (
         <div className='background firstWindow'>
-          {addContract && <AddContract debtorId={addContract} setShow={setAddContract} />}
+          {addContract && <AddContract debtorId={addContract} setShow={setAddContract} show={addContract}/>}
          {addDebtor && <AddDebtor setAddDebtor = {setAddDebtor}/> }
         <div className={"contentBox" + ' ' + styles.listBox}>
           <div className={styles.utils}>

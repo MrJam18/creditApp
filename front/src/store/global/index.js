@@ -4,8 +4,7 @@ const initState = {
     loading: true,
     modal: false,
     error: false,
-    openLeftMenu: false,
-    stub: false
+    openLeftMenu: false
 }
 
 
@@ -68,4 +67,3 @@ export const getLoading = state => state.global.loading;
 export const getModal = state => state.global.modal;
 export const getGlobalError = state => state.global.error;
 export const getOpenLeftMenu = state => state.global.openLeftMenu;
-export const getStub = state => state.global.stub;

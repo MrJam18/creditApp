@@ -5,7 +5,7 @@ const authMiddleware = require('../middleware/authMiddleware');
 
 router.use(authMiddleware);
 
-router.post('/createCourtClaim', documentsController.createCourtClaim);
+router.get('/createCourtOrder', documentsController.createCourtOrder);
 router.get('/createClaim', documentsController.createClaim );
 router.get('/getDocument', documentsController.getDocument);
 router.get('/createCourtReqForID', documentsController.createCourtRequestforID);

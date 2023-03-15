@@ -24,7 +24,8 @@
     display: flex;
     justify-content: center;
     font-family: 'Roboto_slab', serif;
-    margin-bottom: 5px;
+    margin-top: 15px;
+    margin-bottom: 8px;
 }
 .header_first {
     margin-top: 0;
@@ -41,11 +42,10 @@
 .passport_block {
     margin-top: 10px;
 }
-.inputsFullWidthFlexBlock {
+.passport__flexBlock {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    margin-top: 5px;
 }
 .error {
     color: red;

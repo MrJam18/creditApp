@@ -1,7 +1,7 @@
-const { Regions, Cities, Streets, CityTypes, StreetTypes, RegionTypes, HouseTypes, FlatTypes, Areas, BlockTypes } = require('../models/connections');
+const { Regions, Cities, Streets, CityTypes, StreetTypes, RegionTypes, HouseTypes, FlatTypes, Areas, BlockTypes } = require('../models/models');
 const findOrCreateByName = require('../utils/findOrCreateinDBByName');
 
-//this deprecated
+
 class AdressController {
     async getOrCreateAddressIdsFromDB(address) {
         try {

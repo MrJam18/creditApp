@@ -4,10 +4,11 @@
  */
  const changeDateFormat = (date) => {
     const dateArray = date.split('-');
-    return dateArray.reduce((acc, date) => {
-    acc = date + '.' + acc;
-    return acc;
-});
+    const rightDate = dateArray.reduce((acc, date)=> {
+        acc = date + '.' + acc;
+        return acc;
+    })
+return rightDate;
 }  
 /**
  * @param {string} date - дата в русском формате DD.MM.YYYY

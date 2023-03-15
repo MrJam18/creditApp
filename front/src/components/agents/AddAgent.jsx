@@ -1,7 +1,7 @@
 import { Checkbox, FormControlLabel, TextField } from '@mui/material';
 import React, { useEffect, useRef, useState } from 'react';
 import CustomModal from '../dummyComponents/CustomModal';
-import Address from '../dummyComponents/Address/Address'
+import Address from '../Address'
 import { makeStyles } from '@mui/styles';
 import ButtonInForm from '../dummyComponents/ButtonInForm';
 import { useDispatch, useSelector } from 'react-redux';
@@ -10,11 +10,24 @@ import { getAgentsLoading } from '../../store/agents/selectors';
 import { addAgent } from '../../store/agents/actions';
 import { setAlert } from '../../store/alert/actions';
 import { setloading } from '../../store/global';
-import Agent from "./Agent";
 
+const useStyles = makeStyles({
+    fullInput: {
+        marginBottom: '10px'
+    },
+    smallInput: {
+        width: '45%'
+    },
+    requisits: {
+        height: '145px',
+        marginBottom: '10px'
+    }
+
+})
 
 
 const AddAgent = ({show, setShow}) => {
+    const classes = useStyles();
     const dispatch = useDispatch();
     const [address, setAddress ] = useState(false);
     const [error, setError] = useState(false);
@@ -28,7 +41,7 @@ const AddAgent = ({show, setShow}) => {
         if(!address){
             return setError('Укажите адрес!')
         }
-        const data = formDataConverter(form);
+        const data = formDataConverter(form.current);
         await dispatch(addAgent({
             agent: {
                 ...data,
@@ -45,12 +58,12 @@ const AddAgent = ({show, setShow}) => {
         }
 
     }
-    // const onChangeDefaultAgent = ev => {
-    //     setDefaultAgent(ev.target.checked);
-    // }
-    // const onChangeNoGroup = ev => {
-    //     setNoShowGroup(ev.target.checked);
-    // }
+    const onChangeDefaultAgent = ev => {
+        setDefaultAgent(ev.target.checked);
+    }
+    const onChangeNoGroup = ev => {
+        setNoShowGroup(ev.target.checked);
+    }
     useEffect(()=>{
         setDefaultAgent(false);
         setNoShowGroup(false);
@@ -63,14 +76,13 @@ const AddAgent = ({show, setShow}) => {
             <form onSubmit={formHandler} ref={form}>
             <CustomModal show={show} setShow={setShow} customStyles={{width: '500px'}}>
                 <div className="header_small">Добавление представителя</div>
-                <Agent setDefaultAgent={setDefaultAgent} setAddress={setAddress} setNoShowGroup={setNoShowGroup} />
-            {/*<TextField className={classes.fullInput} required name='surname' label={"Фамилия"} variant='standard' fullWidth />*/}
-            {/*<TextField className={classes.fullInput} required name='name' label={'Имя'} fullWidth variant='standard' />*/}
-            {/*<TextField className={classes.fullInput} name='patronymic' label={'Отчество'} variant='standard' fullWidth />*/}
-            {/*<TextField className={classes.fullInput} fullWidth required name='enclosure' label='Документ, подтверждающий полномочия' defaultValue='Копия доверенности представителя' variant='standard' />*/}
-            {/*<Address setAdressForDB={setAddress} />*/}
-            {/*<FormControlLabel control={<Checkbox checked={defaultAgent} onChange={onChangeDefaultAgent}  />} label="Представитель по умолчанию" />*/}
-            {/*<FormControlLabel control={<Checkbox checked={noShowGroup} onChange={onChangeNoGroup} />} label="Представитель не виден группе" />*/}
+            <TextField className={classes.fullInput} required name='surname' label={"Фамилия"} variant='standard' fullWidth />
+            <TextField className={classes.fullInput} required name='name' label={'Имя'} fullWidth variant='standard' />
+            <TextField className={classes.fullInput} name='patronymic' label={'Отчество'} variant='standard' fullWidth />
+            <TextField className={classes.fullInput} fullWidth required name='document' label='Документ, подтверждающий полномочия' defaultValue='Копия доверенности представителя' variant='standard' />
+            <Address setAdressForDB={setAddress} />
+            <FormControlLabel control={<Checkbox checked={defaultAgent} onChange={onChangeDefaultAgent}  />} label="Представитель по умолчанию" />
+            <FormControlLabel control={<Checkbox checked={noShowGroup} onChange={onChangeNoGroup} />} label="Представитель не виден группе" />
             <ButtonInForm loading={loading} />
             <div className="error">{error}</div>
             </CustomModal>

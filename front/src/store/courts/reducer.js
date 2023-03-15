@@ -22,11 +22,6 @@ export const courtsReducer = (state = initState, action) => {
                 ...state,
                 levels: action.payload
             }
-        case 'COURTS::CLEAR_LIST':
-            return {
-                ...state,
-                list: []
-            }
         default:
             return state
     }

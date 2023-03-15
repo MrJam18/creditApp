@@ -53,13 +53,9 @@ const Tasks = () => {
     return (
         <div className={styles.element}>
             <div className="header">Мои задачи</div>
-            <div className={styles.relativeContainer}>
-                <div className={styles.content}>
-           <NoBorderTable loading={loading} rows={tasks} headers={headers} focus={focus} sortHandler={sortHandler}  />
-                </div>
-                <div className={styles.paginationContainer}>
-                    <MinPagination pageUpdater={changePage} total={totalTasks} />
-                </div>
+            <div className={styles.flexContainer}>
+           <NoBorderTable loading={loading} rows={tasks} headers={headers} focus={focus} sortHandler={sortHandler}  /> 
+           <MinPagination pageUpdater={changePage} total={totalTasks} />
            </div>
         </div>
     );

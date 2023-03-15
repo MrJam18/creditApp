@@ -10,6 +10,5 @@ export const recieveBailiffsSearchList = searchString => async dispatch => {
 }
 
 export const createBailiff = (bailiff) => async () => {
-       const {data} = await api.post('bailiffs/createOne', bailiff);
-       return data;
+        await api.post('bailiffs/createOne', bailiff);
 }

@@ -1,13 +1,13 @@
 const ApiError = require("../error/apiError");
-const Bailiffs = require("../models/subjects/Bailiffs");
+const { Bailiffs } = require("../models/models");
 const { Op } = require("sequelize");
-const AddressBuilder = require("../Builders/AddressBuilder");
+const { getOrCreateAddressIdsFromDB } = require('./adressController');
 
 class BailiffsController{
 
 async searchBailiffs (req, res, next) {
         try {
-        const searchString = req.query.value;
+        const searchString = req.query.searchString;
         let bailiffs = await Bailiffs.findAll({limit: 5, attributes: ['id', 'name'], where: {
             name: {
                 [Op.iLike]: `%${searchString}%`
@@ -16,15 +16,16 @@ async searchBailiffs (req, res, next) {
         res.json(bailiffs);
         }
         catch(e) {
-            next(e);
+            console.log(e);
+            next(ApiError.badRequest(e));
         }
     }
 async createOne(req, res, next) {
     try{
         const body = req.body;
-        const address = await  AddressBuilder.build(body.address);
-        const bailiff = await Bailiffs.create({...address, name: body.name});
-        res.json({id: bailiff.id, name: bailiff.name});
+        const address = await getOrCreateAddressIdsFromDB(body.address);
+        await Bailiffs.create({...address, name: body.name});
+        res.json({status: 'ok'});
     }
     catch(e) {
         console.log(e);

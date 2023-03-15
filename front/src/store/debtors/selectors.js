@@ -1,10 +1,3 @@
-import { selectorCreator } from "../base/selectorCreator";
-const base = selectorCreator('debtors');
-export const getDebtor = base('data');
-export const getDebtorLoading = base('loading');
-export const getDebtorError = base('error');
-export const getDebtorComments = base('comments');
-export const getDebtorActions = base('actions');
-export const getDebtorId = base('data.id');
-export const getPassportId = base('passport.id');
-export const getPassport = base('passport');
+export const getDebtors = store => store.debtors.list;
+export const getTotalRows = store => store.debtors.totalRows;
+export const getDebtorsLoading = store => store.debtors.loading;

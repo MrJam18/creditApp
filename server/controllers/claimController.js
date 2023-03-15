@@ -1,4 +1,4 @@
-const {} = require('../models/connections');
+const {} = require('../models/models');
 const ApiError = require('../error/apiError');
 
 

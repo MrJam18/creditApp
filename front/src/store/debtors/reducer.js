@@ -1,43 +1,28 @@
-import { createSlice } from "@reduxjs/toolkit"
-import { reducer } from "../base/baseReducer"
-
-const initialState = {
-    data: {
-        id: 0,
-        surname: 'noname',
-        name: 'noname',
-        patronymic: 'noname',
-        birth_date: 'noname',
-        birth_place: 'noname',
-        fullAddress: 'noname',
-    },
-    passport: {
-        id: 0
-    },
-    comments: [],
-    actions: [],
-    loading: true,
-    error: false,
-    executiveDoc: null
+const initState = {
+    list: [],
+    totalRows: 0,
+    loading: true
 }
 
 
 
 
 
-export const debtorsSlice = createSlice({
-    name: 'debtors',
-    initialState,
-    reducers: {
-        ...reducer,
-        setData(state, action) {
-            state.data = action.payload
-        },
-        setPassport(state, action) {
-            state.passport = action.payload
-        },
-        setExecutiveDoc(state, action) {
-            state.executiveDoc = action.payload
-        }
-        },
-})
+
+export const debtorsReducer = (state = initState, action) => {
+    switch(action.type) {
+        case 'DEBTORS::CHANGE_LIST':
+            return {
+                ...state,
+                list: action.payload.list,
+                totalRows: action.payload.total
+            }
+        case 'DEBTORS::SET_LOADING':
+            return {
+                ...state,
+                loading: action.payload
+            }
+        default:
+            return state;
+    }
+}

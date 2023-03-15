@@ -1,5 +1,5 @@
 const ApiError = require("../error/apiError");
-const { Users, Groups } = require("../models/connections");
+const { Users, Groups } = require("../models/models");
 const bcrypt = require('bcrypt');
 const tokenService = require('../services/tokenService');
 const UserDTO = require('../services/user-dto');

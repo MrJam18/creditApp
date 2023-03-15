@@ -1,6 +1,5 @@
 const ApiError = require("../error/apiError");
-const { Payments } = require("../models/connections");
-const Contracts = require('../models/documents/Contracts')
+const { Contracts, Payments } = require("../models/models");
 const { changeDateToISO } = require("../utils/dates/changeDateFormat");
 const countAllWithPayments = require("../utils/countMoney/countAllWithPayments");
 const numFormatHandler = require("../utils/numFormatHandler");

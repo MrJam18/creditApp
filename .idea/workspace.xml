@@ -1,0 +1,850 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="be7a9f61-53ac-4ce0-ae0b-30606da89a70" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/server/static/contracts/10/documents/orders/1674983219175.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/static/contracts/11/documents/orders/1674983643467.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/static/contracts/12/documents/orders/1674982842560.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/static/contracts/13/documents/orders/1674984861432.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/static/contracts/13/documents/orders/1674984873858.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/static/contracts/14/documents/orders/1673161314840.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/static/contracts/14/documents/orders/1674984390834.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/static/contracts/14/files/contract.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/static/contracts/15/documents/orders/1673163138427.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/static/contracts/15/documents/orders/1673163180720.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/static/contracts/15/documents/orders/1673163294590.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/static/contracts/15/documents/orders/1674984626895.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/static/contracts/15/files/contract.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/static/contracts/16/documents/IPInits/1673165838119.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/static/contracts/16/files/courtOrder.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/static/contracts/17/documents/IPInits/1673167026896.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/static/contracts/17/files/courtOrder.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/static/contracts/18/documents/IPInits/1673167874675.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/static/contracts/18/documents/IPInits/1673168878010.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/static/contracts/18/documents/IPInits/1673169016880.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/static/contracts/18/documents/IPInits/1673169722128.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/static/contracts/18/documents/IPInits/1673169920709.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/static/contracts/18/documents/IPInits/1673169955343.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/static/contracts/18/documents/IPInits/1673170053052.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/static/contracts/18/documents/IPInits/1673170104967.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/static/contracts/18/documents/IPInits/1673170235266.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/static/contracts/18/documents/IPInits/1673170414611.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/static/contracts/18/documents/IPInits/1673170511807.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/static/contracts/18/documents/IPInits/1673170545543.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/static/contracts/18/documents/IPInits/1673170576671.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/static/contracts/18/documents/IPInits/1673170738737.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/static/contracts/18/documents/IPInits/1673170866472.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/static/contracts/18/documents/IPInits/1673170885040.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/static/contracts/18/documents/IPInits/1673171130821.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/static/contracts/18/documents/IPInits/1673171282693.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/static/contracts/18/documents/IPInits/1673171384484.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/static/contracts/18/documents/orders/1673167646660.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/static/contracts/18/documents/orders/1673168938973.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/static/contracts/18/documents/orders/1673170074252.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/static/contracts/18/files/courtOrder.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/static/contracts/19/documents/IPInits/1673172191716.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/static/contracts/19/documents/orders/1673172366461.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/static/contracts/19/documents/orders/1674982778416.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/static/contracts/19/files/contract.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/static/contracts/30/documents/orders/1678887206845.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/static/contracts/30/files/contract.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/static/contracts/31/documents/IPInits/1678888424643.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/static/contracts/31/files/courtOrder.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/static/contracts/6/documents/orders/1674983886619.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/static/contracts/6/documents/orders/1674983919869.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/static/contracts/8/documents/orders/1674984135529.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/static/contracts/9/documents/orders/1674985222949.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/start.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/CreditApp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/CreditApp.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/0a958a3f-4d27-4dfd-8f24-15238b20b9da.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/0a958a3f-4d27-4dfd-8f24-15238b20b9da.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/0a958a3f-4d27-4dfd-8f24-15238b20b9da/storage_v2/_src_/database/creditApp.aEg0KA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/0a958a3f-4d27-4dfd-8f24-15238b20b9da/storage_v2/_src_/database/creditApp.aEg0KA/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/0a958a3f-4d27-4dfd-8f24-15238b20b9da/storage_v2/_src_/database/creditApp.aEg0KA/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/0a958a3f-4d27-4dfd-8f24-15238b20b9da/storage_v2/_src_/database/creditApp.aEg0KA/schema/public.abK9xQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/0a958a3f-4d27-4dfd-8f24-15238b20b9da/storage_v2/_src_/database/postgres.edMnLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/0a958a3f-4d27-4dfd-8f24-15238b20b9da/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/0a958a3f-4d27-4dfd-8f24-15238b20b9da/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/0a958a3f-4d27-4dfd-8f24-15238b20b9da/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/0a958a3f-4d27-4dfd-8f24-15238b20b9da/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/0a958a3f-4d27-4dfd-8f24-15238b20b9da/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webResources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webResources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/.babelrc" beforeDir="false" afterPath="$PROJECT_DIR$/front/.babelrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/front/.eslintrc.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/babel-plugin-macros.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/babel-plugin-macros.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/babel.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/babel.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/config-overrides.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/config-overrides.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/classes/Column.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/classes/Column.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/classes/SelectExisting.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/classes/SelectExisting.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/AddContract.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/AddContract.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/AddDebtor.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/AddDebtor.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/AdressOld.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/AdressOld.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/Claim.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/Claim.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/Debtors.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/Debtors.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/LeftMenu.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/LeftMenu.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/List.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/List.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/Login.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/Menu.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/Menu.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/Search.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/Search.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/Test.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/Test.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/agents/AddAgent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/agents/AddAgent.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/agents/Agent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/agents/Agent.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/agents/Agents.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/agents/Agents.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/agents/AgentsToolBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/agents/AgentsToolBar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/agents/changeAgent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/agents/changeAgent.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/cessions/AddButton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/cessions/AddButton.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/cessions/Cession.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/cessions/Cession.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/cessions/CessionAdder.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/cessions/CessionAdder.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/cessions/CessionChanger.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/cessions/CessionChanger.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/cessions/Cessions.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/cessions/Cessions.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/cessions/NameChanger.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/cessions/NameChanger.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/cessions/Toolbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/cessions/Toolbar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/cessions/UI/ChangerUI.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/cessions/UI/ChangerUI.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/cessions/UI/NamerUI.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/cessions/UI/NamerUI.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/contract/Actions.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/contract/Actions.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/contract/Contract.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/contract/Contract.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/contract/ContractMenu.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/contract/ContractMenu.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/contract/contractData/Changer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/contract/contractData/Changer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/contract/contractData/ContractData.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/contract/contractData/ContractData.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/contract/contractData/CourtChooses.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/contract/contractData/CourtChooses.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/contract/contractData/CourtCreator.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/contract/contractData/CourtCreator.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/contract/contractData/CreateBailiff.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/contract/contractData/CreateBailiff.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/contract/contractData/ExecutiveChooses.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/contract/contractData/ExecutiveChooses.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/contract/contractData/ExecutiveDocChanger.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/contract/contractData/ExecutiveDocChanger.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/contract/contractData/SelectDocument.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/contract/contractData/SelectDocument.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/contract/contractData/Toolbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/contract/contractData/Toolbar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/contract/files/DocumentsGetter.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/contract/files/DocumentsGetter.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/contract/files/FileHandler.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/contract/files/FileHandler.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/contract/files/Files.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/contract/files/Files.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/contract/payments/AddPayment.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/contract/payments/AddPayment.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/contract/payments/ChangePayment.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/contract/payments/ChangePayment.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/contract/payments/ContractPayments.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/contract/payments/ContractPayments.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/contract/payments/Payment.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/contract/payments/Payment.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/creditors/AddBanksRequisites.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/creditors/AddBanksRequisites.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/creditors/AddCreditor.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/creditors/AddCreditor.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/creditors/ChangeCreditor.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/creditors/ChangeCreditor.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/creditors/Creditor.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/creditors/Creditor.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/creditors/Creditors.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/creditors/Creditors.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/creditors/CreditorsList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/creditors/CreditorsList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/creditors/CreditorsToolBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/creditors/CreditorsToolBar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/creditors/DefaultCessionChanger.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/creditors/DefaultCessionChanger.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/debtor/AddPassport.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/debtor/AddPassport.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/debtor/Debtor.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/debtor/Debtor.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/debtor/DebtorInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/debtor/DebtorInfo.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/debtor/DeleteDebtor.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/debtor/DeleteDebtor.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/debtor/PassportTypeSelect.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/debtor/PassportTypeSelect.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/dummyComponents/Address/Address.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/dummyComponents/Address/Address.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/dummyComponents/Address/AddressInputManually.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/dummyComponents/Address/AddressInputManually.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/dummyComponents/Address/AddressManually.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/dummyComponents/Address/AddressManually.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/dummyComponents/ArrowDirection.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/dummyComponents/ArrowDirection.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/dummyComponents/ButtonInForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/dummyComponents/ButtonInForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/dummyComponents/Columns/BaseColumner.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/dummyComponents/Columns/BaseColumner.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/dummyComponents/Columns/Changer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/dummyComponents/Columns/Changer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/dummyComponents/Columns/ColumnsWrapper.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/dummyComponents/Columns/ColumnsWrapper.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/dummyComponents/Content.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/dummyComponents/Content.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/dummyComponents/CustomButton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/dummyComponents/CustomButton.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/dummyComponents/CustomCheckBox.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/dummyComponents/CustomCheckBox.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/dummyComponents/CustomInput.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/dummyComponents/CustomInput.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/dummyComponents/CustomLoadingButton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/dummyComponents/CustomLoadingButton.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/dummyComponents/CustomModal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/dummyComponents/CustomModal.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/dummyComponents/CustomSelect.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/dummyComponents/CustomSelect.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/dummyComponents/DeleteButton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/dummyComponents/DeleteButton.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/dummyComponents/Details.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/dummyComponents/Details.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/dummyComponents/EasyInput.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/dummyComponents/EasyInput.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/dummyComponents/EasySelect.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/dummyComponents/EasySelect.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/dummyComponents/FileChooseHandler.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/dummyComponents/FileChooseHandler.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/dummyComponents/HidingAlert.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/dummyComponents/HidingAlert.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/dummyComponents/InnerMenu.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/dummyComponents/InnerMenu.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/dummyComponents/Loading.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/dummyComponents/Loading.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/dummyComponents/MinPagination.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/dummyComponents/MinPagination.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/dummyComponents/MovingModal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/dummyComponents/MovingModal.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/dummyComponents/NoBorderTable.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/dummyComponents/NoBorderTable.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/dummyComponents/Pagination.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/dummyComponents/Pagination.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/dummyComponents/PrivateAccess.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/dummyComponents/PrivateAccess.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/dummyComponents/PublicAccess.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/dummyComponents/PublicAccess.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/dummyComponents/SortButton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/dummyComponents/SortButton.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/dummyComponents/Stepper.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/dummyComponents/Stepper.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/dummyComponents/Table.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/dummyComponents/Table.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/dummyComponents/Toolbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/dummyComponents/Toolbar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/dummyComponents/ToolbarAddButton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/dummyComponents/ToolbarAddButton.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/dummyComponents/Warning.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/dummyComponents/Warning.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/dummyComponents/customChips/AddModal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/dummyComponents/customChips/AddModal.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/dummyComponents/customChips/CustomChips.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/dummyComponents/customChips/CustomChips.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/dummyComponents/search/BailiffSearcher.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/dummyComponents/search/BailiffSearcher.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/dummyComponents/search/CourtSearcher.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/dummyComponents/search/CourtSearcher.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/dummyComponents/search/CustomSearch.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/dummyComponents/search/CustomSearch.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/dummyComponents/search/EasySearch.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/dummyComponents/search/EasySearch.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/dummyComponents/search/SearchAndAddButton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/dummyComponents/search/SearchAndAddButton.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/start/LastActions.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/start/LastActions.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/start/Limits.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/start/Limits.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/start/Referrences.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/start/Referrences.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/start/Start.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/start/Start.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/components/start/Tasks.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/components/start/Tasks.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/constants/UI/button.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/constants/UI/button.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/constants/contractColumns.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/constants/contractColumns.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/constants/creditorTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/constants/creditorTypes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/constants/css.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/constants/css.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/constants/debtorColumns.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/constants/debtorColumns.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/constants/executiveDocTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/constants/executiveDocTypes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/constants/passportTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/constants/passportTypes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/constants/pathes/IMGFolder.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/constants/pathes/IMGFolder.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/controllers/AbstractController.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/controllers/AbstractController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/controllers/AddBanksRequisitesController.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/controllers/AddBanksRequisitesController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/controllers/AddContractController.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/controllers/AddContractController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/controllers/AddCreditorController.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/controllers/AddCreditorController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/controllers/ChangeCreditorController.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/controllers/ChangeCreditorController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/controllers/CreateCourtClaimController.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/controllers/CreateCourtClaimController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/controllers/CreateIPInitController.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/controllers/CreateIPInitController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/css/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/css/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/css/addContract.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/css/addContract.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/css/addDebtor.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/css/addDebtor.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/css/adress.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/css/adress.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/css/agents.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/css/agents.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/css/cessions.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/css/cessions.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/css/changer.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/css/changer.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/css/claim.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/css/claim.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/css/columnsWrapper.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/css/columnsWrapper.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/css/content.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/css/content.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/css/contract.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/css/contract.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/css/customChips.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/css/customChips.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/css/customModal.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/css/customModal.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/css/customSearch.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/css/customSearch.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/css/customSelect.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/css/customSelect.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/css/debtor.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/css/debtor.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/css/debtorInfo.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/css/debtorInfo.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/css/details.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/css/details.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/css/dummySearch.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/css/dummySearch.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/css/fileSender.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/css/fileSender.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/css/hidingAlert.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/css/hidingAlert.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/css/leftMenu.changer.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/css/leftMenu.changer.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/css/leftMenu.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/css/leftMenu.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/css/list.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/css/list.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/css/loading.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/css/loading.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/css/login.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/css/login.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/css/menu.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/css/menu.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/css/noBorderTable.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/css/noBorderTable.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/css/orgs.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/css/orgs.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/css/pagination.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/css/pagination.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/css/search.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/css/search.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/css/searchAndAddButton.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/css/searchAndAddButton.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/css/start.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/css/start.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/css/table.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/css/table.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/css/tasks.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/css/tasks.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/css/toolbar.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/css/toolbar.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/css/warning.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/css/warning.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/fonts/LICENSE.txt" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/fonts/LICENSE.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/hooks/useDebounce.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/hooks/useDebounce.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/hooks/useError.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/hooks/useError.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/hooks/useInput.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/hooks/useInput.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/hooks/useMUISelect.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/hooks/useMUISelect.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/hooks/useMedia.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/hooks/useMedia.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/hooks/useModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/hooks/useModal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/hooks/useSearch.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/hooks/useSearch.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/hooks/useShow.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/hooks/useShow.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/http/daDataApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/http/daDataApi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/http/getBlob.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/http/getBlob.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/http/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/http/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/services/authService.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/services/authService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/store/actions/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/store/actions/actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/store/actions/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/store/actions/reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/store/actions/selectors.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/store/actions/selectors.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/store/adresses/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/store/adresses/actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/store/adresses/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/store/adresses/reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/store/agents/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/store/agents/actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/store/agents/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/store/agents/reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/store/agents/selectors.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/store/agents/selectors.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/store/alert/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/store/alert/actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/store/alert/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/store/alert/reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/store/bailiffs/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/store/bailiffs/actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/store/bailiffs/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/store/bailiffs/reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/store/base/baseReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/store/base/baseReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/store/base/selectorCreator.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/store/base/selectorCreator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/store/cessions/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/store/cessions/actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/store/cessions/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/store/cessions/reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/store/cessions/selectors.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/store/cessions/selectors.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/store/contracts/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/store/contracts/actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/store/contracts/payments/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/store/contracts/payments/actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/store/contracts/payments/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/store/contracts/payments/reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/store/contracts/payments/selectors.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/store/contracts/payments/selectors.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/store/contracts/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/store/contracts/reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/store/contracts/selectors.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/store/contracts/selectors.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/store/courts/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/store/courts/actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/store/courts/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/store/courts/reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/store/courts/selectors.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/store/courts/selectors.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/store/creditors/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/store/creditors/actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/store/creditors/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/store/creditors/reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/store/creditors/selectors.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/store/creditors/selectors.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/store/debtors/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/store/debtors/actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/store/debtors/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/store/debtors/reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/store/debtors/selectors.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/store/debtors/selectors.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/store/global/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/store/global/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/store/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/store/list/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/store/list/actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/store/list/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/store/list/reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/store/list/selectors.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/store/list/selectors.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/store/tasks/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/store/tasks/actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/store/tasks/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/store/tasks/reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/store/tasks/selectors.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/store/tasks/selectors.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/store/users/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/store/users/actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/store/users/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/store/users/reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/store/users/selectors.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/store/users/selectors.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/utils/addLinkForSaveFile.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/utils/addLinkForSaveFile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/utils/changeDateFormat.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/utils/changeDateFormat.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/utils/countDays.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/utils/countDays.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/utils/countPercent.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/utils/countPercent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/utils/dates/compareDatesBool.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/utils/dates/compareDatesBool.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/utils/errorHandler.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/utils/errorHandler.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/utils/formDataConverter.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/utils/formDataConverter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/utils/getDefaultCessionText.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/utils/getDefaultCessionText.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/utils/getISODate.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/utils/getISODate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/utils/getIdByIndex.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/utils/getIdByIndex.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/utils/getLastinfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/utils/getLastinfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/utils/getjson.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/utils/getjson.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/utils/inputs/enterEventCreator.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/utils/inputs/enterEventCreator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/utils/inputs/validityHandler.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/utils/inputs/validityHandler.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/utils/isLeapsYears.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/utils/isLeapsYears.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/utils/isNumber.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/utils/isNumber.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/utils/moreThenNow.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/utils/moreThenNow.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/utils/postjson.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/utils/postjson.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/utils/prepareForColumnWrapper.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/utils/prepareForColumnWrapper.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/utils/prepareInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/utils/prepareInfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/utils/server/saveFileFromServer.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/utils/server/saveFileFromServer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/utils/serverApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/utils/serverApi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/utils/simpleActionCreator.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/utils/simpleActionCreator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/utils/sortByDate.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/utils/sortByDate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/utils/sortByNumber.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/utils/sortByNumber.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/utils/sortByText.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/utils/sortByText.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/utils/standardFontSize.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/utils/standardFontSize.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/utils/text/capitalize.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/utils/text/capitalize.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reserve/src/components/Claim.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/reserve/src/components/Claim.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reserve/src/components/List.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/reserve/src/components/List.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reserve/src/components/Menu.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/reserve/src/components/Menu.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reserve/src/components/Search.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/reserve/src/components/Search.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reserve/src/css/claim.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/reserve/src/css/claim.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reserve/src/css/list.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/reserve/src/css/list.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reserve/src/css/menu.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/reserve/src/css/menu.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reserve/src/css/search.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/reserve/src/css/search.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reserve/src/fonts/LICENSE.txt" beforeDir="false" afterPath="$PROJECT_DIR$/reserve/src/fonts/LICENSE.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reserve/src/hooks/useInput.js" beforeDir="false" afterPath="$PROJECT_DIR$/reserve/src/hooks/useInput.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reserve/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/reserve/src/store/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reserve/src/store/list/contracts/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/reserve/src/store/list/contracts/reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reserve/src/store/list/debtors/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/reserve/src/store/list/debtors/reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reserve/src/utils/changeDateFormat.js" beforeDir="false" afterPath="$PROJECT_DIR$/reserve/src/utils/changeDateFormat.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reserve/src/utils/webSockets.js" beforeDir="false" afterPath="$PROJECT_DIR$/reserve/src/utils/webSockets.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/.env" beforeDir="false" afterPath="$PROJECT_DIR$/server/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/Builders/AddressBuilder.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/Builders/AddressBuilder.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/WebSocket/broadcast.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/WebSocket/broadcast.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/WebSocket/eventHandler.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/WebSocket/eventHandler.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/WebSocket/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/WebSocket/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/classes/Address.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/classes/Address.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/classes/Breaks/Break.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/classes/Breaks/Break.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/classes/Money.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/classes/Money.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/classes/Result.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/classes/Result.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/classes/Rub.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/classes/Rub.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/classes/counters/Counter.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/classes/counters/Counter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/classes/counters/IgnorePaymentsLoanCounter.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/classes/counters/IgnorePaymentsLoanCounter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/classes/counters/Limited.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/classes/counters/Limited.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/classes/counters/LoanCounter.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/classes/counters/LoanCounter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/classes/counters/Tables/CountingTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/classes/counters/Tables/CountingTable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/classes/counters/Tables/PenaltyTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/classes/counters/Tables/PenaltyTable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/classes/counters/Tables/PercentTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/classes/counters/Tables/PercentTable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/classes/counters/Year.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/classes/counters/Year.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/classes/counters/Years.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/classes/counters/Years.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/classes/docx/Enclosures.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/classes/docx/Enclosures.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/classes/docx/Indents.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/classes/docx/Indents.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/classes/files/Docx.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/classes/files/Docx.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/classes/files/File.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/classes/files/File.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/classes/files/clientFiles/CancelDecision.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/classes/files/clientFiles/CancelDecision.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/classes/files/clientFiles/ClientFile.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/classes/files/clientFiles/ClientFile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/classes/files/clientFiles/Contract.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/classes/files/clientFiles/Contract.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/classes/files/clientFiles/CourtOrder.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/classes/files/clientFiles/CourtOrder.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/classes/files/clientFiles/IPEnd.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/classes/files/clientFiles/IPEnd.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/classes/files/clientFiles/IPInit.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/classes/files/clientFiles/IPInit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/classes/files/clientFiles/ReceivingOrder.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/classes/files/clientFiles/ReceivingOrder.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/classes/files/clientFiles/fileFactory.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/classes/files/clientFiles/fileFactory.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/configs/FileConfig.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/configs/FileConfig.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/constants/DBConstantsFinder.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/constants/DBConstantsFinder.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/constants/addresses.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/constants/addresses.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/constants/clientFiles.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/constants/clientFiles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/constants/dataBase/FIO.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/constants/dataBase/FIO.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/constants/dataBase/actionObjects.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/constants/dataBase/actionObjects.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/constants/dataBase/actionTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/constants/dataBase/actionTypes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/constants/dataBase/address/DBAddressConstructor.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/constants/dataBase/address/DBAddressConstructor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/constants/dataBase/address/streetTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/constants/dataBase/address/streetTypes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/constants/dataBase/addressColumns.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/constants/dataBase/addressColumns.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/constants/dataBase/contractTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/constants/dataBase/contractTypes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/constants/dataBase/courtLevels.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/constants/dataBase/courtLevels.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/constants/dataBase/courtTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/constants/dataBase/courtTypes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/constants/dataBase/creditorTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/constants/dataBase/creditorTypes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/constants/dataBase/executiveDocTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/constants/dataBase/executiveDocTypes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/constants/dataBase/passportTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/constants/dataBase/passportTypes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/constants/dataBase/statuses.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/constants/dataBase/statuses.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/CreditorsController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/CreditorsController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/actionsController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/actionsController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/adressController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/adressController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/agentsController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/agentsController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/bailiffsController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/bailiffsController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/cessionsController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/cessionsController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/claimController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/claimController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/contractsController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/contractsController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/courtsController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/courtsController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/createController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/createController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/debtorsController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/debtorsController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/documentsController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/documentsController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/eventsController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/eventsController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/executiveDocsController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/executiveDocsController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/filesController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/filesController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/listController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/listController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/messengerController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/messengerController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/paymentsController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/paymentsController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/settingsController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/settingsController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/tasksController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/tasksController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/usersController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/usersController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/db.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/db.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/documents/Controllers/ContractDocument.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/documents/Controllers/ContractDocument.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/documents/Controllers/CourtClaim.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/documents/Controllers/CourtClaim.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/documents/Controllers/IPInit.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/documents/Controllers/IPInit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/documents/Controllers/Payment.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/documents/Controllers/Payment.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/documents/Views/ClaimView.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/documents/Views/ClaimView.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/documents/Views/IPInitView.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/documents/Views/IPInitView.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/documents/Views/OrderView.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/documents/Views/OrderView.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/documents/Views/abstract/AbstractView.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/documents/Views/abstract/AbstractView.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/documents/Views/abstract/CourtClaimView.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/documents/Views/abstract/CourtClaimView.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/error/apiError.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/error/apiError.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/error/errorHandler.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/error/errorHandler.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/fixture.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/fixture.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/helpers/DateTimeHelper.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/helpers/DateTimeHelper.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/helpers/StringHelper.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/helpers/StringHelper.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/helpers/numbersHelper.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/helpers/numbersHelper.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/inspectors/instanceInspector.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/inspectors/instanceInspector.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/logs/db.log" beforeDir="false" afterPath="$PROJECT_DIR$/server/logs/db.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/middleware/authMiddleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/middleware/authMiddleware.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/middleware/errorHandlingMiddleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/middleware/errorHandlingMiddleware.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/PassportType.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/PassportType.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/base/BaseModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/base/BaseModel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/base/ContractOwned.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/base/ContractOwned.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/base/DocumentModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/base/DocumentModel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/base/Human.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/base/Human.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/base/Subject.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/base/Subject.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/connections.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/connections.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/documents/BankRequisites.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/documents/BankRequisites.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/documents/Cessions.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/documents/Cessions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/documents/CessionsEnclosures.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/documents/CessionsEnclosures.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/documents/CessionsInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/documents/CessionsInfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/documents/Contracts.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/documents/Contracts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/documents/CourtClaims.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/documents/CourtClaims.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/documents/ExecutiveDocs.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/documents/ExecutiveDocs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/documents/Passport.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/documents/Passport.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/documents/Payments.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/documents/Payments.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/documents/Requisites.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/documents/Requisites.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/statuses/AbstractStatuses.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/statuses/AbstractStatuses.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/statuses/CourtClaimsStatuses.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/statuses/CourtClaimsStatuses.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/subjects/Agents.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/subjects/Agents.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/subjects/Bailiffs.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/subjects/Bailiffs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/subjects/Courts.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/subjects/Courts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/subjects/Creditors.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/subjects/Creditors.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/subjects/Debtors.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/subjects/Debtors.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/templates/addressTemplate.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/templates/addressTemplate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/templates/initTemplates.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/templates/initTemplates.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/types/AbstractTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/types/AbstractTypes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/types/CourtClaimsTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/types/CourtClaimsTypes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/providers/DebtorsProvider.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/providers/DebtorsProvider.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/providers/ModelsProviders/CreditorsProvider.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/providers/ModelsProviders/CreditorsProvider.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/providers/SearchProviders/SearchByNameProvider.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/providers/SearchProviders/SearchByNameProvider.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/providers/base/Provider.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/providers/base/Provider.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/providers/documents/CessionsProvider.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/providers/documents/CessionsProvider.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/providers/documents/DocumentsProvider.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/providers/documents/DocumentsProvider.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/agents.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/agents.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/bailiffs.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/bailiffs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/cessions.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/cessions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/contracts.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/contracts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/courts.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/courts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/creditors.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/creditors.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/debtors.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/debtors.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/documents.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/documents.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/events.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/events.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/executiveDocs.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/executiveDocs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/files.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/files.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/list.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/list.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/messenger.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/messenger.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/new_claim.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/new_claim.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/payments.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/payments.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/settings.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/tasks.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/tasks.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/users.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/services/documentsService/DocxBuilders/DocxBodyBuilder.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/documentsService/DocxBuilders/DocxBodyBuilder.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/services/documentsService/DocxBuilders/DocxDocumentBuilder.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/documentsService/DocxBuilders/DocxDocumentBuilder.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/services/documentsService/DocxBuilders/DocxElementsBuilder.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/documentsService/DocxBuilders/DocxElementsBuilder.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/services/documentsService/DocxBuilders/DocxFooterBuilder.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/documentsService/DocxBuilders/DocxFooterBuilder.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/services/documentsService/DocxBuilders/DocxHeadBuilder.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/documentsService/DocxBuilders/DocxHeadBuilder.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/services/documentsService/classes/docxClassesBig.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/documentsService/classes/docxClassesBig.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/services/documentsService/countLimitedIgnorePayments.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/documentsService/countLimitedIgnorePayments.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/services/documentsService/countingTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/documentsService/countingTable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/services/documentsService/courtReqforIdDoc.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/documentsService/courtReqforIdDoc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/services/documentsService/createClaimDoc.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/documentsService/createClaimDoc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/services/documentsService/createCourtOrderDoc.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/documentsService/createCourtOrderDoc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/services/documentsService/createIPInitDoc.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/documentsService/createIPInitDoc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/services/documentsService/docxClasses.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/documentsService/docxClasses.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/services/documentsService/getTextFromCessions.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/documentsService/getTextFromCessions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/services/paymentsService.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/paymentsService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/services/tokenService.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/tokenService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/services/user-dto.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/user-dto.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/services/userService.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/userService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/templates/controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/templates/controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/utils/DBIds/actionObjects.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/utils/DBIds/actionObjects.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/utils/DBIds/actionTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/utils/DBIds/actionTypes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/utils/SQL Commands.txt" beforeDir="false" afterPath="$PROJECT_DIR$/server/utils/SQL Commands.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/utils/accessSecret.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/utils/accessSecret.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/utils/adress/changeAddressOnFullinArray.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/utils/adress/changeAddressOnFullinArray.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/utils/adress/changeAddressesOnFullAddress.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/utils/adress/changeAddressesOnFullAddress.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/utils/adress/getFullAddressWithoutInclude.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/utils/adress/getFullAddressWithoutInclude.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/utils/adresses.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/utils/adresses.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/utils/changeAllNumFormates.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/utils/changeAllNumFormates.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/utils/changeFIOOnFullName.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/utils/changeFIOOnFullName.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/utils/checkObjectOnEmpty.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/utils/checkObjectOnEmpty.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/utils/countMoney/Break.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/utils/countMoney/Break.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/utils/countMoney/countAllInYear.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/utils/countMoney/countAllInYear.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/utils/countMoney/countAllInYearNoLimit.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/utils/countMoney/countAllInYearNoLimit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/utils/countMoney/countAllWithPayments.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/utils/countMoney/countAllWithPayments.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/utils/countMoney/countAllWithPaymentsIgnorePayments.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/utils/countMoney/countAllWithPaymentsIgnorePayments.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/utils/countMoney/countFee.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/utils/countMoney/countFee.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/utils/countMoney/countLimited.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/utils/countMoney/countLimited.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/utils/countMoney/countOtherInOneYear.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/utils/countMoney/countOtherInOneYear.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/utils/countMoney/countPercentsInOneYear.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/utils/countMoney/countPercentsInOneYear.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/utils/countMoney/countSumWithFee.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/utils/countMoney/countSumWithFee.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/utils/countMoney/getRubles.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/utils/countMoney/getRubles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/utils/countMoney/sum.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/utils/countMoney/sum.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/utils/countOffset.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/utils/countOffset.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/utils/countPaid.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/utils/countPaid.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/utils/countPayment.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/utils/countPayment.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/utils/countPercent.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/utils/countPercent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/utils/countSum.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/utils/countSum.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/utils/createDataInDB.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/utils/createDataInDB.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/utils/cyclicCreator.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/utils/cyclicCreator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/utils/dataBase/moneyObjectToDBFormat.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/utils/dataBase/moneyObjectToDBFormat.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/utils/dataBase/moneyToDBFormat.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/utils/dataBase/moneyToDBFormat.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/utils/dates/addDays.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/utils/dates/addDays.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/utils/dates/addYears.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/utils/dates/addYears.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/utils/dates/changeDateFormat.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/utils/dates/changeDateFormat.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/utils/dates/compareDates.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/utils/dates/compareDates.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/utils/dates/compareDatesBool.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/utils/dates/compareDatesBool.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/utils/dates/compareEqualsDates.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/utils/dates/compareEqualsDates.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/utils/dates/countDays.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/utils/dates/countDays.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/utils/dates/getISODate.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/utils/dates/getISODate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/utils/dates/getRusDate.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/utils/dates/getRusDate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/utils/dates/isDate.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/utils/dates/isDate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/utils/dates/isLeap.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/utils/dates/isLeap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/utils/deleteCycle.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/utils/deleteCycle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/utils/files/createDirs.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/utils/files/createDirs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/utils/files/mkDirWithCheck.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/utils/files/mkDirWithCheck.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/utils/findOrCreateinDBByName.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/utils/findOrCreateinDBByName.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/utils/getAgentByGroupOrUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/utils/getAgentByGroupOrUser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/utils/getArrayFromString.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/utils/getArrayFromString.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/utils/getDataDB.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/utils/getDataDB.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/utils/getExecutiveDocName.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/utils/getExecutiveDocName.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/utils/getFieldFromDBMatches.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/utils/getFieldFromDBMatches.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/utils/getFullAddress.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/utils/getFullAddress.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/utils/getFullName.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/utils/getFullName.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/utils/getLastCessionInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/utils/getLastCessionInfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/utils/getSurnameAndInititals.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/utils/getSurnameAndInititals.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/utils/getWherePropertyWhenSearchFIO.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/utils/getWherePropertyWhenSearchFIO.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/utils/getYear.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/utils/getYear.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/utils/isLeapsYears.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/utils/isLeapsYears.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/utils/numFormatHandler.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/utils/numFormatHandler.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/utils/objects/objectComparing.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/utils/objects/objectComparing.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/utils/prepareDataForColWrapper.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/utils/prepareDataForColWrapper.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/utils/setFalseDefaultsInGroup.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/utils/setFalseDefaultsInGroup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/utils/sortByNumber.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/utils/sortByNumber.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/utils/text/capitalizeFirst.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/utils/text/capitalizeFirst.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/utils/text/uncapitalizeFirst.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/utils/text/uncapitalizeFirst.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="CSS React Module" />
+        <option value="Model" />
+        <option value="Node Controller" />
+        <option value="NodeJS Controller" />
+        <option value="NodeJS Router" />
+        <option value="NodeJS Export Function" />
+        <option value="React Controller" />
+        <option value="NodeJS Class" />
+        <option value="React Component" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2ARHj19aVIYn0fFaAz5Q6gocNQO" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "javascript.nodejs.core.library.configured.version": "20.0.0-nightly2023031585d614090b",
+    "javascript.nodejs.core.library.typings.version": "18.15.3",
+    "last_opened_file_path": "/media/jamil/DATA/projects/CreditApp2",
+    "nodejs_interpreter_path": "node",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "ts.external.directory.path": "/media/jamil/DATA/projects/CreditApp2/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/server/node_modules" />
+      <recent name="D:\CreditApp\server\classes\Breaks" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\projects\CreditApp\front\src\components\dummyComponents\Address" />
+      <recent name="D:\CreditApp\front\src\components\dummyComponents\search" />
+      <recent name="D:\CreditApp\front\src\components\dummyComponents" />
+      <recent name="D:\CreditApp\server" />
+      <recent name="D:\CreditApp\server\services\documentsService\DocxBuilders" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="index.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="index.js" working-dir="$PROJECT_DIR$/server">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.index.js" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="StructuralSearchPlugin">
+    <searchConfiguration name="InitTemplates" created="1666708323885" uuid="db4b32bb-b2a1-36a8-a896-0d91c20dad28" text="InitTemplates" recursive="true" caseInsensitive="false" type="ECMAScript 6" scope_type="PROJECT" scope_descriptor="" history="1">
+      <constraint name="__context__" within="" contains="" />
+    </searchConfiguration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="be7a9f61-53ac-4ce0-ae0b-30606da89a70" name="Changes" comment="" />
+      <created>1654965610642</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1654965610642</updated>
+      <workItem from="1654965612783" duration="672000" />
+      <workItem from="1654966319966" duration="1697000" />
+      <workItem from="1654968064695" duration="147000" />
+      <workItem from="1655011311208" duration="18669000" />
+      <workItem from="1655060987192" duration="1329000" />
+      <workItem from="1655213452055" duration="10092000" />
+      <workItem from="1655286432972" duration="21427000" />
+      <workItem from="1655461322073" duration="617000" />
+      <workItem from="1655542448110" duration="8459000" />
+      <workItem from="1655554255721" duration="3236000" />
+      <workItem from="1655636096394" duration="7467000" />
+      <workItem from="1655717929395" duration="18769000" />
+      <workItem from="1655884025483" duration="8269000" />
+      <workItem from="1655971085470" duration="2028000" />
+      <workItem from="1655973185428" duration="2810000" />
+      <workItem from="1655976052319" duration="22464000" />
+      <workItem from="1656142036331" duration="22081000" />
+      <workItem from="1656228704346" duration="23083000" />
+      <workItem from="1656315460323" duration="34853000" />
+      <workItem from="1656401465274" duration="27675000" />
+      <workItem from="1656748311080" duration="23750000" />
+      <workItem from="1656833281538" duration="9747000" />
+      <workItem from="1656846683546" duration="15542000" />
+      <workItem from="1657009547668" duration="26912000" />
+      <workItem from="1657278801932" duration="21611000" />
+      <workItem from="1657351809907" duration="6775000" />
+      <workItem from="1657433765331" duration="21963000" />
+      <workItem from="1657608525609" duration="1387000" />
+      <workItem from="1657610370877" duration="443000" />
+      <workItem from="1657610838781" duration="28223000" />
+      <workItem from="1657693924450" duration="16018000" />
+      <workItem from="1658040764651" duration="28085000" />
+      <workItem from="1658326271909" duration="6329000" />
+      <workItem from="1658392417678" duration="23321000" />
+      <workItem from="1658552609071" duration="21731000" />
+      <workItem from="1658737274287" duration="17133000" />
+      <workItem from="1658996910071" duration="21153000" />
+      <workItem from="1659076656488" duration="18649000" />
+      <workItem from="1659157614643" duration="24149000" />
+      <workItem from="1659245736861" duration="27861000" />
+      <workItem from="1659447662384" duration="8292000" />
+      <workItem from="1659678772509" duration="26032000" />
+      <workItem from="1660042946657" duration="13071000" />
+      <workItem from="1660390120853" duration="9321000" />
+      <workItem from="1660454108091" duration="26891000" />
+      <workItem from="1660729294328" duration="1141000" />
+      <workItem from="1661086759016" duration="4796000" />
+      <workItem from="1661154617840" duration="644000" />
+      <workItem from="1661155361967" duration="13481000" />
+      <workItem from="1661505280720" duration="301000" />
+      <workItem from="1661505645239" duration="16889000" />
+      <workItem from="1661854095010" duration="739000" />
+      <workItem from="1661854953631" duration="13563000" />
+      <workItem from="1662282833755" duration="17038000" />
+      <workItem from="1662379543888" duration="9976000" />
+      <workItem from="1662475218944" duration="4078000" />
+      <workItem from="1662714266287" duration="16186000" />
+      <workItem from="1663501922606" duration="8780000" />
+      <workItem from="1663930190830" duration="12853000" />
+      <workItem from="1663996776351" duration="977000" />
+      <workItem from="1664192069152" duration="2274000" />
+      <workItem from="1664279824197" duration="79000" />
+      <workItem from="1664279951388" duration="2257000" />
+      <workItem from="1664552292313" duration="163000" />
+      <workItem from="1665993750765" duration="14453000" />
+      <workItem from="1666160909717" duration="13513000" />
+      <workItem from="1666501129619" duration="19858000" />
+      <workItem from="1666688149998" duration="20882000" />
+      <workItem from="1666712565964" duration="214000" />
+      <workItem from="1666712799487" duration="2109000" />
+      <workItem from="1666715322685" duration="552000" />
+      <workItem from="1667030126557" duration="22460000" />
+      <workItem from="1667108920349" duration="17577000" />
+      <workItem from="1667286160705" duration="12139000" />
+      <workItem from="1667461956437" duration="6548000" />
+      <workItem from="1667481386919" duration="688000" />
+      <workItem from="1667482124527" duration="7601000" />
+      <workItem from="1667624891247" duration="23565000" />
+      <workItem from="1667721501957" duration="22369000" />
+      <workItem from="1667806304723" duration="18953000" />
+      <workItem from="1668800922338" duration="775000" />
+      <workItem from="1669120510310" duration="201000" />
+      <workItem from="1669120733810" duration="2602000" />
+      <workItem from="1669123386641" duration="3798000" />
+      <workItem from="1669185101008" duration="5101000" />
+      <workItem from="1669190742038" duration="2818000" />
+      <workItem from="1669194908688" duration="2736000" />
+      <workItem from="1671178835130" duration="170000" />
+      <workItem from="1671179237942" duration="9518000" />
+      <workItem from="1671255298826" duration="21084000" />
+      <workItem from="1671340509267" duration="17000" />
+      <workItem from="1671340540694" duration="23037000" />
+      <workItem from="1671437285972" duration="15256000" />
+      <workItem from="1671455990490" duration="90000" />
+      <workItem from="1671456096234" duration="1367000" />
+      <workItem from="1671457544884" duration="943000" />
+      <workItem from="1671461490745" duration="191000" />
+      <workItem from="1671701260967" duration="773000" />
+      <workItem from="1671703448831" duration="1139000" />
+      <workItem from="1671883237305" duration="660000" />
+      <workItem from="1671898562753" duration="1166000" />
+      <workItem from="1671949520454" duration="20816000" />
+      <workItem from="1671977285364" duration="2068000" />
+      <workItem from="1671979558798" duration="267000" />
+      <workItem from="1671979838212" duration="11000" />
+      <workItem from="1672135683314" duration="17866000" />
+      <workItem from="1672214162061" duration="19204000" />
+      <workItem from="1672636569386" duration="22998000" />
+      <workItem from="1672723041203" duration="14804000" />
+      <workItem from="1672821064880" duration="18026000" />
+      <workItem from="1672904787253" duration="4113000" />
+      <workItem from="1672915790713" duration="2943000" />
+      <workItem from="1672987371302" duration="18539000" />
+      <workItem from="1673068653573" duration="19195000" />
+      <workItem from="1673160001047" duration="7968000" />
+      <workItem from="1673249065507" duration="7535000" />
+      <workItem from="1673368165635" duration="51000" />
+      <workItem from="1674977340157" duration="6169000" />
+      <workItem from="1677680038221" duration="1269000" />
+      <workItem from="1677681348048" duration="25000" />
+      <workItem from="1677681431175" duration="4438000" />
+      <workItem from="1677688627068" duration="171000" />
+      <workItem from="1677688810741" duration="824000" />
+      <workItem from="1677689668734" duration="140000" />
+      <workItem from="1677752238463" duration="306000" />
+      <workItem from="1677752704810" duration="1508000" />
+      <workItem from="1677764339554" duration="869000" />
+      <workItem from="1677769739816" duration="2204000" />
+      <workItem from="1678883958780" duration="3486000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/front/src/components/debtor/PassportTypeSelect.jsx</url>
+          <line>9</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/front/src/components/cessions/NameChanger.jsx</url>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/front/src/components/dummyComponents/Address/AddressManually.jsx</url>
+          <line>22</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

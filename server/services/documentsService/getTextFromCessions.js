@@ -1,7 +1,7 @@
-const { Organizations, Cessions } = require("../../models/connections");
+const { Organizations, Cessions } = require("../../models/models");
 const { Indent, Text } = require("./docxClasses");
 
-module.exports = async function(cessionId, contractCreditorName) {
+module.exports = async function(cession, contractCreditorName) {
     let cessionText = [];
     let firstCreditorName = contractCreditorName;
     let cessionDocuments = [];

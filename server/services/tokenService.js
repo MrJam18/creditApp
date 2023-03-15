@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-const { Tokens } = require('../models/connections');
+const { Tokens } = require('../models/models');
 const { accessSecret, refreshSecret } = require('../utils/accessSecret');
 
 class TokenService {

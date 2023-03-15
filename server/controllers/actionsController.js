@@ -1,10 +1,7 @@
-const { Actions, ActionTypes, ActionObjects, Users } = require('../models/connections');
-const Contracts = require('../models/documents/Contracts');
-const Debtors = require('../models/subjects/Debtors');
+const { Actions, ActionTypes, ActionObjects, Users } = require('../models/models');
 const ApiError = require('../error/apiError');
+const { changeDateTimeFormat } = require('../utils/dates/changeDateFormat');
 const countOffset = require('../utils/countOffset');
-const getSurnameAndInititals = require('../utils/getSurnameAndInititals');
-const sequelize = require('sequelize');
 
 
 
@@ -42,23 +39,20 @@ class ActionsController {
     async getLastActionsList(req, res, next) {
         try{
             const { userId, page } = req.query;
-            const limit = 8;
+            const limit = 10;
             const offset = countOffset(limit, page);
             const actions = await Actions.findAndCountAll({
                 offset, limit,
-                order: [['createdAt', 'DESC']], attributes: [[sequelize.fn('to_char', sequelize.col('actions.createdAt'), 'DD.MM.YYYY'), 'createdAt'], 'id', 'result', 'contractId'], include: [{model: ActionTypes, attributes: ['name']}, {model: ActionObjects, attributes: ['name']}, {model: Contracts, attributes: ['id'], include: [{model: Debtors, attributes: ['surname', 'name', 'patronymic']}]}], where: {
+                order: [['createdAt', 'DESC']], attributes: ['createdAt', 'id', 'result'], include: [{model: ActionTypes, attributes: ['name']}, {model: ActionObjects, attributes: ['name']}], where: {
                     userId
                 }});
             const rows = actions.rows.map((el)=> {
-                const debtor = getSurnameAndInititals(el.contract.debtor);
                 return {
-                    createdAt: el.createdAt + ' г.',
+                    createdAt: el.createdAt,
                     id: el.id,
                     result: el.result,
                     actionType: el.actionType.name,
-                    actionObject: el.actionObject.name,
-                    contractId: el.contractId,
-                    debtor
+                    actionObject: el.actionObject.name
                 }
             })
             res.json({count: actions.count, rows});
