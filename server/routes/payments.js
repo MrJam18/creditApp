@@ -5,10 +5,11 @@ const router = new Router();
 
 router.use(authMiddleware);
 
-router.post('/deletePayment', paymentsController.deletePayment);
+router.delete('/deleteOne', paymentsController.deletePayment);
 router.get('/getPayments', paymentsController.getPayments);
 router.get('/sortPayments', paymentsController.sortPayments);
 router.post('/add', paymentsController.createPayment);
+router.post('/change', paymentsController.changePayment);
 
 
 module.exports = router;

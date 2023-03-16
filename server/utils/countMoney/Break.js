@@ -1,11 +1,14 @@
 module.exports = class Break {
-    constructor(date, isLeap, percents, penalties, payment, stopPercents = false, stopPenalties = false){
+    constructor(date, isLeap, main, percents, penalties, payment, percentsCounted = true, penaltyCounted = true, noPenalty){
         this.date = date;
         this.isLeap = isLeap;
-        this.percents =  percents.toFixed(2);
-        this.penalties =  penalties.toFixed(2);
-        this.stopPercents = stopPercents;
-        this.stopPenalties = stopPenalties;
+        this.main = main;
+        this.percents =  percents
+        this.penalties =  penalties;
+        this.percentsCounted = percentsCounted;
+        this.penaltyCounted = penaltyCounted;
         if(payment) this.payment = payment;
+        if(noPenalty) this.noPenalty = true;
     }
 }
+

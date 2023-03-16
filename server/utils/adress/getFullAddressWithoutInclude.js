@@ -1,4 +1,5 @@
-const { Regions, Cities, Streets, Areas, FlatTypes, BlockTypes, HouseTypes, RegionTypes, CityTypes, StreetTypes } = require("../../models/models");
+const { Regions, Cities, Streets, Areas, FlatTypes, BlockTypes, HouseTypes, RegionTypes, CityTypes, StreetTypes,
+} = require("../../models/connections");
 
 module.exports = async function(addressHolder){
     let fullAddress;

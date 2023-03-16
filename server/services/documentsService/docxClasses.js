@@ -1,5 +1,7 @@
 const { Paragraph, AlignmentType, TextRun, TableRow, TableCell, Table, HeightRule, ShadingType, VerticalAlign, WidthType, TabStopType, TabStopPosition } = require("docx");
+const {getRusDate} = require("../../utils/dates/getRusDate");
 
+//DEPRECATED! Use docxElementsBuilder instead!
 class Head extends Paragraph{
     constructor(text){
         const head = {
@@ -83,6 +85,7 @@ class BoldWithTopBreak extends Paragraph {
 }
 class Signature extends Paragraph {
     constructor(name){
+        const now = getRusDate();
         super({
             spacing: {
                 before: 400,
@@ -97,7 +100,7 @@ class Signature extends Paragraph {
                 },
             ],
             children: [new TextRun({
-                text: `«__»_________.20__ г. \t _____________ ${name}`,
+                text: `${now} г. \t _____________ ${name}`,
             })] 
         })
     }
@@ -179,7 +182,7 @@ class Merged3Cell extends TableCell {
                 columnSpan: 3,
                 verticalAlign: VerticalAlign.CENTER,
                 children: [new Paragraph({
-                    alignment: 'left',
+                    alignment: 'center',
                     children: [new TableText(text)]
                 })],
             }

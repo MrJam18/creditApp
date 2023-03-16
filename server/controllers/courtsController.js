@@ -1,20 +1,23 @@
-const { Courts, CourtLevels, CourtTypes } = require("../models/models");
+const {  CourtLevels, CourtTypes } = require("../models/connections");
 const { Op } = require("sequelize");
-const adressController = require("./adressController");
 const ApiError = require("../error/apiError");
+const Courts = require('../models/subjects/Courts');
+const AddressBuilder = require("../Builders/AddressBuilder");
 
 class CourtsController{
 
 async findByName (req, res, next) {
     try {
-        const {find} = req.query;
-        const regExp = `%${find}%`.toLowerCase();
+        const { value } = req.query;
+        const regExp = `%${value}%`.toLowerCase();
         const courts = await Courts.findAll({limit: 5,
             where: {
             name:{
                 [Op.iLike]: regExp
-            } 
-        }})
+            }
+        },
+            attributes: ['id', 'name']
+        })
         return res.json(courts);
     }
     catch(e) {
@@ -43,7 +46,7 @@ async getTypes(req,res,next) {
  async create(req, res, next) {
      try{
         const body = req.body;
-        const address = await adressController.getOrCreateAddressIdsFromDB(body.address);
+        const address = await AddressBuilder.build(body.address);
         const court = {
             ...body.court,
             ...address,
@@ -53,8 +56,9 @@ async getTypes(req,res,next) {
         res.json(DBResponse);
      }
      catch(e) {
-        res.json(e)
-        next(ApiError.badRequest(e));
+         console.log(e.name);
+         if(e.name === 'SequelizeUniqueConstraintError') e.message = 'Суд с таким именем уже существует.';
+        next(e);
     }
 
  }

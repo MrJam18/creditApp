@@ -1,7 +1,6 @@
 const getFullAddressWithoutInclude = require('./getFullAddressWithoutInclude');
 
 module.exports = async function(addressHolder) {
-    addressHolder = addressHolder.get({plain: true});
     addressHolder.fullAddress = await getFullAddressWithoutInclude(addressHolder);
     delete addressHolder.flat;
     delete addressHolder.house;

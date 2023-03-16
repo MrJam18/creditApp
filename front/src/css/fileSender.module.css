@@ -1,0 +1,11 @@
+.main {
+    
+}
+.header {
+    display: block;
+    font-weight: 600;
+    font-family: 'Roboto_slab', serif;
+    margin: 0 auto 10px;
+    font-size: 17px;
+    text-align: center;
+}

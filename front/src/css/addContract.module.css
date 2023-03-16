@@ -17,7 +17,7 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 .selectBlock {
     display: flex;
@@ -32,13 +32,23 @@
 }
 .header {
     font-size: 19px;
+    font-weight: 600;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    font-family: 'Roboto_slab', serif;
+    margin-bottom: 15px;
+}
+.noWeightHeader {
+    font-size: 19px;
     font-weight: 500;
     align-items: center;
     display: flex;
     justify-content: center;
     font-family: 'Roboto_slab', serif;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 }
+
 .payments {
     display: flex;
     justify-content: space-between;
@@ -85,5 +95,10 @@
     margin-bottom: 12.5px;
 }
 .button_submit {
-    margin-top: 10px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+.block_75 {
+    margin-bottom: 10px;
+    width: 75%;
 }

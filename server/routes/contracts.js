@@ -8,8 +8,8 @@ router.get('/getContract', contractsController.getContract);
 router.post('/changeContract', contractsController.changeContract);
 router.get('/getLimitationsList', contractsController.getLimitations);
 router.post('/createOne', contractsController.createOne);
-router.post('/setExecutiveDoc', contractsController.setExecutiveDoc);
 router.post('/deleteOne', contractsController.deleteOne);
+router.get('/getStatuses', contractsController.getStatuses);
 
 
 module.exports = router;

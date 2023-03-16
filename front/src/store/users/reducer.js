@@ -7,29 +7,6 @@ const initState = {
     error: false,
 }
 
-// export const usersReducer = (state = initState, action) => {
-//     switch(action.type) {
-//         case 'USERS::LOGIN':
-//             return {
-//                 ...state,
-//                 isOnline: true,
-//                 user: action.payload
-//             }
-//         case 'USERS::LOGOUT':
-//             return {
-//                 ...state, 
-//                 isOnline: false,
-//                 user: {}
-//             }
-//         case 'USERS::SET_LOADING':
-//             return {
-//                 ...state,
-//                 loading: action.payload
-//             }
-//         default:
-//             return state
-//     }
-// }
 
 const usersSlice = createSlice({
     name: 'users',

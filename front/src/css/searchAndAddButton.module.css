@@ -1,0 +1,15 @@
+.main {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+}
+.addChipButton {
+    width: 30px;
+    height: 30px;
+    min-height: 20px;
+    bottom: 0;
+    border: none;
+    background-color: #6a6868;
+    border-radius: 50%;
+}

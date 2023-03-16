@@ -1,7 +1,6 @@
-import { Button, Checkbox, FormControlLabel, TextField } from '@mui/material';
+import { Button } from '@mui/material';
 import React, { useEffect, useRef, useState } from 'react';
 import CustomModal from '../dummyComponents/CustomModal';
-import Address from '../Address'
 import { makeStyles } from '@mui/styles';
 import ButtonInForm from '../dummyComponents/ButtonInForm';
 import { useDispatch, useSelector } from 'react-redux';
@@ -10,29 +9,18 @@ import { getAgentsLoading } from '../../store/agents/selectors';
 import { changeAgent, deleteAgent } from '../../store/agents/actions';
 import { setAlert } from '../../store/alert/actions';
 import { setloading } from '../../store/global';
+import Agent from "./Agent";
 
 const useStyles = makeStyles({
-    fullInput: {
-        marginBottom: '10px'
-    },
-    smallInput: {
-        width: '45%'
-    },
-    requisits: {
-        height: '145px',
-        marginBottom: '10px'
-    },
     deleteButton: {
         width: '30%',
         marginBottom: '20px'
         
     }
-
 })
 
 
 const ChangeAgent = ({setShow, agent}) => {
-    const noShowGroupMount = agent.noShowGroup;
     const classes = useStyles();
     const dispatch = useDispatch();
     const [address, setAddress ] = useState('default');
@@ -40,15 +28,15 @@ const ChangeAgent = ({setShow, agent}) => {
     const loading = useSelector(getAgentsLoading);
     const form = useRef();
     const [defaultAgent, setDefaultAgent] = useState(agent.isDefault);
-    const [noShowGroup, setNoShowGroup] = useState(noShowGroupMount);
+    const [noShowGroup, setNoShowGroup] = useState(agent.noShowGroup);
     const formHandler = async (ev) => {
         try{
         ev.preventDefault();
         if(!address){
             return setError('Укажите адрес!');
         }
-        const data = formDataConverter(form.current);
-        if(address == 'default') {
+        const data = formDataConverter(form);
+        if(address === 'default') {
             await dispatch(changeAgent({
                 agent: {
                     id: agent.id,
@@ -77,12 +65,6 @@ const ChangeAgent = ({setShow, agent}) => {
         }
 
     }
-    const onChangeDefaultAgent = ev => {
-        setDefaultAgent(ev.target.checked);
-    }
-    const onChangeNoGroup = ev => {
-        setNoShowGroup(ev.target.checked);
-    }
     const deleteHandler = async () => {
         try{
            await dispatch(deleteAgent(agent.id));
@@ -105,13 +87,7 @@ const ChangeAgent = ({setShow, agent}) => {
             <CustomModal show={agent} setShow={setShow} customStyles={{width: '500px'}}>
                 <div className="header_small">Изменение представителя</div>
                 <Button color='error' onClick={deleteHandler} className={classes.deleteButton} variant='contained' > Удалить агента </Button>
-            <TextField className={classes.fullInput} required name='surname' label={"Фамилия"} variant='standard' defaultValue={agent.surname} fullWidth />
-            <TextField className={classes.fullInput} required name='name' label={'Имя'} fullWidth variant='standard' defaultValue={agent.name} />
-            <TextField className={classes.fullInput} defaultValue={agent.patronymic} name='patronymic' label={'Отчество'} variant='standard' fullWidth />
-            <TextField className={classes.fullInput} defaultValue={agent.document} fullWidth required name='document' label='Документ, подтверждающий полномочия' variant='standard' />
-            <Address defaultValue={agent.fullAddress} setAdressForDB={setAddress} />
-            <FormControlLabel control={<Checkbox checked={defaultAgent} onChange={onChangeDefaultAgent}  />} label="Представитель по умолчанию" />
-            <FormControlLabel control={<Checkbox checked={noShowGroup} onChange={onChangeNoGroup} />} label="Представитель не виден группе" />
+                <Agent setAddress={setAddress} setDefaultAgent={setDefaultAgent} setNoShowGroup={setNoShowGroup} defaultValues={agent} />
             <ButtonInForm loading={loading} />
             <div className="error">{error}</div>
             </CustomModal>

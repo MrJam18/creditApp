@@ -28,13 +28,12 @@
 }
 
 .contentBox {
-    padding: 20px 30px;
     border-radius: 15px;
     background-color: white;
-    padding-left: 30px;
+    padding: 20px 30px;
     width: 400px;
-    min-height: 200px;
-    margin-top: 75px;
+    min-height: 100px;
+    margin-top: 5px;
 }
 .closingButton {
     display: flex;
@@ -51,14 +50,16 @@
 .fixed {
     position: fixed;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
 }
 .headerHolder {
-    width: 100%;
-    position: absolute;
-    top: -22%;
-    right: 36%;
+    margin-top: 85px;
+    font-family: 'Roboto_slab', serif;
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
 }
 
 @keyframes slowShow {

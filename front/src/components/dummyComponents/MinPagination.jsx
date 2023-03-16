@@ -10,17 +10,16 @@ const useStyles = makeStyles({
     }
 })
 
-const MinPagination = ({total, pageUpdater }) => {
+const MinPagination = ({total, pageUpdater, limit = 10 }) => {
     const classes = useStyles();
     const [page, setPage] = useState(0);
-    const limit = 10;
     const pageChanger = (ev, page)=> {
         setPage(page);
         pageUpdater(limit, page+1);
     }
     return (
         <div className={styles.main}>
-        <TablePagination count={total} style={{paddingLeft: 0}} rowsPerPage={limit} className={classes.main} onPageChange={pageChanger} rowsPerPageOptions={[10]} page={page} />   
+        <TablePagination count={total} style={{paddingLeft: 0}} rowsPerPage={limit} className={classes.main} onPageChange={pageChanger} rowsPerPageOptions={[limit]} page={page} />
         </div>
     );
   };

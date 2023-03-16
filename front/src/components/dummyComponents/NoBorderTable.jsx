@@ -4,12 +4,17 @@ import {chandeDateFormatOnRus} from '../../utils/changeDateFormat';
 import SortButton from './SortButton';
 import Loading from './Loading';
 
+
 const NoBorderTable = ({rows = [], headers = [], sortHandler, focus, loading, rowsButtons, onClickRow}) => {
     const table = useRef();
     let Rows = [];
     const [empty, setEmpty] = useState(false);
+    const clickRowHandler = (ev) => {
+        const index = ev.currentTarget.getAttribute('data-index');
+        onClickRow(index);
+    }
     const doRows = () => {
-        if (!loading && rows.length != 0) {
+        if (!loading && rows.length !== 0) {
             Rows = rows.map((row, index) => {
                 let array = []
                 const copyRow = {...row};
@@ -22,7 +27,7 @@ const NoBorderTable = ({rows = [], headers = [], sortHandler, focus, loading, ro
                     if(key === el.key) {
                         find = true;
                         let cellValue = copyRow[key];
-                    if (el.type === 'date') cellValue = chandeDateFormatOnRus(cellValue);
+                    if (el.type === 'date') cellValue = chandeDateFormatOnRus(cellValue) + ' г.';
                     array.push(<td className={styles.row}>
                         <div className={styles.rowContainer}>
                         {cellValue}</div>
@@ -38,7 +43,7 @@ const NoBorderTable = ({rows = [], headers = [], sortHandler, focus, loading, ro
             })
             if(rowsButtons){
                 return ( 
-                    <tr key={cellId} data-index={index} onClick={onClickRow} className={styles.clickableRow}>
+                    <tr key={cellId} data-index={index} onClick={clickRowHandler} className={styles.clickableRow}>
                         {array}
                         </tr> )
             }

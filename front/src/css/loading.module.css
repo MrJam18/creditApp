@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     position: relative;
-    height: 80px;
+    min-height: 140px;
     text-align: center
   }
   .ldsRing div {
@@ -12,7 +12,7 @@
     width: 64px;
     height: 64px;
     margin: 8px;
-    border: 6px solid #fff;
+    border: 6px solid;
     border-radius: 50%;
     animation: ldsRing 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
     border-color: #1976d2 transparent transparent transparent;

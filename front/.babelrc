@@ -1,0 +1,39 @@
+{
+  "plugins": [
+    [
+      "babel-plugin-root-import",
+      {
+        "extends": "airbnb",
+        "rules": {},
+        "settings": {
+          "import/resolver": {
+            "babel-plugin-root-import": {}
+          }
+        },
+        "paths": [
+          {
+            "rootPathSuffix": "./src/",
+            "rootPathPrefix": "~/"
+          },
+          {
+            "rootPathSuffix": "./src/utils",
+            "rootPathPrefix": "%/"
+          },
+          {
+            "rootPathSuffix": "./src/components",
+            "rootPathPrefix": "$/"
+          },
+          {
+            "rootPathSuffix": "./src/css",
+            "rootPathPrefix": "*/"
+          },
+          {
+            "rootPathSuffix": "./src/store",
+            "rootPathPrefix": "#/"
+          }
+        ]
+      },
+      "macros"
+    ]
+  ]
+}

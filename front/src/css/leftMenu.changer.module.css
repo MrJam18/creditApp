@@ -1,0 +1,19 @@
+.fullInput {
+    margin-bottom: 10px;
+}
+.smallInput {
+    width: 45%;
+}
+.smallInputsHolder {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    width: 100%;
+}
+.typeHolder {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    margin-top: 15px;
+    width: 100%;
+}

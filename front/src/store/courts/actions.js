@@ -13,6 +13,9 @@ export const setCourtLevels = list => ({
     type: 'COURTS::CHANGE_LEVELS',
     payload: list
 })
+export const clearCourtsList = () => ({
+    type: 'COURTS::CLEAR_LIST'
+})
 // export const setCurrentContract = contract => ({
 //     type: 'CONTRACTS::GET_CURRENT',
 //     payload: contract
@@ -54,13 +57,8 @@ export const createCourt = (court, address) => async () => {
     court.house = address.house;
     court.flat = address.flat;
     court.block = address.block;
-    try{
-        const {data} = await api.post('courts/create', {
-            court, address
-        });
-        return data;
-    }
-    catch(e){
-        throw new Error(e.message);
-    }
+    const {data} = await api.post('courts/create', {
+        court, address
+    });
+    return data;
 }

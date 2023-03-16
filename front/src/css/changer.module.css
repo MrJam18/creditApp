@@ -1,17 +1,17 @@
-.contentBox {
-    padding: 20px 30px;
-    border-radius: 15px;
-    background-color: white;
-    padding-left: 30px;
-    position: fixed;
-    width: 400px;
-    min-height: 200px;
-    top: 25%;
-    left: 50%;
-    margin-top: -100px;
-    margin-left: -250px; 
-    text-align: center;
-}
+/*.contentBox {*/
+/*    padding: 20px 30px;*/
+/*    border-radius: 15px;*/
+/*    background-color: white;*/
+/*    padding-left: 30px;*/
+/*    position: fixed;*/
+/*    width: 400px;*/
+/*    min-height: 200px;*/
+/*    top: 25%;*/
+/*    left: 50%;*/
+/*    margin-top: -100px;*/
+/*    margin-left: -250px; */
+/*    text-align: center;*/
+/*}*/
 .relative {
     position: relative;
 }
@@ -22,7 +22,12 @@
 }
 .header {
     text-align: center;
+    margin-top: 0;
+    margin-bottom: 10px;
 }
 .error {
     margin-top: 15px;
+}
+.input {
+    margin-bottom: 10px;
 }

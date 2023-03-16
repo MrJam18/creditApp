@@ -1,8 +1,8 @@
-const ApiError = require('../error/apiError');
-const { Payments, Contracts } = require('../models/models');
-const paymentsService = require('../services/paymentsService');
-const countAllWithPayments = require('../utils/countMoney/countAllWithPayments');
-const compareDates = require('../utils/dates/compareDates');
+const Payments = require('../models/documents/Payments');
+const errorHandler = require('../error/errorHandler');
+const LoanCounter = require("../classes/counters/LoanCounter");
+const Contracts = require("../models/documents/Contracts");
+const {numbersHelper} = require("../helpers/numbersHelper");
 
 const limit = 25; 
 const offset = 0;
@@ -10,99 +10,61 @@ const offset = 0;
 class PaymentsController {
     async deletePayment(req,res, next) {
         try{
-            const {paymentId, contractId} = req.body;
+            const {id, contractId} = req.query;
             await Payments.destroy({
                 where: {
-                    id: paymentId
+                    id
                 }
             });
-            const contract = await Contracts.findByPk(contractId, {
-                attributes: ['percent', 'penalty', 'date_issue', 'sum_issue', 'due_date']
-            });
-            const paymentsInDB = await Payments.findAll({ order: [['date', 'ASC']],
-                where: {
-                    contractId
-                }
-            })
-            if(paymentsInDB.length != 0) paymentsService.countPaymentsInDB(paymentsInDB, contract)
-                // const endDate = paymentsInDB[paymentsInDB.length - 1].date;
-                // const { payments } = countAllWithPayments(contract.percent, contract.penalty, contract.sum_issue, contract.date_issue, endDate, paymentsInDB, contract.due_date);
-                // for (let payment of payments){
-                //     delete payment.createdAt;
-                //     delete payment.updatedAt;
-                //     Payments.update(payment, {
-                //         where: {                        
-                //             id: payment.id
-                //         }
-                //     })
-                // }
-                return res.json({status: 'ok'}); 
-
-            
+            await LoanCounter.updatePayments(contractId);
+                return res.json({status: 'ok'});
         }
         catch(e) {
-            console.log(e);
-            next(ApiError.internal(e.message));
+            next(e);
         }
         }
+
         async createPayment(req, res, next) {
             try{
             let {payment, contractId} = req.body;
-            const contract = await Contracts.findByPk(contractId, {
-                attributes: ['percent', 'penalty', 'date_issue', 'sum_issue', 'due_date']
-            });
-            const paymentsInDB = await Payments.findAll({ order: [['date', 'ASC']],
-                where: {
-                    contractId
-                }
-            })
-            
-            if(paymentsInDB != 0){
-            const endDate = compareDates(paymentsInDB[paymentsInDB.length - 1].date, payment.date);
-            paymentsInDB.push(payment);
-            const { payments } = countAllWithPayments(contract.percent, contract.penalty, contract.sum_issue, contract.date_issue, endDate, paymentsInDB, contract.due_date);
-            payment = payments.pop();
-            for (let payment of payments){
-                delete payment.createdAt;
-                delete payment.updatedAt;
-                Payments.update(payment, {
-                    where: {
-                        id: payment.id
-                    }
-                })
-            }
-            }
-            else {
-                const {payments} = countAllWithPayments(contract.percent, contract.penalty, contract.sum_issue, contract.date_issue, payment.date, [payment], contract.due_date);
-                payment = payments[0];
-            }
+            payment.sum = numbersHelper.getDBFormat(payment.sum);
+            await Contracts.checkGroupId(contractId, req.user.groupId);
             payment.contractId = contractId;
-            const response = await Payments.create(payment);
-            return res.json(response);
+            await LoanCounter.updatePayments(contractId, payment);
+            return res.json({status: 'ok'});
         }
         catch(e) {
-            console.log(e);
-            next(ApiError.internal(e.message));
+            next(e);
         }
-    
         }
+
+        async changePayment(req, res, next)
+        {
+            try{
+                const {payment, contractId} = req.body;
+                await Payments.destroy({where: {id: payment.id}});
+                delete payment.id;
+                payment.contractId = contractId;
+                await LoanCounter.updatePayments(contractId, payment);
+                return res.json({status: 'ok'});
+            }
+            catch (e) {
+                next(e);
+            }
+        }
+
 
     async getPayments(req,res, next) {
         try{
             const {page, limit, contractId, orderField, orderType} = req.query;
             const offset = page * limit - limit;
-            const contract = await Contracts.findByPk(contractId, {
-                attributes: ['percent', 'penalty', 'date_issue', 'sum_issue', 'due_date']
-            })
-            let dataPayments = await Payments.findAndCountAll({limit, offset, order: [[orderField, orderType]], where: {
+            const payments = await Payments.findAndCountAll({limit, offset, order: [[orderField, orderType]], where: {
                 contractId
-            }})
-            const total = dataPayments.count;
-            // const { payments } = countAllWithPayments(contract.percent, contract.penalty, contract.sum_issue, contract.date_issue, getISODate(), dataPayments.rows, contract.due_date);
-            res.json({total, list: dataPayments.rows});
+            }});
+            return res.json({total: payments.count, list: payments.rows});
         }
         catch(e) {
-            next(ApiError.internal(e.message));
+            errorHandler(e, next);
         }
     }
     async getPaymentsInner(contractId) {
@@ -113,26 +75,21 @@ class PaymentsController {
         return response;
     }
     catch(e){
-        console.log(e);
-        next(ApiError.internal(e.message));
+        errorHandler(e, next);
     }
     }
     async sortPayments(req,res,next) {
         try{
             const {field, contractId, type} = req.query;
-            const contract = await Contracts.findByPk(contractId, {
-                attributes: ['percent', 'penalty', 'date_issue', 'sum_issue', 'due_date']
-            });
             const payments = await Payments.findAndCountAll({limit, offset, order: [[field, type]], where: {
                 contractId
             }})
-            // const total = dataPayments.count;
-            // const {payments} = countAllWithPayments(contract.percent, contract.penalty, contract.sum_issue, contract.date_issue, getISODate(), dataPayments.rows, contract.due_date);
+            console.log(payments)
             res.json({total: payments.count, list: payments.rows});
             
         }
         catch(e){
-            next(ApiError.internal(e.message));
+            errorHandler(e, next);
         }
     }
 

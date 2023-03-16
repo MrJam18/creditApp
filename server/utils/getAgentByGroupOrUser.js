@@ -1,10 +1,9 @@
 const { Op } = require("sequelize")
 
 module.exports = function(groupId, userId) {
-    const where = {
+    return {
         [Op.or]: [
             {groupId}, {userId}
         ]
-    }
-    return where;
+    };
 }

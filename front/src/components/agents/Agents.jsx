@@ -10,9 +10,10 @@ import ChangeAgent from './changeAgent';
 import {setAlert} from '../../store/alert/actions'
 import agentsSlice from '../../store/agents/reducer';
 
+const headers = [{key: 'createdAt', name: 'Дата создания', type: 'date'}, {key: 'surname', name: 'Фамииля'}, {key: 'name', name: 'Имя'}, {key: 'patronymic' , name: 'Отчество'}, {key: "enclosure", name: "Документ"}];
+
 const Agents = () => {
     const dispatch = useDispatch();
-    const headers = [{key: 'createdAt', name: 'Дата создания'}, {key: 'surname', name: 'Фамииля'}, {key: 'name', name: 'Имя'}, {key: 'patronymic' , name: 'Отчество'}, {key: "document", name: "Документ"}];
     const error = useSelector(getAgentsError);
     const agents = useSelector(getAgentsList);
     const total = useSelector(getAgentsTotal);
@@ -28,13 +29,17 @@ const Agents = () => {
         setFocus(field);
         dispatch(recieveAgentsList(1, 25, order));
     }
-    const onClickRow = (ev) => {
-        const index = ev.currentTarget.getAttribute('data-index');
+    const onClickRow = (index) => {
         setChangedAgent(agents[index]);
     }
     useEffect(()=> {
         dispatch(recieveAgentsList(1, 25, order));
     }, []);
+    useEffect(()=> {
+        if(error){
+            dispatch(setAlert('ошибка получения предстаувителей', error, 'error'));
+        }
+    }, [error]);
 
 
     return (
